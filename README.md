@@ -7,7 +7,7 @@ Checks the case citations in a legal memo or brief, the way a careful associate 
 1. **Does the case exist?** Citations are found with [eyecite](https://github.com/freelawproject/eyecite) and looked up on [CourtListener](https://www.courtlistener.com). If the citation leads to a *different* case than the one named, that's flagged too, which is how most AI-invented citations show up.
 2. **Is the quote real?** Every quotation is fuzzy-matched against the opinion text, so curly quotes, brackets and OCR noise don't cause false alarms, but changed words do. Quotes the memo attributes to a statute or contract aren't held against the case.
 3. **Does the case say that?** Claude Haiku reads only passages from the cited opinion and decides whether they support, contradict, or don't support the memo's proposition.
-4. **Scanned filings** are read with PaddleOCR (PP-OCRv6) on the server.
+4. **Scanned filings** are read with PaddleOCR (PP-OCRv6) on the server, running on ONNX Runtime. A page is OCR'd only if it has no real text layer, so court e-filing stamps on scanned pages don't hide the scan. Five scanned pages take about 25 seconds on two CPU cores, in about 420 MB of memory.
 
 ## Accuracy (measured on real court cases)
 
@@ -56,12 +56,12 @@ streamlit run app.py
 
 1. Push this folder to a **public** GitHub repo. `.streamlit/secrets.toml` is git-ignored, so keys stay off GitHub.
 2. At [share.streamlit.io](https://share.streamlit.io): **Create app** → pick the repo, branch `main`, file `app.py`.
-3. **Advanced settings** → Python **3.12** if it's offered (it includes OCR for scanned uploads). On 3.14 the app still builds: one small C++ package is compiled during the build, and scanned uploads are turned off. Paste your secrets:
+3. **Advanced settings** → any Python from 3.11 up (3.12–3.14 tested for installation), and paste your secrets:
    ```toml
    ANTHROPIC_API_KEY = "sk-ant-..."
    COURTLISTENER_TOKEN = "..."
    ```
-4. **Deploy.** The first build takes several minutes (PaddleOCR is large). If the app runs out of memory, delete the `paddlepaddle` and `paddleocr` lines from `requirements.txt`; everything except scanned uploads keeps working.
+4. **Deploy.** The first scanned upload downloads the PP-OCRv6 models (about 30 seconds, once per server start). If the app ever runs out of memory, delete the `paddleocr` and `onnxruntime` lines from `requirements.txt`; everything except scanned uploads keeps working.
 
 The **Sample memo**, **Real cases** and **Accuracy** tabs run from recorded data and cached verdicts. They're instant and don't touch either API, so they work even without keys.
 

@@ -180,7 +180,7 @@ def daily_counter() -> dict:
 
 @st.cache_resource(show_spinner="Loading the OCR model (first use only)…")
 def ocr_engine():
-    return load_ocr("medium")
+    return load_ocr()
 
 
 def budget_left() -> tuple[bool, str]:

@@ -19,13 +19,13 @@ A Streamlit demo that checks case citations in legal memos. It confirms the case
 ## Check locally before pushing
 ```bash
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
-pip install -r requirements.txt                        # PaddleOCR is large; to skip it, delete the last two lines of requirements.txt
+pip install -r requirements.txt                        # includes PaddleOCR on ONNX Runtime; to skip OCR, delete the last two lines
 streamlit run app.py                                   # The Real cases and Accuracy tabs work with no keys
 python -m eval.run_eval --no-ai                        # free sanity check of the benchmark
 ```
 
 ## If the Streamlit Cloud build runs out of memory
-Delete the `paddlepaddle` and `paddleocr` lines from `requirements.txt`, commit, and push. Only scanned-PDF/image uploads stop working, and the app says so.
+OCR is PaddleOCR (PP-OCRv6, small tier) on ONNX Runtime, about 420 MB at peak. Don't add `paddlepaddle` back: it has no Python 3.14 build. If memory is still a problem, delete the `paddleocr` and `onnxruntime` lines from `requirements.txt`, commit, and push. Only scanned-PDF/image uploads stop working, and the app says so.
 
 ## Layout
 - `app.py`: UI
