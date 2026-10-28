@@ -12,6 +12,7 @@ numpy>=1.26
 # --- Optional: OCR for scanned PDFs and images (adds ~1 GB to the build) ---
 # If the app runs out of memory on Streamlit Community Cloud, delete these two
 # lines and redeploy; everything else keeps working, and scanned uploads show
-# a clear message instead.
-paddlepaddle>=3.0
-paddleocr>=3.7
+# a clear message instead. PaddlePaddle has no Python 3.14 build yet, so on 3.14
+# the app runs without OCR.
+paddlepaddle>=3.0; python_version < "3.14"
+paddleocr>=3.7; python_version < "3.14"

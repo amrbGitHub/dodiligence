@@ -56,7 +56,7 @@ streamlit run app.py
 
 1. Push this folder to a **public** GitHub repo. `.streamlit/secrets.toml` is git-ignored, so keys stay off GitHub.
 2. At [share.streamlit.io](https://share.streamlit.io): **Create app** → pick the repo, branch `main`, file `app.py`.
-3. **Advanced settings** → Python **3.12**, and paste your secrets:
+3. **Advanced settings** → Python **3.12** if it's offered (it includes OCR for scanned uploads). On 3.14 the app still builds: one small C++ package is compiled during the build, and scanned uploads are turned off. Paste your secrets:
    ```toml
    ANTHROPIC_API_KEY = "sk-ant-..."
    COURTLISTENER_TOKEN = "..."
