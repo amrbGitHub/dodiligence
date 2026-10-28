@@ -4,6 +4,8 @@ from __future__ import annotations
 import html
 import json
 import re
+import time
+from collections import OrderedDict
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -35,6 +37,30 @@ def _strip_html(s: str) -> str:
     return re.sub(r"\n\s*\n+", "\n\n", s).strip()
 
 
+# CourtListener's free quota is small (this account: 125 requests a day), so successful responses
+# are kept for the life of the server process and shared by every visitor: checking the same memo
+# again, or another memo citing the same case, costs no requests.
+_CACHE: OrderedDict[tuple, tuple[int, object]] = OrderedDict()
+_CACHE_MAX = 500
+# Where an opinion's text can be, best first (plain text, then the HTML variants).
+TEXT_FIELDS = ("plain_text", "html_with_citations", "html", "html_lawbox", "html_columbia",
+               "xml_harvard", "html_anon_2020")
+_blocked_until = 0.0    # after a long throttle, don't send requests that will only be refused
+MAX_RETRY_WAIT = 30     # seconds; a longer Retry-After means a daily limit, not worth waiting for
+
+
+def _cached(key: tuple, fetch) -> tuple[int, object]:
+    if key in _CACHE:
+        _CACHE.move_to_end(key)
+        return _CACHE[key]
+    status, body = fetch()
+    if status == 200:
+        _CACHE[key] = (status, body)
+        if len(_CACHE) > _CACHE_MAX:
+            _CACHE.popitem(last=False)
+    return status, body
+
+
 class HttpTransport:
     """Talks to the real CourtListener API."""
 
@@ -46,29 +72,57 @@ class HttpTransport:
         self.s.headers["Authorization"] = f"Token {token}"
         self.timeout = timeout
 
-    def _send(self, method: str, url: str, **kw):
-        """CourtListener throttles new accounts hard (a few requests a minute), so wait and retry on 429."""
-        import time
-        for _ in range(5):
-            r = self.s.request(method, url, timeout=self.timeout, **kw)
+    def _send(self, method: str, url: str, **kw) -> tuple[int, object]:
+        """Returns (status, JSON body or text). Retries a short throttle once or twice; a long one is
+        remembered, so later requests fail at once instead of hitting CourtListener again."""
+        global _blocked_until
+        wait = _blocked_until - time.time()
+        if wait > 0:
+            return 429, {"detail": f"Request was throttled. Expected available in {int(wait)} seconds."}
+        for attempt in range(3):
+            try:
+                r = self.s.request(method, url, timeout=self.timeout, **kw)
+            except requests.RequestException as e:
+                return 0, f"{type(e).__name__}: {e}"
             if r.status_code != 429:
-                return r
-            time.sleep(min(30, int(r.headers.get("retry-after", "10") or 10)) + 1)
-        return r
-
-    def lookup(self, text: str) -> tuple[int, object]:
-        try:
-            r = self._send("POST", f"{CL_BASE}/api/rest/v4/citation-lookup/", data={"text": text})
-        except requests.RequestException as e:
-            return 0, f"{type(e).__name__}: {e}"
+                break
+            retry_after = _retry_after(r)
+            if retry_after > MAX_RETRY_WAIT:
+                _blocked_until = time.time() + retry_after
+                break
+            if attempt < 2:
+                time.sleep(retry_after + 1)
         try:
             return r.status_code, r.json()
         except ValueError:
             return r.status_code, r.text[:200]
 
+    def lookup(self, text: str) -> tuple[int, object]:
+        return _cached(("lookup", text), lambda: self._send(
+            "POST", f"{CL_BASE}/api/rest/v4/citation-lookup/", data={"text": text}))
+
     def get(self, url: str) -> tuple[int, dict]:
-        r = self._send("GET", url)
-        return r.status_code, (r.json() if r.status_code == 200 else {})
+        def fetch():
+            status, body = self._send("GET", url)
+            if status == 200 and isinstance(body, dict):    # keep only what _opinion_text reads
+                text_field = next((f for f in TEXT_FIELDS if (body.get(f) or "").strip()), None)
+                body = {"type": body.get("type", ""), **({text_field: body[text_field]} if text_field else {})}
+            return status, body
+        status, body = _cached(("get", url), fetch)
+        return status, (body if status == 200 and isinstance(body, dict) else {})
+
+
+def _retry_after(r) -> int:
+    """Seconds until CourtListener accepts requests again, from the header or the error text."""
+    try:
+        return int(r.headers.get("retry-after") or 0) or _seconds_in(r.json().get("detail", "")) or 10
+    except (ValueError, AttributeError):
+        return 10
+
+
+def _seconds_in(detail: str) -> int:
+    m = re.search(r"available in (\d+) seconds", detail or "")
+    return int(m.group(1)) if m else 0
 
 
 class ReplayTransport:
@@ -99,8 +153,11 @@ def _lookup_error(status: int, body) -> str:
         why = ("CourtListener rejected the API token, so this case couldn't be looked up. "
                "The app's owner should check COURTLISTENER_TOKEN in the app's Secrets.")
     elif status == 429:
-        why = ("CourtListener's rate limit was reached (free accounts get 50 requests an hour), "
-               "so this case couldn't be looked up. Try again later.")
+        secs = _seconds_in(detail)
+        when = ("later" if not secs else f"in about {round(secs / 3600, 1):g} hours" if secs >= 3600
+                else f"in about {max(1, round(secs / 60))} minutes")
+        why = (f"CourtListener's free API limit was reached, so this case couldn't be looked up. "
+               f"Lookups work again {when}. Citations already checked on this server still work.")
     elif status == 0:
         why = "Couldn't reach CourtListener, so this case couldn't be looked up."
     else:
@@ -122,8 +179,7 @@ class CourtListenerSource:
                 continue
             txt = j.get("plain_text") or ""
             if not txt.strip():
-                for f in ("html_with_citations", "html", "html_lawbox", "html_columbia",
-                          "xml_harvard", "html_anon_2020"):
+                for f in TEXT_FIELDS[1:]:
                     if j.get(f):
                         txt = _strip_html(j[f])
                         break

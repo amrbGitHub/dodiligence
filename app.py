@@ -350,8 +350,8 @@ with tab_paste:
     if not CL_TOKEN:
         st.caption("Live case lookups aren't configured on this deployment, so only cases from the benchmark can be checked.")
     else:
-        st.caption("Case lookups use CourtListener's free API, which allows only a few requests a minute, "
-                   "so a memo with many citations can take a minute or two.")
+        st.caption("Case lookups use CourtListener's free API, which has a small daily limit shared by every "
+                   "visitor. Cases already looked up on this server are reused at no cost.")
     if st.button("Check citations", type="primary", key="run_paste", disabled=not pasted.strip()):
         memo_text, mode = pasted, "paste"
 
@@ -395,7 +395,7 @@ with (OUT.get(run_mode) if run_mode else st.container()):
             bar.progress(n / total, text=f"Checking {n} of {total}: {claim.case_name}")
 
         try:
-            # Cap before lookup: each citation uses CourtListener requests (50 an hour on the free tier).
+            # Cap before lookup: each citation uses CourtListener requests (a small daily quota on the free tier).
             results = verify(memo_text, source, judge, on_progress=progress,
                              max_cites=None if mode == "showcase" else MAX_CITES)
         except Exception as e:

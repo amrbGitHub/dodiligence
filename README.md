@@ -28,7 +28,7 @@ Ground truth comes from courts, not from us. We took **218 citations that US jud
 - **Fast and light.** Finding citations, matching quotes and picking passages take a median of a few milliseconds per citation on one CPU core, in about 130 MB of memory, with no GPU. The only model call is the support check: `claude-haiku-5-5` reads about five passages (roughly 1,900 tokens), not the whole opinion, and answers in about a second. Measured with `python -m eval.perf`.
 - **Stable.** Two fresh runs from scratch gave identical results.
 - **Honest limits.**
-  - The correct-citation set is small (14), and it was looked at while the rules were tuned, so treat 12/14 as optimistic. Of the two false alarms, one is a judge quoting a statute through a case, and one is a broad "see, e.g." cite. A larger held-out set (63 sentences, already selected) is waiting on CourtListener's free-tier limit of 50 requests an hour.
+  - The correct-citation set is small (14), and it was looked at while the rules were tuned, so treat 12/14 as optimistic. Of the two false alarms, one is a judge quoting a statute through a case, and one is a broad "see, e.g." cite. A larger held-out set (63 sentences, already selected) is waiting on CourtListener's free-tier request limits.
   - For misstated holdings, the filer's proposition was reconstructed from the court's description of it, so it isn't always word-for-word what was filed.
   - Only the majority opinion of each case is checked.
 
@@ -68,7 +68,7 @@ The **Sample memo**, **Real cases** and **Accuracy** tabs run from recorded data
 ## Keys and limits
 
 - **Claude:** console.anthropic.com → API keys. Use a key just for this demo.
-- **CourtListener:** free account → Profile → Developer Tools → API token. New accounts get **50 requests an hour** (5 a minute). A memo uses one request for the lookup plus one per case, so the live "Paste a memo" tab handles roughly 8 short memos an hour; DoDiligence waits and retries when throttled.
+- **CourtListener:** free account → Profile → Developer Tools → API token. Free accounts have small hourly **and daily** limits (this demo's account: 125 requests a day). A memo uses one request for the lookup plus one to three per case, so the live tabs handle only a handful of new memos a day. To stretch that, CourtListener responses are cached in memory and shared by all visitors, so re-checking a memo or citing a case already looked up costs nothing; a short throttle is retried, and a daily one is reported with the time until lookups work again. For a busier demo, ask Free Law Project for a higher limit.
 - The public demo caps new AI checks at 3 per visitor session and 150 per day (`RUNS_PER_SESSION`, `RUNS_PER_DAY`).
 
 ## Project layout

@@ -151,7 +151,7 @@ the court said the filer attributed to it. The court’s finding is the label.
 downloaded for the error set (one citation per sentence, no “but see”/“cf.” signals). We assume judges cited
 correctly. **This set is small (14) and was looked at while DoDiligence’s rules were adjusted, so its pass rate is
 optimistic and has a wide margin of error.** A larger held-out set (63 sentences, already selected) is being
-added; CourtListener’s free API allows 50 requests an hour, which is the bottleneck.
+added; CourtListener’s free API limits requests per hour and per day, which is the bottleneck.
 
 **Precision.** Because the test set has far more errors than correct citations, “share of flags that were real
 errors” would look near-perfect no matter what, so we report the false-alarm count on correct citations instead.
