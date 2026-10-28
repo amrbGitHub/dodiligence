@@ -1,0 +1,23 @@
+MEMORANDUM
+
+TO: Litigation team
+FROM: AI research assistant
+RE: Mata v. Avianca, Inc.: is the claim time-barred under the Montreal Convention?
+
+Question presented. Mr. Mata was injured on an Avianca flight in August 2019 and filed suit in February 2022, more than two years later. Avianca has moved to dismiss under Article 35 of the Montreal Convention. Is the claim time-barred?
+
+Short answer. No. Avianca's bankruptcy filing in May 2020 triggered the automatic stay, and the stay tolled the two-year period while it was in effect.
+
+The automatic bankruptcy stay tolls the Montreal Convention's two-year limitations period. See Varghese v. China Southern Airlines Co., Ltd., 925 F.3d 1339.
+
+Courts treat the Article 35 period as a statute of limitations that can be tolled, not as a condition on the right to sue. See Petersen v. Iran Air, 905 F. Supp. 2d 121.
+
+A stay that bars the plaintiff from suing the debtor stops the limitations clock for as long as the stay lasts. See Miller v. United Airlines, Inc., 174 F.3d 366.
+
+The Convention leaves questions of tolling to the law of the forum. See Zicherman v. Korean Air Lines Co., 516 F.3d 1237.
+
+Courts apply the bankruptcy stay to toll limitations periods on claims against the debtor. See Holliday v. Atl. Capital Corp., 738 F.2d 1153.
+
+Tolling applies even where the underlying claim arises under a treaty. See Hyatt v. N. Cent. Airlines, 92 F.3d 1074.
+
+Conclusion. Excluding the time the stay was in effect, Mr. Mata sued within two years. We recommend opposing the motion to dismiss.

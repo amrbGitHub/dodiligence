@@ -1,0 +1,17 @@
+streamlit>=1.45
+eyecite>=2.7
+rapidfuzz>=3.9
+anthropic>=2.3
+pandas>=2.0
+requests>=2.31
+pypdf>=5.0
+pypdfium2>=4.30
+pillow>=10.0
+numpy>=1.26
+
+# --- Optional: OCR for scanned PDFs and images (adds ~1 GB to the build) ---
+# If the app runs out of memory on Streamlit Community Cloud, delete these two
+# lines and redeploy; everything else keeps working, and scanned uploads show
+# a clear message instead.
+paddlepaddle>=3.0
+paddleocr>=3.7

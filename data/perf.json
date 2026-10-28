@@ -1,0 +1,13 @@
+{
+ "items": 232,
+ "median_ms": 2.5,
+ "p95_ms": 45.4,
+ "total_s": 2.89,
+ "memory_mb": 128,
+ "cpu_cores_used": 1,
+ "ai_checks": 71,
+ "ai_median_s": 1.1,
+ "ai_input_tokens": 1925,
+ "ai_output_tokens": 144,
+ "machine": "20-thread CPU, Python 3.11.9"
+}
