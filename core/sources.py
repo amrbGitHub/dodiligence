@@ -22,8 +22,8 @@ class Opinion:
     year: str | int | None = None
     url: str = ""
     text: str = ""
-    source: str = ""          # "cache" | "courtlistener"
-    note: str = ""            # e.g. "multiple matches", "lookup error"
+    source: str = ""          # "courtlistener" | "lookup_error" | "none"
+    note: str = ""            # e.g. why a lookup failed
 
 
 def _strip_html(s: str) -> str:
@@ -39,6 +39,9 @@ class HttpTransport:
     """Talks to the real CourtListener API."""
 
     def __init__(self, token: str, timeout: int = 30):
+        token = token.strip().strip('"').strip()
+        if token.lower().startswith("token "):     # pasted with CourtListener's own "Token " prefix
+            token = token[6:].strip()
         self.s = requests.Session()
         self.s.headers["Authorization"] = f"Token {token}"
         self.timeout = timeout
@@ -54,7 +57,10 @@ class HttpTransport:
         return r
 
     def lookup(self, text: str) -> tuple[int, object]:
-        r = self._send("POST", f"{CL_BASE}/api/rest/v4/citation-lookup/", data={"text": text})
+        try:
+            r = self._send("POST", f"{CL_BASE}/api/rest/v4/citation-lookup/", data={"text": text})
+        except requests.RequestException as e:
+            return 0, f"{type(e).__name__}: {e}"
         try:
             return r.status_code, r.json()
         except ValueError:
@@ -84,6 +90,22 @@ class ReplayTransport:
 def _name_match(a: str, b: str) -> float:
     from rapidfuzz import fuzz
     return fuzz.token_set_ratio(a.lower(), b.lower()) if a and b else 0.0
+
+
+def _lookup_error(status: int, body) -> str:
+    """Why a CourtListener lookup failed, in words a visitor (or the app's owner) can act on."""
+    detail = (body.get("detail") if isinstance(body, dict) else str(body or "")).strip()[:160]
+    if status in (401, 403):
+        why = ("CourtListener rejected the API token, so this case couldn't be looked up. "
+               "The app's owner should check COURTLISTENER_TOKEN in the app's Secrets.")
+    elif status == 429:
+        why = ("CourtListener's rate limit was reached (free accounts get 50 requests an hour), "
+               "so this case couldn't be looked up. Try again later.")
+    elif status == 0:
+        why = "Couldn't reach CourtListener, so this case couldn't be looked up."
+    else:
+        why = f"CourtListener returned an error (HTTP {status}), so this case couldn't be looked up."
+    return why + (f" ({detail})" if detail else "")
 
 
 class CourtListenerSource:
@@ -118,9 +140,9 @@ class CourtListenerSource:
             return out
         status, results = self.t.lookup("; ".join(cites))
         if status != 200 or not isinstance(results, list):
+            note = _lookup_error(status, results)
             for c in cites:
-                out[c] = Opinion(citation=c, found=False, source="courtlistener",
-                                 note=f"lookup error {status}: {str(results)[:120]}")
+                out[c] = Opinion(citation=c, found=False, source="lookup_error", note=note)
             return out
         by_norm: dict[str, dict] = {}
         for item in results:

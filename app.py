@@ -419,6 +419,9 @@ with (OUT.get(run_mode) if run_mode else st.container()):
                 st.caption(f"The demo checks at most the first {MAX_CITES} citations in a document.")
             if mode == "upload" and st.session_state.get("upload_note"):
                 st.caption(st.session_state["upload_note"])
+            failed = [r for r in results if r.opinion.source == "lookup_error"]
+            if failed:
+                st.error(f"{len(failed)} of {len(results)} citations couldn't be checked. {failed[0].opinion.note}")
             if not ANTHROPIC_KEY and mode != "showcase":
                 st.caption("AI support-checking is off on this deployment, so only existence and quotes were checked.")
             picks = showcase()[1] if mode == "showcase" else []

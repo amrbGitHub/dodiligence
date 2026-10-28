@@ -116,7 +116,7 @@ def verify(text: str, source, judge=None, on_progress=None, max_cites: int | Non
         if on_progress:
             on_progress(n, len(claims), cl)
         op = opinions[cl.citation]
-        if not op.found and (op.source == "none" or op.note.startswith("lookup error")):
+        if not op.found and op.source in ("none", "lookup_error"):
             results.append(CitationResult(cl, op, "REVIEW", op.note))
             continue
         if not op.found:
