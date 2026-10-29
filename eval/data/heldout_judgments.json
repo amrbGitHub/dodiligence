@@ -1,0 +1,345 @@
+{
+"b6235bdf028fec6972350d5189e44c2c": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts address whether the United States can be made a party or be bound by a state court judgment without congressional consent, and the government's limited authority to appear. They do not address whether a declaration of a contract's validity is a suit against the sovereign because the Administrator was an agent for a disclosed principal, nor the Restatement agency point.",
+"key_excerpt": 3,
+"in": 1883,
+"out": 142
+},
+"4774a5efb3e17ff17ae54e0fc4c01832": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The proposition attributes to the Court a statement that the Court has twice nearly held something, citing the quoted line; the excerpt does say 'it is highly doubtful that a mere question has any constitutional implications whatever,' but it is a passing observation in the reasoning, not a holding, and the memo's characterization of Chief Judge Schwartz's authorship and the 'precipice' framing is not supported by the excerpts. Excerpt 4 shows the quoted language is present but does not show the claimed institutional stance.",
+"key_excerpt": 4,
+"in": 2222,
+"out": 205
+},
+"326dd215a8a46f7cdb5f9a3f0fd78c7a": {
+"verdict": "UNCLEAR",
+"explanation": "The excerpts are fragmentary, showing only partial citations and a dispute between the parties about enforcement, with no statement of an en banc or panel decision being approved or any holding in the affirmative. The excerpts are insufficient to determine whether the court approved a panel decision holding in the affirmative.",
+"key_excerpt": 6,
+"in": 959,
+"out": 130
+},
+"6b0c5ffba8045859420c7cecc18ebc4a": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts show the Roy per curiam and Scalia's concurrence discussing harmless-error standards for omitted-element instructions, including the 'grave doubt' and 'impossible to find otherwise' tests, but nothing in them addresses footnote 10 of the majority in a dissent or the 'harmless structural error' concern about applying footnote 10 to anything short of a stipulation. The proposition attributes a specific structural-error argument to this concurrence that the excerpts do not contain.",
+"key_excerpt": 5,
+"in": 3568,
+"out": 199
+},
+"ef7aeb85464c0e77d8072773ec195c7c": {
+"verdict": "SUPPORTED",
+"explanation": "The excerpt states that on a Rule 12(b)(6) dismissal the court must accept as true all allegations and all reasonable inferences from them, viewed in the light most favorable to the non-moving party. This matches the proposition, which the memo attributes to Rocks at 645; the proposition's reference to 'this Court and the district court' is a minor framing point that does not change the core rule.",
+"key_excerpt": 3,
+"in": 2499,
+"out": 158
+},
+"be148194e3e63eec548dfe15e0bad646": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpts 3 and 5 state the Central Hudson threshold rule: if commercial speech concerns unlawful activity or is misleading, it is not protected by the First Amendment, and only if it concerns lawful, non-misleading activity does the court proceed to further analysis. The memo's proposition that analysis ends once speech is found unprotected is a fair paraphrase, though the opinion's quoted language is a threshold rule rather than an explicit statement that 'analysis ends,' a minor scope point the citation's parenthetical quotes directly.",
+"key_excerpt": 3,
+"in": 2726,
+"out": 214
+},
+"2f74d8a5c5008673bcde0be37bc1788d": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts address res judicata and whether a prior dismissal was with or without prejudice, not whether an order dismissing 'without qualification' finally adjudicates a case so as to bar amendment under Rule 41(b). Excerpt 3 actually notes that dismissal for failure to state a claim is without prejudice and that plaintiffs were free to file a new complaint, which cuts against the memo's proposition.",
+"key_excerpt": 3,
+"in": 2863,
+"out": 172
+},
+"75191a88e7c5311b75fff3d88413b8e4": {
+"verdict": "SUPPORTED",
+"explanation": "The quoted sentence appears verbatim in the opinion, stating that a contract required to be in writing cannot be orally modified except in limited circumstances such as extension of time for performance (excerpts 3 and 6). The memo's quotation is accurate and the Court states it as settled, not as a rejected position.",
+"key_excerpt": 6,
+"in": 2511,
+"out": 132
+},
+"426def178aa96d9ab77c6b05801ec1ff": {
+"verdict": "UNCLEAR",
+"explanation": "The excerpts include the dissent's quoted reference to the majority's footnote 2 stating the Commission's findings were not before the trial court and that judicial notice of such evidence is not ordinarily taken, but the excerpts cut off before the footnote's own reasoning about exceptional circumstances, and the dissent also notes the court has discretion in unusual circumstances. The excerpts do not show whether the majority declined consideration for lack of exceptional circumstances as the memo states.",
+"key_excerpt": 4,
+"in": 3324,
+"out": 189
+},
+"bcc89d7ca760344353495d6493ebf7c5": {
+"verdict": "SUPPORTED",
+"explanation": "The court construed the then-existing Workmen's Compensation act as not extending to injuries occurring outside Illinois, stating there is no provision authorizing such compensation (excerpt 6). This matches the memo's claim that the court construed the statute as it then obtained, before the amendment expressly authorizing extraterritorial compensation.",
+"key_excerpt": 6,
+"in": 2265,
+"out": 141
+},
+"5dd4711ca2399ac75bca4e3997b20c3e": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The memo's proposition is that Richardson announced a 'preference' for joint trials of co-indicted defendants, but the excerpts show Richardson stating that joint trials conserve resources while acknowledging they create prejudice risks and that fairness normally outweighs administrative concerns, which is not framed as an enthusiastic or unqualified preference. The excerpts (see excerpt 3 and 6) are about the balance between joint-trial efficiency and fairness in the Bruton context, and do not contain the 'preference' language or pin cite at 209 that the memo attributes to it.",
+"key_excerpt": 3,
+"in": 1925,
+"out": 227
+},
+"0b59bb757bf551f3da62a8385392aa23": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 6 contains the quoted passage verbatim, in the context of the court explaining that the district court's imprecise damages charge must give the jury the 'instructional equivalent of the mariner's compass and sea-lane map.' The proposition's characterization of the case as reversing a damages instruction is consistent with excerpts 3 and 5, which order a new trial and criticize the damages charge.",
+"key_excerpt": 6,
+"in": 2387,
+"out": 163
+},
+"5463a920facda7f04b93ffa717cc4e1d": {
+"verdict": "CONTRADICTED",
+"explanation": "The opinion does not state the majority rule barring third-party suits; instead it allows Grand to recover indemnity from Troy, the workers' compensation employer, on a contractual indemnity theory, despite the compensation act. Excerpt 4 shows the court found Troy and Grand intended indemnity notwithstanding the workers' compensation law, which is the opposite of the proposition's bar.",
+"key_excerpt": 4,
+"in": 2393,
+"out": 162
+},
+"ca3eb3ca95d587326abf2f3b19c76daa": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 5 states the Fifth Circuit's 'disposition of leniency toward pro se litigants' and excerpt 6 confirms the court's practice of leniency toward pro se litigants, tempered only in certain circumstances. The memo's quoted phrase and its general point that pro se litigants receive some solicitude are therefore supported, though the excerpts are fragmentary.",
+"key_excerpt": 5,
+"in": 1183,
+"out": 161
+},
+"4e97cdad51bc69d8e60ae0bc61d4530a": {
+"verdict": "SUPPORTED",
+"explanation": "The proposition is that plaintiff's injury extent is a relevant consideration; the opinion's totality-of-circumstances analysis and its discussion of the leg injury and medical care (excerpts 5-7) treat the nature and severity of the injury as relevant. Excerpt 7 explicitly notes medical expenses as an element of damages and considers the seriousness of restriction such as a disabling injury, supporting the point.",
+"key_excerpt": 7,
+"in": 2974,
+"out": 171
+},
+"ddafd2fdbbc25a33fc22add9e188f320": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Pod-Ners applies the good cause standard under Rule 26(d) to grant expedited discovery, but the excerpts never mention or discuss the 'No-taro' line of authority, so they do not show that other courts applied good cause free of its strictures. The case does illustrate good cause, but the proposition's comparative point about No-taro is not addressed.",
+"key_excerpt": 4,
+"in": 2079,
+"out": 152
+},
+"2d5907db16f1d8c617580aad1a412df9": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts do not say that each count charged a separate and distinct substantive crime or that the omitted materiality instruction had no bearing on other counts. Instead, Winstead reasons that the materiality issue was effectively decided because the jury was instructed on materiality for the mail fraud counts and that only one fraudulent scheme underlay both charges, so the proposition's core point is not what the case holds.",
+"key_excerpt": 5,
+"in": 1911,
+"out": 166
+},
+"cbbbbb5cc783cdad11d038bb558a5360": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The memo's proposition concerns Datacom's estoppel argument, but the excerpts address attorney conflicts of interest, the authority of an assistant State's attorney to file a quo warranto petition, and disqualification; nothing in them mentions estoppel or any argument by a party named Datacom. The case therefore does not support the proposition as stated, which is about the party's cited support, not a legal holding on estoppel.",
+"key_excerpt": 6,
+"in": 2318,
+"out": 172
+},
+"71b70aff953728f09eca758cf12777e7": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts are only fragments of the opinion's procedural history and a discussion of voting practices; none addresses whether amendments or a complaint are redundant. The proposition concerns pleading redundancy, which the excerpts do not discuss.",
+"key_excerpt": 0,
+"in": 1095,
+"out": 116
+},
+"c9d0d3a4b8935bfea652f375690e19aa": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 3 states that inherent judicial power is not derived from legislative grant or specific constitutional provision but from the fact that the court is created and charged by the constitution with certain duties, matching the quoted language. The memo's proposition that a trial court has inherent authority on this basis is consistent with that statement, though the excerpt addresses inherent power generally rather than attorney's fees specifically.",
+"key_excerpt": 3,
+"in": 1703,
+"out": 162
+},
+"9901cfdb242f23483edfbcc49986c00d": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The proposition says the District Court failed to consider a beneficial ownership claim in light of Cortner, but the excerpts show the District Court did address beneficial ownership standing (it held plaintiffs retained no beneficial interest) and the Second Circuit affirmed on jurisdictional grounds, not on any failure to consider a claim. The excerpts do not support a finding that the district court failed to consider the claim as framed in the memo.",
+"key_excerpt": 4,
+"in": 2603,
+"out": 178
+},
+"0d5e640ee29fb96c801c3c68a2b94bab": {
+"verdict": "SUPPORTED",
+"explanation": "The opinion states that the court will overturn the district court's exercise of its broad discretion over discovery scope 'only in unusual circumstances' (excerpt 3), and the memo's proposition accurately reflects that standard. The excerpts do not expressly say 'abuse of discretion,' but that is a fair characterization of the review standard applied.",
+"key_excerpt": 3,
+"in": 1717,
+"out": 144
+},
+"e7ebfda063feee0ea53f5e5b56365355": {
+"verdict": "SUPPORTED",
+"explanation": "The proposition cites Grissom, see e.g., for the point that some cases require a clear and convincing standard of proof. Excerpts 4 and 6 show the court applying a clear and convincing evidence standard to the plaintiff's proof of a material omission under the Consumer Fraud Act, which illustrates the cited point.",
+"key_excerpt": 4,
+"in": 1819,
+"out": 139
+},
+"2f16acf9b099debb8efd66f0e7baeb4b": {
+"verdict": "SUPPORTED",
+"explanation": "The Court states that the admission or refusal of evidence lies largely within the trial court's sound discretion and will be reversed only upon a showing of abuse of discretion, and it applies that standard to the refused exhibits. This matches the proposition's core point (excerpt 3, repeated in excerpt 5).",
+"key_excerpt": 3,
+"in": 1689,
+"out": 132
+},
+"254bff43ec1b98e9339207fb59ae0177": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpts 3 and 4 state the holding that the Federal Constitution does not require a lawfully seized person to be advised he is 'free to go' before consent to search is voluntary. The memo's proposition, that the officer had no obligation to so inform Stone, is a fair application of that holding.",
+"key_excerpt": 3,
+"in": 1865,
+"out": 129
+},
+"3b57ce96f2599d3037ff11ec09a4699b": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 5 states that \"equitably\" refers to the Court's power to divide property according to justice and fairness, and excerpt 4 holds that the power is limited to dividing property between the parties. Together these support the memo's point that the power to divide equitably is bounded by justice and fairness and is not unlimited.",
+"key_excerpt": 5,
+"in": 1297,
+"out": 136
+},
+"8cfd5e449a77e165137f11685e57cec8": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 5 and 6 quote Bertine stating that the probable-cause standard is peculiarly related to criminal investigations and unhelpful for routine administrative caretaking functions like inventory searches. This supports the memo's proposition that probable cause is not the relevant measure for such searches, as the memo's cited language indicates.",
+"key_excerpt": 6,
+"in": 2793,
+"out": 143
+},
+"d66c0a88f57444f12dd2934d6571c7c5": {
+"verdict": "UNCLEAR",
+"explanation": "The excerpts show only the caption, the procedural framing, and a quoted passage about Gertz dicta and a letter containing allegedly defamatory opinion statements, but the memo's proposition is truncated and the excerpts do not state the Court's holding on whether statements of opinion are actionable. Without the full proposition and the opinion's core holding, I cannot decide the match.",
+"key_excerpt": 5,
+"in": 1237,
+"out": 155
+},
+"32bb6169a8548d88e1f1176a52aba954": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 4 states that when an administrative agency acts in a judicial capacity and resolves disputed fact issues the parties had an adequate opportunity to litigate, courts have not hesitated to apply preclusion principles, and excerpt 7 says such administrative findings are considered final absent good reason for a new inquiry. Excerpt 6 refers to the policy nourishing collateral estoppel, though it notes some reluctance about applying it to these boards.",
+"key_excerpt": 4,
+"in": 1556,
+"out": 184
+},
+"df49118623a927a6227f317704d1426b": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpts 3 and 6 state that a federal statute being violated and someone being harmed does not automatically give rise to a private cause of action, and that courts must analyze Cort's factors before finding Congress intended a remedy. The memo's quoted language matches the opinion verbatim, though the proposition's broader claim about OSHA and remedy limits is not addressed by the excerpts.",
+"key_excerpt": 3,
+"in": 2166,
+"out": 159
+},
+"8d9842f54a3f0db0038b2c16cfca8e35": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 5 holds that the preliminary objection based on the plaintiff's failure to produce a cardholder agreement and statement of account (and evidence of assignment) was meritorious, and excerpt 4 quotes Rule 1019(i) requiring attachment of writings on which a claim is based. This directly supports the proposition that such a preliminary objection is proper in a credit card debt complaint.",
+"key_excerpt": 5,
+"in": 1779,
+"out": 165
+},
+"0b7339e9955e5386df3f968670af520d": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpts 1-4 show Porter holding that the PLRA's \u00a7 1997e(a) exhaustion requirement applies to prisoner suits challenging prison conditions, including a specific assault, and reversing the Second Circuit's exemption from exhaustion. Excerpt 2 quotes the statutory text requiring exhaustion of available administrative remedies before suit, which supports the memo's cited point that Porter bears on whether plaintiffs had to exhaust.",
+"key_excerpt": 2,
+"in": 1714,
+"out": 189
+},
+"fee959bf5e34b7e29daef8f281ea6250": {
+"verdict": "SUPPORTED",
+"explanation": "The excerpts state that under Ala. Code \u00a7 6-2-3 the general limitations period is tolled when there has been fraudulent concealment by the party guilty of fraud, and the burden is on the plaintiff to show it. This matches the memo's proposition that a plaintiff can overcome a limitations defense by proving fraudulent concealment tolling circumstances.",
+"key_excerpt": 6,
+"in": 2921,
+"out": 152
+},
+"e4aebe6d8d9ecfb18a559d236e6c390c": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 5 contains the Court's statement that the purpose of \u00a7 455(a) is to promote confidence in the judiciary by avoiding even the appearance of impropriety whenever possible, matching the quoted language and pin cite at 865.",
+"key_excerpt": 5,
+"in": 1894,
+"out": 113
+},
+"17135b789100dc38972a8b7b90e186e0": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 4 states that the jury's overriding responsibility is to stand between the accused and a potentially arbitrary or abusive Government in command of the criminal sanction, which is the quoted language. The proposition's core point, that the jury serves this constitutional protective function, is therefore supported.",
+"key_excerpt": 4,
+"in": 2908,
+"out": 129
+},
+"bd89e92b9077deb4949f516fef868bfc": {
+"verdict": "SUPPORTED",
+"explanation": "The opinion holds that the attorney-client privilege protects communications, not underlying facts, and orders factual information such as status reports and business information produced despite privilege claims (excerpts 3, 7). The memo's proposition that purely factual reports are not privileged is a fair reading, though excerpt 3 concerns status reports with factual background, which matches the proposition closely.",
+"key_excerpt": 3,
+"in": 3060,
+"out": 152
+},
+"ef4a1d4cf3300d2f4c8d819be30bcdfd": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Denehy concerns voluntariness of consent to search a truck during an agricultural inspection stop, and the court upheld the trial judge's finding of consent based on the officer's testimony. It says nothing about consent to search for a registration and insurance card or about a lawful seizure of a car on that basis, so the proposition's specific scope is not supported.",
+"key_excerpt": 6,
+"in": 1769,
+"out": 149
+},
+"980a79e0dbe5bdab7b5e31e4dc60ad98": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 5 (and 6) states that 'The Harlow right to immunity is a right to immunity from certain claims, not from litigation in general,' and that appeal must be available even though other claims are added to the suit. This matches the proposition, which the memo uses to say the defendant must go to trial on other claims yet immunity appeal still lies.",
+"key_excerpt": 5,
+"in": 2062,
+"out": 145
+},
+"b0c347389b0582f21532c43ace496a6b": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpts 3 and 6 state that when a contempt sanction for violating a pretrial discovery order is appealed under Rule 304(b)(5), the discovery order is subject to review, because review of the contempt finding necessarily requires review of the underlying order. The memo's proposition that the underlying discovery order is reviewable on appeal of a discovery-based contempt order matches this holding, and the memo's immediate-appealability point is consistent with the Rule 304(b)(5) appeal described in the same excerpts.",
+"key_excerpt": 3,
+"in": 3128,
+"out": 203
+},
+"0cf0cba20f8b67a83392c0b87226b009": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpts 3 and 6 state that under the Supremacy Clause, since McCulloch it has been settled that state law conflicting with federal law is 'without effect.' The memo's 'axiomatic' phrasing is a modest embellishment of that settled principle, and the cited page (516) matches the excerpt marked *516.",
+"key_excerpt": 6,
+"in": 2288,
+"out": 141
+},
+"a2b58592316334c340d59ebee903cf61": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts concern a product liability case and section 631.8 nonsuit standards, including the rule that a trial judge's findings are reviewed for substantial evidence and that 'no evidence' findings are disfavored on appeal. Nothing addresses authorship of deletions or interlineations on a will, so the excerpts do not support the proposition that a 'no evidence' conclusion on that issue requires reversal.",
+"key_excerpt": 6,
+"in": 3391,
+"out": 171
+},
+"c76069ef7f98de5ea5d471f069cd903f": {
+"verdict": "SUPPORTED",
+"explanation": "The excerpts show the case was decided under the Ex Post Facto Clause of Art. I, \u00a7 10, with the Court holding that retroactive application of the Texas reformation statute did not violate it. This supports the memo's use of the case for the proposition that Art. I, \u00a7 10 prohibits ex post facto laws, though the excerpts do not expressly quote the 'any ex post facto Law' language at page 41.",
+"key_excerpt": 2,
+"in": 1933,
+"out": 166
+},
+"6c22b8c6d210056ef6ebbfb5ca9e68ab": {
+"verdict": "CONTRADICTED",
+"explanation": "The excerpts state that secrecy is the exception and that the party seeking a Rule 26(c) protective order bears a heavy burden, which is the reverse of the memo's proposition that the party seeking non-disclosure must show good cause. Excerpt 5 does mention a 'good cause' standard, but it applies to disclosure under a stipulation, not to placing the burden on the protective-order movant.",
+"key_excerpt": 3,
+"in": 1364,
+"out": 164
+},
+"1bac30d6c9a1cc64e357652d1cbc04e5": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 4 states the First Circuit's settled rule that, absent extraordinary circumstances, legal theories not raised squarely in the lower court cannot be broached for the first time on appeal, and excerpt 5 applies it to the case. The memo's parenthetical describes the case accurately on this point, though the excerpts do not show the specific district court ruling about the Secretary's specificity.",
+"key_excerpt": 4,
+"in": 1450,
+"out": 162
+},
+"6f78f16888ba87ff3e4d8aaf4f2775e2": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts concern an Establishment Clause challenge to a Latin cross in the Mojave National Preserve, standing, and the merits; nothing addresses disabled plaintiffs, a mobility- and dexterity-impaired detainee subclass, or an equal protection claim. Buono is cited for de novo review of summary judgment, but the excerpts show a de novo standard for different issues, not a November 2004 ruling on an equal protection claim.",
+"key_excerpt": 2,
+"in": 1978,
+"out": 185
+},
+"82f1f6b458565d2180cdb0614d05a9e5": {
+"verdict": "UNCLEAR",
+"explanation": "The excerpts are fragmentary and do not contain the Kinney court's holding on qualified immunity, supervisor liability, or cat's-paw liability; only a fragment about adverse employment decisions and a qualified immunity determination appears. The excerpts are insufficient to confirm or refute the proposition as stated.",
+"key_excerpt": 5,
+"in": 1071,
+"out": 137
+},
+"8568689d3e35ff5e96eb1fdb2645d1f3": {
+"verdict": "SUPPORTED",
+"explanation": "The opinion states that 'on issues of credibility and weight of the evidence, we defer to the findings of the trial judge,' quoting the proposition nearly verbatim. The memo's quotation matches the excerpt, so the cited point is accurately stated.",
+"key_excerpt": 3,
+"in": 2338,
+"out": 116
+},
+"c46945b2f63d4a3f1e9f2230764e7e14": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 7 states that the use of pseudonyms concealing plaintiffs' real names has no explicit sanction in the federal rules and seems contrary to Rule 10(a), which requires party names in the complaint. The proposition's quoted language matches this passage closely, though the excerpt does not mention Rule 17(a), which is only a minor gap in the memo's framing.",
+"key_excerpt": 7,
+"in": 1898,
+"out": 157
+},
+"7d31431c339f45f75a46917c8a7e05cb": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 3 states that if a statute is ambiguous it can be construed 'in line with what reason and public policy would indicate the legislature intended,' and excerpt 5 relies on 'reason and public policy' to interpret the ambiguous NRS 62.080. The memo's general proposition that ambiguous statutes are construed consistent with legislative intent, reason and public policy is thus supported, though the excerpts do not show the memo's specific ambiguity finding about mandatory versus permissive notice.",
+"key_excerpt": 3,
+"in": 1444,
+"out": 199
+}
+}

@@ -35,6 +35,16 @@ def load():
 
 
 @st.cache_data
+def heldout() -> tuple[dict, dict] | None:
+    """Correct citations chosen after the rules were frozen (eval/heldout.py), if that run exists."""
+    p, q = DATA / "heldout_results.json", DATA / "heldout_items.json"
+    if not (p.exists() and q.exists()):
+        return None
+    return (json.loads(p.read_text(encoding="utf-8")),
+            {i["id"]: i for i in json.loads(q.read_text(encoding="utf-8"))})
+
+
+@st.cache_data
 def perf() -> dict | None:
     p = Path(__file__).parent / "data" / "perf.json"
     return json.loads(p.read_text()) if p.exists() else None
@@ -60,11 +70,15 @@ def render() -> None:
     if not ctrl["n"]:
         ctrl = dict(ctrl, n=1)   # avoid dividing by zero before controls exist
     n_bad = o["tp"] + o["fn"]
+    ho = heldout()
+    hr, h_items = ho if ho else (None, {})
+    n_good = ctrl["n"] + (hr["n"] if hr else 0)
     st.markdown(
         f'<p class="cc-lede" style="margin-bottom:.6rem">We ran DoDiligence on <b>{n_bad} citations that US courts '
         f'caught in real filings</b> (fake cases, invented quotes, real cases cited for things they don’t say), and on '
-        f'<b>{ctrl["n"]} correct citations written by judges</b>. Ground truth is the courts’ own findings, '
-        f'not ours.</p>', unsafe_allow_html=True)
+        f'<b>{n_good} correct citations written by judges</b>'
+        + (f' ({hr["n"]} of them chosen only after DoDiligence’s rules were frozen)' if hr else '')
+        + '. Ground truth is the courts’ own findings, not ours.</p>', unsafe_allow_html=True)
 
     c1, c2, c3 = st.columns(3)
     pf = perf()
@@ -72,6 +86,9 @@ def render() -> None:
         (c1, "", "of real errors flagged",
          f'{o["tp"]} of {n_bad} · 95% CI {pct(o["recall_ci"][0])}–{pct(o["recall_ci"][1])}',
          f'--to:{round(100 * o["recall"])};--suffix:\'%\''),
+        (c2, f'{hr["passed"]} of {hr["n"]}', "held-out correct citations passed",
+         f'{hr["false_alarms"]} wrongly flagged, {hr["needs_review"]} sent to review · never seen during development',
+         "") if hr else
         (c2, f'{ctrl["passed"]} of {ctrl["n"]}', "correct citations passed",
          f'{ctrl["false_alarms"]} wrongly flagged · small sample, see note below', ""),
     ]
@@ -105,19 +122,27 @@ def render() -> None:
             f'<div class="nums"><b>{pct(d["catch_rate"])}</b> flagged'
             + (f' · {d["needs_review"]} sent to review' if d["needs_review"] else "")
             + f'<br>caught by {by}</div></div></div>')
-    rows.append(
-        f'<div class="cc-row"><div class="name"><b>Correct citations</b> <span class="n">({ctrl["n"]})</span>'
-        f'<div class="desc">Sentences where judges cite a case. These should pass.</div></div>'
-        f'<div class="viz">{bar(ctrl["pass_rate"], "#23663D", ctrl["needs_review"] / ctrl["n"])}'
-        f'<div class="nums"><b>{pct(ctrl["pass_rate"])}</b> passed · {ctrl["false_alarms"]} false alarms · '
-        f'{ctrl["needs_review"]} sent to review</div></div></div>')
+    good_rows = [("Correct citations, development set", ctrl["n"], ctrl["passed"], ctrl["false_alarms"],
+                  ctrl["needs_review"], "Sentences where judges cite a case, seen while the rules were tuned.")]
+    if hr:
+        good_rows.append(("Correct citations, held out", hr["n"], hr["passed"], hr["false_alarms"], hr["needs_review"],
+                          "Chosen the same way, but only after the rules were frozen. These should pass."))
+    for label, n, passed, alarms, review, desc in good_rows:
+        rows.append(
+            f'<div class="cc-row"><div class="name"><b>{label}</b> <span class="n">({n})</span>'
+            f'<div class="desc">{desc}</div></div>'
+            f'<div class="viz">{bar(passed / n, "#23663D", review / n)}'
+            f'<div class="nums"><b>{pct(passed / n)}</b> passed · {alarms} false alarms · '
+            f'{review} sent to review</div></div></div>')
     st.markdown("".join(rows), unsafe_allow_html=True)
     st.caption("Dark bar: flagged as a problem. Grey: “needs review” (DoDiligence couldn’t decide and asks a person to look).")
-    if ctrl.get("heldout_n"):
-        st.markdown(f"**Held-out check.** {ctrl['heldout_n']} of the correct citations were collected only after "
-                    f"DoDiligence’s settings were frozen. {ctrl['heldout_passed']} of them passed "
-                    f"({pct(ctrl['heldout_passed'] / ctrl['heldout_n'])}); {ctrl['heldout_false_alarms']} were "
-                    f"wrongly flagged.")
+    if hr:
+        lo, hi = hr["pass_ci"]
+        st.markdown(f"**Held-out check.** {hr['n']} correct citations were chosen from the same opinions, with the "
+                    f"same rules and a fixed random seed, only after DoDiligence’s checks were frozen; the selection "
+                    f"was committed to the repository before anything was run on it. {hr['passed']} passed "
+                    f"({pct(hr['passed'] / hr['n'])}, 95% CI {pct(lo)}–{pct(hi)}), {hr['false_alarms']} were wrongly "
+                    f"flagged and {hr['needs_review']} were sent to review.")
 
     if pf:
         st.markdown(f"**Speed.** All {pf['items']} citations went through the local checks in {pf['total_s']:g} s "
@@ -137,14 +162,21 @@ def render() -> None:
         "Citation as filed": items[r["id"]]["text"],
         "What the court found": items[r["id"]].get("court_finding", ""),
         "Source": items[r["id"]].get("decision", ""),
-    } for r in res["rows"]])
+    } for r in res["rows"]] + ([{
+        "Group": "Correct citation (held out)",
+        "DoDiligence said": STATUS_LABEL.get(r["status"], r["status"]),
+        "Right?": "✓" if r["status"] in ("VERIFIED", "QUOTE_OK") else ("review" if r["status"] == "REVIEW" else "✗"),
+        "Citation as filed": h_items[r["id"]]["text"],
+        "What the court found": h_items[r["id"]].get("court_finding", ""),
+        "Source": h_items[r["id"]].get("decision", ""),
+    } for r in hr["rows"]] if hr else []))
     pick = st.segmented_control("Show", ["All", "Misses only", "Correct citations"], default="All",
                                 key="acc_filter")
     view = df
     if pick == "Misses only":
         view = df[df["Right?"] != "✓"]
     elif pick == "Correct citations":
-        view = df[df["Group"] == "Correct citation"]
+        view = df[df["Group"].str.startswith("Correct citation")]
     st.dataframe(view, hide_index=True, width="stretch", height=380,
                  column_config={"Citation as filed": st.column_config.TextColumn(width="large"),
                                 "What the court found": st.column_config.TextColumn(width="large")})
@@ -161,9 +193,9 @@ the court said the filer attributed to it. The court’s finding is the label.
 
 **Correct citations (negatives).** Sentences in which judges cite another case, taken from the court opinions
 downloaded for the error set (one citation per sentence, no “but see”/“cf.” signals). We assume judges cited
-correctly. **This set is small (14) and was looked at while DoDiligence’s rules were adjusted, so its pass rate is
-optimistic and has a wide margin of error.** A larger held-out set (63 sentences, already selected) is being
-added; CourtListener’s free API limits requests per hour and per day, which is the bottleneck.
+correctly. **The first 14 were looked at while DoDiligence’s rules were adjusted, so their pass rate is
+optimistic.** A held-out set was then chosen from the same opinions with the same rules and a fixed seed, after the
+rules were frozen, and committed before it was run (`eval/heldout.py`); its result is the one to trust.
 
 **Precision.** Because the test set has far more errors than correct citations, “share of flags that were real
 errors” would look near-perfect no matter what, so we report the false-alarm count on correct citations instead.
