@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import html
 import json
+from collections import Counter
 from pathlib import Path
 
 import pandas as pd
@@ -21,14 +22,16 @@ STATUS_LABEL = {
     "UNSUPPORTED": "Not supported", "REVIEW": "Needs review",
 }
 FLAGS = {"NOT_FOUND", "NAME_MISMATCH", "MISQUOTED", "CONTRADICTED", "UNSUPPORTED"}
+# Which check produced each flag. Only the support check uses a language model.
+CAUGHT_BY = {"NOT_FOUND": "case lookup", "NAME_MISMATCH": "case lookup", "MISQUOTED": "quote match",
+             "CONTRADICTED": "support check", "UNSUPPORTED": "support check"}
 
 
 @st.cache_data
 def load():
     res = json.loads((DATA / "results.json").read_text(encoding="utf-8"))
-    base = json.loads((DATA / "results_no_ai.json").read_text(encoding="utf-8"))
     items = {i["id"]: i for i in json.loads((DATA / "items.json").read_text(encoding="utf-8"))}
-    return res, base, items
+    return res, items
 
 
 @st.cache_data
@@ -51,7 +54,7 @@ def render() -> None:
     if not (DATA / "results.json").exists():
         st.info("Benchmark results haven't been generated yet. Run `python -m eval.run_eval`.")
         return
-    res, base, items = load()
+    res, items = load()
     o, g = res["overall"], res["groups"]
     ctrl = g.get("control") or {"n": 0, "passed": 0, "pass_rate": 0.0, "false_alarms": 0, "needs_review": 0}
     if not ctrl["n"]:
@@ -73,26 +76,35 @@ def render() -> None:
          f'{ctrl["false_alarms"]} wrongly flagged · small sample, see note below', ""),
     ]
     if pf:
-        cards.append((c3, f'{pf["median_ms"]:g} ms', "per citation, before the AI step",
-                      f'median on one CPU core, no GPU · AI step about {pf["ai_median_s"]:g} s', ""))
+        cards.append((c3, f'{pf["median_ms"]:g} ms', "per citation for lookup and quote checks",
+                      f'median on one CPU core, no GPU · support check about {pf["ai_median_s"]:g} s', ""))
     for i, (col, big, label, sub, count) in enumerate(cards):
         num = (f'<div class="big count" style="{count};--i:{i}"></div>' if count else f'<div class="big">{big}</div>')
         col.markdown(f'<div class="cc-stat" style="--i:{i}">{num}<div class="lab">{label}</div>'
                      f'<div class="sub">{sub}</div></div>', unsafe_allow_html=True)
 
     st.markdown("#### Caught, by kind of error")
+    caught = {key: Counter(CAUGHT_BY[r["status"]] for r in res["rows"] if r["group"] == key and r["status"] in FLAGS)
+              for key, _, _ in GROUPS}
+    n_flags = sum(sum(c.values()) for c in caught.values())
+    n_model = sum(c["support check"] for c in caught.values())
+    n_asked = sum(1 for r in res["rows"] if r.get("verdict"))
+    st.caption(f"The case lookup and quote match are plain checks with no AI, and they produce {n_flags - n_model} of "
+               f"the {n_flags} catches. Only the support check uses a language model, and only on citations that pass "
+               f"the other two ({n_asked} of the {len(res['rows'])} test citations).")
     rows = []
     for key, label, desc in GROUPS:
-        d, d0 = g.get(key), base["groups"].get(key)
+        d = g.get(key)
         if not d:
             continue
+        by = " · ".join(f"{name} {n}" for name, n in caught[key].most_common())
         rows.append(
             f'<div class="cc-row"><div class="name"><b>{label}</b> <span class="n">({d["n"]})</span>'
             f'<div class="desc">{desc}</div></div>'
             f'<div class="viz">{bar(d["catch_rate"], "#1C2433", d["needs_review"] / d["n"])}'
             f'<div class="nums"><b>{pct(d["catch_rate"])}</b> flagged'
             + (f' · {d["needs_review"]} sent to review' if d["needs_review"] else "")
-            + f' · without the Claude step: {pct(d0["catch_rate"])}</div></div></div>')
+            + f'<br>caught by {by}</div></div></div>')
     rows.append(
         f'<div class="cc-row"><div class="name"><b>Correct citations</b> <span class="n">({ctrl["n"]})</span>'
         f'<div class="desc">Sentences where judges cite a case. These should pass.</div></div>'
@@ -111,8 +123,8 @@ def render() -> None:
         st.markdown(f"**Speed.** All {pf['items']} citations went through the local checks in {pf['total_s']:g} s "
                     f"on one CPU core (median {pf['median_ms']:g} ms each"
                     + (f", about {pf['memory_mb']} MB of memory" if pf.get("memory_mb") else "")
-                    + f", no GPU). The AI step reads about {pf['ai_input_tokens']:,} tokens per check, roughly five "
-                    f"passages rather than the whole opinion, and its median answer took {pf['ai_median_s']:g} s. "
+                    + f", no GPU). The support check sends the model about {pf['ai_input_tokens']:,} tokens, roughly "
+                    f"five passages rather than the whole opinion, and its median answer took {pf['ai_median_s']:g} s. "
                     "Two fresh runs from scratch gave identical results. Measured with `python -m eval.perf`.")
 
     st.markdown("#### Every test case")

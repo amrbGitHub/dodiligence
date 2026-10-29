@@ -127,7 +127,10 @@ p.cc-lede { animation: cc-rise .6s .15s ease-out both; }
   h1.cc-title { font-size: 2.1rem; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
-.stButton button[kind="primary"] { background: #1C2433; border-color: #1C2433; font-weight: 600; padding: .55rem 1.3rem; }
+.stButton button[kind="primary"] { background: #1C2433; border-color: #1C2433; color: #FFFFFF; font-weight: 600; padding: .55rem 1.3rem; }
+.stButton button[kind="primary"]:hover { background: #2E3A50; border-color: #2E3A50; color: #FFFFFF; }
+.stButton button[kind="primary"]:disabled { background: #E3E7ED; border-color: #C9CFD8; color: #5B6576; cursor: not-allowed; }
+.stButton button[kind="primary"] p { color: inherit; }
 .stButton button:focus-visible { outline: 3px solid #4C7DD9; outline-offset: 2px; }
 </style>
 """,
@@ -434,7 +437,7 @@ st.markdown(
     'so small transcription differences don’t trigger false alarms. '
     'Finding citations, matching quotes and picking passages take a few milliseconds per citation on an '
     'ordinary CPU, with no GPU. '
-    + (f'Whether the opinion supports the claim is judged by {html.escape(MODEL)}, which reads only about five '
+    + ('Only the last check, whether the opinion supports the claim, uses a language model. It reads about five '
        'passages from the opinion, not the whole thing, and answers in about a second. ' if ANTHROPIC_KEY else '')
     + 'Real-case data: Damien Charlotin, <a href="https://www.damiencharlotin.com/hallucinations/" target="_blank">'
       'AI Hallucination Cases database</a> (CC BY 4.0). '
