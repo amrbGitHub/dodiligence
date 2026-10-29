@@ -34,6 +34,8 @@ from core.sources import CourtListenerSource, ReplayTransport  # noqa: E402
 DATA = ROOT / "eval" / "data"
 FLAGS = {"NOT_FOUND", "NAME_MISMATCH", "MISQUOTED", "CONTRADICTED", "UNSUPPORTED"}
 OK = {"VERIFIED", "QUOTE_OK"}
+CAUGHT_BY = {"NOT_FOUND": "case lookup", "NAME_MISMATCH": "case lookup", "MISQUOTED": "quote match",
+             "CONTRADICTED": "support check", "UNSUPPORTED": "support check"}
 # What a correct answer looks like for each group.
 RIGHT_TYPE = {
     "fabricated": {"NOT_FOUND", "NAME_MISMATCH"},
@@ -186,18 +188,24 @@ def report_md(full: dict, no_ai: dict | None) -> str:
                   f"adjusted, {c['heldout_passed']} passed ({pct(c['heldout_passed'] / c['heldout_n'])}) and "
                   f"{c['heldout_false_alarms']} were wrongly flagged."]
     if no_ai:
-        L += ["", "## What the AI step adds", "",
-              "Same items, with the Claude check turned off (existence and quote checks only):", "",
-              "| | With Claude | Without |", "|---|---|---|"]
+        L += ["", "## Which check caught each error", "",
+              "The case lookup and quote match are plain checks; only the support check uses a language model, "
+              "and only on citations that pass the other two.", "",
+              "| Group | Case lookup | Quote match | Support check | Sent to review | Missed |", "|---|---|---|---|---|---|"]
         for g in ("fabricated", "false_quote", "misrepresented"):
             if g in full["groups"]:
-                L.append(f"| {GROUP_LABEL[g]} caught | {pct(full['groups'][g]['catch_rate'])} | "
-                         f"{pct(no_ai['groups'][g]['catch_rate'])} |")
+                c = Counter(CAUGHT_BY.get(r["status"], "missed" if r["status"] in OK else "review")
+                            for r in full["rows"] if r["group"] == g)
+                L.append(f"| {GROUP_LABEL[g]} | {c['case lookup']} | {c['quote match']} | {c['support check']} | "
+                         f"{c['review']} | {c['missed']} |")
+        if "misrepresented" in full["groups"]:
+            L += ["", f"With the support check switched off, the lookup and quote checks alone catch "
+                      f"{pct(no_ai['groups']['misrepresented']['catch_rate'])} of misstated holdings."]
     if full["cost"]:
         k = full["cost"]
         n = max(1, k["api_calls"])
-        L += ["", "## AI step", "",
-              f"{k['api_calls']} Claude calls ({k['model']}), averaging {k['input_tokens'] / n:,.0f} input and "
+        L += ["", "## Support check", "",
+              f"{k['api_calls']} language-model calls ({k['model']}), averaging {k['input_tokens'] / n:,.0f} input and "
               f"{k['output_tokens'] / n:,.0f} output tokens per check: each check reads about five passages, "
               "not the whole opinion. Everything else runs locally on the CPU; see `python -m eval.perf`."]
     L += ["", "## Status counts", "", "| Group | " + " | ".join(
@@ -228,5 +236,5 @@ if __name__ == "__main__":
         (DATA / "results_no_ai.json").write_text(json.dumps(base, indent=1, default=list))
         (DATA / "results.json").write_text(json.dumps(res, indent=1, default=list))
         md = report_md(res, base)
-        (ROOT / "eval" / "RESULTS.md").write_text(md)
+        (ROOT / "eval" / "RESULTS.md").write_text(md, encoding="utf-8")
         print(md)

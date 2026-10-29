@@ -20,19 +20,21 @@
 |---|---|---|---|---|
 | Correct citations written by judges | 14 | 85.7% | 2 | 0 |
 
-## What the AI step adds
+## Which check caught each error
 
-Same items, with the Claude check turned off (existence and quote checks only):
+The case lookup and quote match are plain checks; only the support check uses a language model, and only on citations that pass the other two.
 
-| | With Claude | Without |
-|---|---|---|
-| Fake or wrong-case citations caught | 97.5% | 97.5% |
-| Invented quotations caught | 93.3% | 93.3% |
-| Real case, misstated holding caught | 95.6% | 11.1% |
+| Group | Case lookup | Quote match | Support check | Sent to review | Missed |
+|---|---|---|---|---|---|
+| Fake or wrong-case citations | 154 | 0 | 0 | 4 | 0 |
+| Invented quotations | 0 | 14 | 0 | 1 | 0 |
+| Real case, misstated holding | 2 | 3 | 38 | 1 | 1 |
 
-## AI step
+With the support check switched off, the lookup and quote checks alone catch 11.1% of misstated holdings.
 
-71 Claude calls (claude-haiku-5-5), averaging 1,925 input and 144 output tokens per check: each check reads about five passages, not the whole opinion. Everything else runs locally on the CPU; see `python -m eval.perf`.
+## Support check
+
+71 language-model calls (claude-haiku-5-5), averaging 1,925 input and 144 output tokens per check: each check reads about five passages, not the whole opinion. Everything else runs locally on the CPU; see `python -m eval.perf`.
 
 ## Status counts
 
