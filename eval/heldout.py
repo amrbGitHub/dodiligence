@@ -26,6 +26,7 @@ import os
 import random
 import re
 import sys
+import time
 import tomllib
 from collections import Counter
 from pathlib import Path
@@ -158,25 +159,59 @@ def load_heldout_recording() -> dict:
     return {"lookups": {}, "opinions": {}}
 
 
+class Resume:
+    """Replays what's already recorded and fetches (and records) only what's missing, so `record` can be
+    re-run after CourtListener's daily limit resets without spending requests twice."""
+
+    PACE = 13.0   # seconds between opinion downloads: CourtListener allows free accounts 5 a minute
+
+    def __init__(self, live, known: dict, rec: dict):
+        self.live, self.known, self.rec = live, known, rec
+        self.failures: list[tuple[int, object]] = []
+        self._last = 0.0
+
+    def lookup(self, text: str):
+        cites = text.split("; ")
+        have = [self.known["lookups"][c] for c in cites if c in self.known["lookups"]]
+        todo = [c for c in cites if c not in self.known["lookups"]]
+        if not todo:
+            return 200, have
+        status, body = Recorder(self.live, self.rec).lookup("; ".join(todo))
+        if status != 200:
+            self.failures.append((status, body))
+            return status, body
+        return 200, have + list(body)
+
+    def get(self, url: str):
+        if url in self.known["opinions"]:
+            return 200, self.known["opinions"][url]
+        time.sleep(max(0.0, self._last + self.PACE - time.time()))
+        self._last = time.time()
+        status, body = Recorder(self.live, self.rec).get(url)
+        if status != 200:
+            self.failures.append((status, body))
+        else:
+            print(f"  recorded opinion {len(self.rec['opinions'])}", flush=True)
+        return status, body
+
+
 def record() -> None:
     token = secret("COURTLISTENER_TOKEN")
     if not token:
         sys.exit("Set COURTLISTENER_TOKEN (environment or .streamlit/secrets.toml).")
     items = json.loads(ITEMS.read_text(encoding="utf-8"))
     main, rec = load_recording(), load_heldout_recording()
-    todo = [i for i in items if i["cite"] not in main["lookups"] and i["cite"] not in rec["lookups"]]
-    print(f"{len(items) - len(todo)} of {len(items)} already recorded; fetching {len(todo)}.")
-    if todo:
-        src = CourtListenerSource(transport=Recorder(HttpTransport(token), rec))
-        res = src.get_many([i["cite"] for i in todo], {i["cite"]: i["name"] for i in todo})
-        failed = [o for o in res.values() if o.source == "lookup_error"]
-        if failed:
-            print("Stopped:", failed[0].note)
-        with gzip.open(RECORDING, "wt", encoding="utf-8") as f:
-            json.dump(rec, f)
-    missing = [i["id"] for i in items if i["cite"] not in main["lookups"] and i["cite"] not in rec["lookups"]]
-    print(f"Recorded: {len(rec['lookups'])} lookups, {len(rec['opinions'])} opinions."
-          + (f" Still missing: {len(missing)} (re-run later)." if missing else " Complete."))
+    known = {"lookups": {**main["lookups"], **rec["lookups"]}, "opinions": {**main["opinions"], **rec["opinions"]}}
+    t = Resume(HttpTransport(token), known, rec)
+    # The same requests the app makes: one lookup, then up to three opinions for the case each citation names.
+    CourtListenerSource(transport=t).get_many([i["cite"] for i in items], {i["cite"]: i["name"] for i in items})
+    with gzip.open(RECORDING, "wt", encoding="utf-8") as f:
+        json.dump(rec, f)
+    if t.failures:
+        status, body = t.failures[-1]
+        print(f"{len(t.failures)} requests failed; last: HTTP {status} {str(body)[:200]}")
+    print(f"Recorded so far: {len(rec['lookups'])} lookups, {len(rec['opinions'])} opinions."
+          + (" Re-run `python -m eval.heldout record` to fetch the rest." if t.failures else " Complete."))
 
 
 def run() -> None:
