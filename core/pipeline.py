@@ -150,7 +150,10 @@ def verify(text: str, source, judge=None, on_progress=None, max_cites: int | Non
                 j = judge.judge(cl.claim_text, op.case_name or cl.case_name, excerpts)
                 res.judgment = j
             except Exception as e:  # network / parsing problems shouldn't sink the whole report
-                res.reason = res.reason or f"AI check failed: {e}"
+                body = getattr(e, "body", None)        # API errors carry {"error": {"message": ...}}
+                detail = (body.get("error") or {}).get("message") if isinstance(body, dict) else None
+                res.reason = res.reason or ("The support check couldn't run, so a person should read the opinion. "
+                                            f"({detail or type(e).__name__})")
                 results.append(res)
                 continue
             if res.status != "MISQUOTED":

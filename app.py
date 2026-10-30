@@ -438,7 +438,7 @@ st.markdown(
     'Finding citations, matching quotes and picking passages take a few milliseconds per citation on an '
     'ordinary CPU, with no GPU. '
     + ('Only the last check, whether the opinion supports the claim, uses a language model. It reads about five '
-       'passages from the opinion, not the whole thing, and answers in about a second. ' if ANTHROPIC_KEY else '')
+       'passages from the opinion, not the whole thing. ' if ANTHROPIC_KEY else '')
     + 'Real-case data: Damien Charlotin, <a href="https://www.damiencharlotin.com/hallucinations/" target="_blank">'
       'AI Hallucination Cases database</a> (CC BY 4.0). '
     + 'This is a demo, not legal advice; always read the opinion.</div>',

@@ -2,14 +2,16 @@
 
 Times the whole pipeline on every benchmark item, single-threaded, using the recorded
 CourtListener responses and cached Claude verdicts, so it measures DoDiligence's own work
-(finding citations, matching quotes, picking passages) without network time. The AI step's
-latency comes from the benchmark's recorded live runs. Writes data/perf.json for the Accuracy tab.
+(finding citations, matching quotes, picking passages) without network time. With --live N it also
+times N support checks against the API, one at a time and uncached (the verdicts are thrown away).
+Writes data/perf.json for the Accuracy tab.
 
 Usage:
-    python -m eval.perf
+    python -m eval.perf [--live 15]     # --live needs ANTHROPIC_API_KEY
 """
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import statistics
@@ -35,7 +37,7 @@ def rss_mb() -> float | None:
         return None
 
 
-def main() -> dict:
+def main(live: int = 0) -> dict:
     items = json.loads((DATA / "items.json").read_text(encoding="utf-8"))
     source = CourtListenerSource(transport=ReplayTransport(load_recording()))
     judge = ClaudeJudge("cache-only", store=json.loads((DATA / "judgments.json").read_text()))
@@ -48,9 +50,20 @@ def main() -> dict:
         times.append(time.perf_counter() - t)
     times.sort()
     res = json.loads((DATA / "results.json").read_text(encoding="utf-8"))
-    ai = sorted(r["seconds"] for r in res["rows"] if r["verdict"])
     k = res.get("cost") or {}
     calls = max(1, k.get("api_calls", 1))
+    old = json.loads((ROOT / "data" / "perf.json").read_text()) if (ROOT / "data" / "perf.json").exists() else {}
+    ai = []
+    if live:
+        fresh = ClaudeJudge(os.environ["ANTHROPIC_API_KEY"], store={})
+        asked = {r["id"] for r in res["rows"] if r["verdict"]}
+        for it in [i for i in items if i["id"] in asked][:live]:
+            t = time.perf_counter()
+            verify(it["text"], source, fresh)
+            ai.append(time.perf_counter() - t)
+        if fresh.api_calls < len(ai):
+            sys.exit(f"Only {fresh.api_calls} of {len(ai)} support checks reached the API; not saving the timing.")
+        ai.sort()
     out = {
         "items": len(times),
         "median_ms": round(statistics.median(times) * 1000, 1),
@@ -58,8 +71,9 @@ def main() -> dict:
         "total_s": round(sum(times), 2),
         "memory_mb": round(rss_mb()) if rss_mb() else None,
         "cpu_cores_used": 1,
-        "ai_checks": len(ai),
-        "ai_median_s": round(ai[len(ai) // 2], 1) if ai else None,
+        "ai_checks_timed": len(ai) or old.get("ai_checks_timed"),
+        "ai_median_s": round(ai[len(ai) // 2], 1) if ai else old.get("ai_median_s"),
+        "ai_model": fresh.model if ai else old.get("ai_model"),
         "ai_input_tokens": round(k.get("input_tokens", 0) / calls),
         "ai_output_tokens": round(k.get("output_tokens", 0) / calls),
         "machine": f"{os.cpu_count()}-thread CPU, Python {sys.version.split()[0]}",
@@ -69,4 +83,6 @@ def main() -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(main(), indent=1))
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--live", type=int, default=0, help="time this many uncached support checks")
+    print(json.dumps(main(ap.parse_args().live), indent=1))

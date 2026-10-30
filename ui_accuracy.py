@@ -35,9 +35,11 @@ def load():
 
 
 @st.cache_data
-def heldout() -> tuple[dict, dict] | None:
-    """Correct citations chosen after the rules were frozen (eval/heldout.py), if that run exists."""
-    p, q = DATA / "heldout_results.json", DATA / "heldout_items.json"
+def heldout(n: int) -> tuple[dict, dict] | None:
+    """Correct-citation set n from eval/heldout.py, if it has been run. Set 1 was looked at while the support
+    check was fixed; set 2 was chosen after that and is the held-out one."""
+    tag = "" if n == 1 else n
+    p, q = DATA / f"heldout{tag}_results.json", DATA / f"heldout{tag}_items.json"
     if not (p.exists() and q.exists()):
         return None
     return (json.loads(p.read_text(encoding="utf-8")),
@@ -70,9 +72,10 @@ def render() -> None:
     if not ctrl["n"]:
         ctrl = dict(ctrl, n=1)   # avoid dividing by zero before controls exist
     n_bad = o["tp"] + o["fn"]
-    ho = heldout()
-    hr, h_items = ho if ho else (None, {})
-    n_good = ctrl["n"] + (hr["n"] if hr else 0)
+    s1, s2 = heldout(1), heldout(2)
+    sr, s_items = s1 if s1 else (None, {})       # seen while fixing the support check
+    hr, h_items = s2 if s2 else (None, {})       # held out
+    n_good = ctrl["n"] + (sr["n"] if sr else 0) + (hr["n"] if hr else 0)
     st.markdown(
         f'<p class="cc-lede" style="margin-bottom:.6rem">We ran DoDiligence on <b>{n_bad} citations that US courts '
         f'caught in real filings</b> (fake cases, invented quotes, real cases cited for things they don’t say), and on '
@@ -89,12 +92,16 @@ def render() -> None:
         (c2, f'{hr["passed"]} of {hr["n"]}', "held-out correct citations passed",
          f'{hr["false_alarms"]} wrongly flagged, {hr["needs_review"]} sent to review · never seen during development',
          "") if hr else
+        (c2, f'{sr["passed"]} of {sr["n"]}', "correct citations passed",
+         f'{sr["false_alarms"]} wrongly flagged, {sr["needs_review"]} sent to review · seen during development, '
+         'see note below', "") if sr else
         (c2, f'{ctrl["passed"]} of {ctrl["n"]}', "correct citations passed",
          f'{ctrl["false_alarms"]} wrongly flagged · small sample, see note below', ""),
     ]
     if pf:
         cards.append((c3, f'{pf["median_ms"]:g} ms', "per citation for lookup and quote checks",
-                      f'median on one CPU core, no GPU · support check about {pf["ai_median_s"]:g} s', ""))
+                      'median on one CPU core, no GPU'
+                      + (f' · support check about {pf["ai_median_s"]:g} s' if pf.get("ai_median_s") else ''), ""))
     for i, (col, big, label, sub, count) in enumerate(cards):
         num = (f'<div class="big count" style="{count};--i:{i}"></div>' if count else f'<div class="big">{big}</div>')
         col.markdown(f'<div class="cc-stat" style="--i:{i}">{num}<div class="lab">{label}</div>'
@@ -124,9 +131,13 @@ def render() -> None:
             + f'<br>caught by {by}</div></div></div>')
     good_rows = [("Correct citations, development set", ctrl["n"], ctrl["passed"], ctrl["false_alarms"],
                   ctrl["needs_review"], "Sentences where judges cite a case, seen while the rules were tuned.")]
+    if sr:
+        good_rows.append(("Correct citations, set 1", sr["n"], sr["passed"], sr["false_alarms"], sr["needs_review"],
+                          "Chosen the same way as a held-out set; its misses were then studied to fix the support "
+                          "check, so it is now a development set too."))
     if hr:
         good_rows.append(("Correct citations, held out", hr["n"], hr["passed"], hr["false_alarms"], hr["needs_review"],
-                          "Chosen the same way, but only after the rules were frozen. These should pass."))
+                          "Set 2: chosen only after that fix, and never used to adjust anything. These should pass."))
     for label, n, passed, alarms, review, desc in good_rows:
         rows.append(
             f'<div class="cc-row"><div class="name"><b>{label}</b> <span class="n">({n})</span>'
@@ -136,21 +147,28 @@ def render() -> None:
             f'{review} sent to review</div></div></div>')
     st.markdown("".join(rows), unsafe_allow_html=True)
     st.caption("Dark bar: flagged as a problem. Grey: “needs review” (DoDiligence couldn’t decide and asks a person to look).")
+    if sr:
+        st.markdown(f"**How the false alarms were found.** Set 1 ({sr['n']} correct citations) was chosen as a "
+                    "held-out test. On its first run only 27 passed: the support check called a case “not "
+                    "supported” whenever the passages it read didn’t mention a side point (a standard of review, "
+                    "say), and judged the citing court’s own facts instead of the rule it applied. After fixing that, "
+                    f"{sr['passed']} pass. Because those misses were studied, set 1 no longer counts as held out.")
     if hr:
         lo, hi = hr["pass_ci"]
-        st.markdown(f"**Held-out check.** {hr['n']} correct citations were chosen from the same opinions, with the "
-                    f"same rules and a fixed random seed, only after DoDiligence’s checks were frozen; the selection "
-                    f"was committed to the repository before anything was run on it. {hr['passed']} passed "
-                    f"({pct(hr['passed'] / hr['n'])}, 95% CI {pct(lo)}–{pct(hi)}), {hr['false_alarms']} were wrongly "
-                    f"flagged and {hr['needs_review']} were sent to review.")
+        st.markdown(f"**Held-out check.** {hr['n']} new correct citations (set 2) were chosen with a fixed random "
+                    f"seed after the fix, from opinions set 1 didn’t use, and committed to the repository before "
+                    f"anything was run on them. {hr['passed']} passed ({pct(hr['passed'] / hr['n'])}, 95% CI "
+                    f"{pct(lo)}–{pct(hi)}), {hr['false_alarms']} were wrongly flagged and {hr['needs_review']} "
+                    "were sent to review.")
 
     if pf:
         st.markdown(f"**Speed.** All {pf['items']} citations went through the local checks in {pf['total_s']:g} s "
                     f"on one CPU core (median {pf['median_ms']:g} ms each"
                     + (f", about {pf['memory_mb']} MB of memory" if pf.get("memory_mb") else "")
                     + f", no GPU). The support check sends the model about {pf['ai_input_tokens']:,} tokens, roughly "
-                    f"five passages rather than the whole opinion, and its median answer took {pf['ai_median_s']:g} s. "
-                    "Two fresh runs from scratch gave identical results. Measured with `python -m eval.perf`.")
+                    "five passages rather than the whole opinion"
+                    + (f", and its median answer took {pf['ai_median_s']:g} s" if pf.get("ai_median_s") else "") + ". "
+                    "Measured with `python -m eval.perf`.")
 
     st.markdown("#### Every test case")
     st.caption("Including the ones DoDiligence got wrong. Pick a row group to filter.")
@@ -162,14 +180,15 @@ def render() -> None:
         "Citation as filed": items[r["id"]]["text"],
         "What the court found": items[r["id"]].get("court_finding", ""),
         "Source": items[r["id"]].get("decision", ""),
-    } for r in res["rows"]] + ([{
-        "Group": "Correct citation (held out)",
+    } for r in res["rows"]] + [{
+        "Group": group,
         "DoDiligence said": STATUS_LABEL.get(r["status"], r["status"]),
         "Right?": "✓" if r["status"] in ("VERIFIED", "QUOTE_OK") else ("review" if r["status"] == "REVIEW" else "✗"),
-        "Citation as filed": h_items[r["id"]]["text"],
-        "What the court found": h_items[r["id"]].get("court_finding", ""),
-        "Source": h_items[r["id"]].get("decision", ""),
-    } for r in hr["rows"]] if hr else []))
+        "Citation as filed": its[r["id"]]["text"],
+        "What the court found": its[r["id"]].get("court_finding", ""),
+        "Source": its[r["id"]].get("decision", ""),
+    } for group, rr, its in [("Correct citation (set 1)", sr, s_items), ("Correct citation (held out)", hr, h_items)]
+      if rr for r in rr["rows"]])
     pick = st.segmented_control("Show", ["All", "Misses only", "Correct citations"], default="All",
                                 key="acc_filter")
     view = df
@@ -193,9 +212,9 @@ the court said the filer attributed to it. The court’s finding is the label.
 
 **Correct citations (negatives).** Sentences in which judges cite another case, taken from the court opinions
 downloaded for the error set (one citation per sentence, no “but see”/“cf.” signals). We assume judges cited
-correctly. **The first 14 were looked at while DoDiligence’s rules were adjusted, so their pass rate is
-optimistic.** A held-out set was then chosen from the same opinions with the same rules and a fixed seed, after the
-rules were frozen, and committed before it was run (`eval/heldout.py`); its result is the one to trust.
+correctly. **The first 14, and set 1 (50 more), were looked at while DoDiligence’s rules were adjusted, so their
+pass rates are optimistic.** Set 2 was chosen from the same pool with a fixed seed after the last change, and
+committed before it was run (`eval/heldout.py`); its result is the one to trust.
 
 **Precision.** Because the test set has far more errors than correct citations, “share of flags that were real
 errors” would look near-perfect no matter what, so we report the false-alarm count on correct citations instead.
@@ -207,6 +226,6 @@ or Not supported. “Needs review” is counted as not caught in the headline nu
 Run it yourself: `python -m eval.run_eval` (needs an Anthropic key; `--no-ai` runs without one).
 
 **Limits.** The propositions for misstated holdings were reconstructed from the courts’ descriptions with an LLM and
-checked by hand, so they are close to, but not always word-for-word, what the filer wrote. Only the first
-(majority) opinion of each case is checked.
+checked by hand, so they are close to, but not always word-for-word, what the filer wrote. Up to three opinions
+of each case are read (majority first), so a quote from a fourth opinion isn’t found.
 """)
