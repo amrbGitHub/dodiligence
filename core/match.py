@@ -60,7 +60,8 @@ class QuoteResult:
 def check_quote(quote: str, opinion_text: str) -> QuoteResult:
     norm_op, op_map = _normalize_with_map(opinion_text)
     # Split on ellipses so "a . . . b" is checked as two fragments.
-    frags = [f.strip() for f in re.split(r"\.\s?\.\s?\.|…", quote) if len(f.strip()) >= 8]
+    # Nested quotation marks (" `...' ") belong to the memo, not the opinion.
+    frags = [f.strip(" `'\"") for f in re.split(r"\.\s?\.\s?\.|…", quote) if len(f.strip(" `'\"")) >= 8]
     if not frags:
         frags = [quote]
     scores, spans = [], []
@@ -109,8 +110,18 @@ def _tokens(s: str) -> list[str]:
     return [w for w in _WORD.findall(normalize(s)) if w not in _STOP and len(w) > 2]
 
 
-def split_passages(text: str, max_chars: int = 1400) -> list[str]:
-    paras = [p.strip() for p in re.split(r"\n\s*\n", text) if len(p.strip()) > 40]
+def split_passages(text: str, max_chars: int = 1400, min_chars: int = 600) -> list[str]:
+    # Some opinion texts put a blank line after every printed line; join short paragraphs until a
+    # passage is long enough to carry a whole thought.
+    paras: list[str] = []
+    for p in (" ".join(p.split()) for p in re.split(r"\n\s*\n", text)):
+        if not p:
+            continue
+        if paras and len(paras[-1]) < min_chars and not p.startswith("[0"):   # "[010lead]" etc. start a new opinion
+            paras[-1] += " " + p
+        else:
+            paras.append(p)
+    paras = [p for p in paras if len(p) > 40]
     out: list[str] = []
     for p in paras:
         while len(p) > max_chars:

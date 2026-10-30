@@ -27,7 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from core.judge import ClaudeJudge, DEFAULT_MODEL  # noqa: E402
+from core.judge import DEFAULT_EFFORT, DEFAULT_MODEL, ClaudeJudge  # noqa: E402
 from core.pipeline import verify  # noqa: E402
 from core.sources import CourtListenerSource, ReplayTransport  # noqa: E402
 
@@ -80,7 +80,8 @@ def run(use_ai: bool, workers: int = 6, limit: int | None = None) -> dict:
         if not key:
             sys.exit("Set ANTHROPIC_API_KEY (or use --no-ai).")
         store = json.loads(store_path.read_text()) if store_path.exists() else {}
-        judge = ClaudeJudge(key, os.environ.get("CLAUDE_MODEL", DEFAULT_MODEL), store)
+        judge = ClaudeJudge(key, os.environ.get("CLAUDE_MODEL", DEFAULT_MODEL), store,
+                        os.environ.get("CLAUDE_EFFORT", DEFAULT_EFFORT))
 
     def one(it):
         t0 = time.time()
@@ -98,7 +99,7 @@ def run(use_ai: bool, workers: int = 6, limit: int | None = None) -> dict:
     with ThreadPoolExecutor(workers) as ex:
         rows = list(ex.map(one, items))
     if judge is not None:
-        store_path.write_text(json.dumps(judge.store, indent=0))
+        store_path.write_text(json.dumps({k: judge.store[k] for k in sorted(judge.used)}, indent=0))
     return summarize(items, rows, judge, use_ai)
 
 

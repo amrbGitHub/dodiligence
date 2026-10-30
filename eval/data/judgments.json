@@ -1,499 +1,499 @@
 {
-"20b23ded3be96d35c5cd77808c3f27a2": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts do not contain the quoted statement that filing an answer effected a waiver of the right to demur, nor any discussion of waiver of demurrer by answering. The excerpts address appealability of an order on a motion to dismiss/strike and the limitations period, not waiver by answer.",
-"key_excerpt": 0,
-"in": 1523,
-"out": 131
-},
-"7c0155c4a7bf805c0d70ae50b36264ea": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern the scope of 18 U.S.C. \u00a7 875(d) and hold that threats to reputation seeking money without a plausible claim of right are inherently wrongful and prohibited. Nothing in the excerpts addresses whether informing authorities of misconduct can be an unlawful threat, so the proposition is not supported by these excerpts.",
-"key_excerpt": 4,
-"in": 1531,
-"out": 153
-},
-"0f0f0bc2251b053e52c17d5a02afbc8c": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts discuss conditional promises and condition precedent generally, and say a conditional promise becomes absolute only on performance of the condition, but none says the court put it as a contract that 'never becomes binding' when a condition is not completed. The quoted language does not appear in the excerpts, and the excerpts' framing (a condition limits the promisor's undertaking, and a promise may be absolute or nugatory) does not directly state the proposition as quoted.",
-"key_excerpt": 4,
-"in": 1441,
-"out": 184
-},
-"0fe45532d35090070a29d37e14ea66d1": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts do address objective reasonableness under qualified immunity, saying immunity turns on 'all the circumstances as they reasonably appeared at the time' (excerpt 4), which is close to the proposition. However, the memo's quoted phrase 'circumstances of the occasion' does not appear in any excerpt, and the excerpts do not contain that language, so the attributed quotation cannot be verified.",
-"key_excerpt": 4,
-"in": 1515,
-"out": 170
-},
-"11235e0905a2fe2962dc13c8353090d1": {
-"verdict": "SUPPORTED",
-"explanation": "The opinion holds that Rule 11 sanctions are unavailable unless the motion is served for the full twenty-one day safe harbor period before filing, with service and filing completed prior to final judgment or judicial rejection of the contention. The memo's proposition paraphrases this, and the quoted language appears in substance in excerpt 6, though the exact phrase 'served before the case is disposed of' is not verbatim.",
-"key_excerpt": 6,
-"in": 2012,
-"out": 168
-},
-"5c6ce46b5014fda3b94e9a7b28d6a18a": {
-"verdict": "SUPPORTED",
-"explanation": "The court holds that the OSH Act does not imply a private right of action for employees discharged in retaliation for reporting safety violations, affirming the district court. Excerpt 1 states the holding directly, though the exact quoted sentence \"OSHA does not create a private cause of action\" does not appear in the excerpts provided, so only the substance is confirmed.",
+"02e49a7e9b381b5686fb94d07fe17dec": {
+"verdict": "OFF_TOPIC",
+"explanation": "Discover Bank v. Stucka is a credit card collection and pleading case (Pa.R.C.P. 1019, amending a complaint) and says nothing about parental alienation or child custody modification (see excerpts 1, 4). It cannot be authority for that rule.",
 "key_excerpt": 1,
-"in": 3071,
-"out": 148
-},
-"0247e616c6baae33a0b92a1c16c292aa": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address whether substance abuse rendered the father unable to parent under A.R.S. \u00a7 8-533(B)(3) and the likelihood of future parenting, but none discuss a parent's claim of 'just cause' for failing to maintain a relationship or the quoted language about creating barriers to contact. The quoted sentence does not appear in the provided excerpts.",
-"key_excerpt": 5,
-"in": 1420,
-"out": 157
-},
-"6c145fb9636517a86854a72df35cab59": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts discuss the Title VII standard for prevailing defendants (frivolous, unreasonable, or groundless) and the EAJA and \u00a7 1927, but nowhere use the phrase 'egregious cases' or state that defendant fees are appropriate only in egregious cases. The quoted language attributed to the court does not appear in the excerpts, so the proposition is not supported as stated.",
-"key_excerpt": 3,
-"in": 2905,
-"out": 165
-},
-"d16f0e90051b4db08a8601932144337e": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts discuss excessive force in terms of severe injuries, the deputy's intentional use of force on an unarmed, restrained person, and fair warning, but never state that a minimal level of force can violate constitutional rights or quote the phrase \"a minimal level of force.\" The memo's quoted language is not found in the provided excerpts, so the proposition is not supported by them.",
-"key_excerpt": 5,
-"in": 2556,
-"out": 161
-},
-"cf6039ae116dcbd833fd5bf09ebc4e7e": {
-"verdict": "UNCLEAR",
-"explanation": "The excerpts cover sufficiency of the evidence on conspiracy, departure review, and jury instructions but never mention packaging weight or how drug quantity is calculated for sentencing. The excerpts are insufficient to confirm the quoted language or the proposition.",
-"key_excerpt": 0,
-"in": 1164,
-"out": 120
-},
-"e19a12e432bb4d065156d98a9b032eba": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts only show the caption and the opening of the appeal, a pro se plaintiff challenging dismissal under RICO and a Rule 28 brief requirement that applies equally to pro se litigants. Nothing in these excerpts addresses opposing counsel preying on the ignorance of pro se litigants.",
-"key_excerpt": 6,
-"in": 1029,
-"out": 140
-},
-"6683b8ffa1ab35ccbb51444dbab316be": {
-"verdict": "UNCLEAR",
-"explanation": "The excerpts are fragmentary and mention maritime liens for towing services and their priority, but none of the visible text states that the lien includes principal, interest, and attorney's fees under the contract. The quoted sentence cannot be confirmed from these excerpts.",
-"key_excerpt": 0,
-"in": 1001,
-"out": 117
-},
-"6f32453c153c0488cc8775dda76b6c64": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern whether post-seizure food catering services to a custodial crew are recognized as vessel-preservation expenses and whether a contractual indemnity waived maritime liens, plus prejudgment interest generally; none defines 'necessaries' as including the contract price with interest if agreed or customary. The quoted sentence does not appear in any excerpt.",
-"key_excerpt": 0,
-"in": 1465,
-"out": 155
-},
-"04a30fcc49a6b1f97ef99788dc51039c": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address when pseudonymous litigation is permitted (privacy interests, public access to courts) and deny pseudonymity here; they never discuss evading service or using pseudonyms while engaging in legal actions. The quoted sentence does not appear in the excerpts.",
-"key_excerpt": 5,
-"in": 2691,
-"out": 127
-},
-"17639fd650b736b538f8a6a405ce64dc": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts set out the Rule 11 test as whether the conduct was 'reasonable under the circumstances' and affirm sanctions under abuse-of-discretion review; they never state that Rule 11 sanctions are reserved for exceptional circumstances or use that phrase. The quoted language does not appear in any excerpt, so the proposition is not supported as stated.",
-"key_excerpt": 4,
-"in": 2332,
-"out": 158
-},
-"db27096913fa7277ae759bbd9d8234e3": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address whether an administrative factfinding has preclusive effect in federal civil rights litigation, not any rule that doubts must be resolved in favor of remand. The Court's only remand reference is to leaving respondent's contentions for resolution on remand, which does not state a resolve-doubts-for-remand standard.",
-"key_excerpt": 6,
-"in": 1695,
-"out": 142
-},
-"13a02c67142681496802f148bf190352": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts discuss RSE's general objection being ineffective and the waiver of privilege under Rules 26(b)(5), 34(b), and 45, but none contains the quoted phrase \"tantamount to no objection at all.\" The court's reasoning (boilerplate objections are presumptively insufficient, failure to timely object typically waives objections) is related, but the specific quoted language attributed to the court does not appear in the provided excerpts.",
-"key_excerpt": 4,
-"in": 2994,
-"out": 183
-},
-"3162bbdf3353d3b6f718bb90fa254e6a": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern a First Amendment challenge to Illinois's ban on professional telemarketing and the denial of a preliminary injunction; they say nothing about whether the ADA provides compensatory or punitive damages. The cited case does not address the proposition at all.",
-"key_excerpt": 0,
-"in": 2300,
-"out": 124
-},
-"de8cf4f8b67ff90b6d52907886dd80aa": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 5 indicates the Act reaches individual members of an agency who participate in meetings in violation of the Act, and excerpt 4 describes the Act's purpose as addressing private meetings on agency business, which together fairly support the proposition that the Act applies to both the agency and its members.",
-"key_excerpt": 5,
-"in": 1029,
-"out": 129
-},
-"610a501034f74bd2c06c2145ddaa7dcc": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern whether the PSD permit expired because construction was not commenced or was discontinued, and whether a preliminary construction memorandum counted as beginning construction. Nothing in the excerpts addresses whether required pollution-control fixes are modest in cost.",
-"key_excerpt": 4,
-"in": 1611,
-"out": 125
-},
-"a5b1a1114b7b7e00d9436c31e1a50099": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts discuss a default judgment, a party's statutory right to appear pro se under 28 U.S.C. \u00a7 1654, and a Rule 6(b) issue, but none states that courts must give special solicitude to pro se prisoner litigants in construing pleadings. Excerpt 6 only refers generally to protecting pro se litigants from inadvertent forfeiture of rights, and does not address prisoners or pleading construction.",
-"key_excerpt": 6,
-"in": 1250,
-"out": 179
-},
-"cc00519e62147a271929df7a83dc7e99": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address quo warranto pleading standards, appellate review of waived arguments, and dismissal of a complaint under section 2-615; none discuss the jury trial right when legal and equitable issues are joined. The proposition concerns a different issue than the excerpts cover.",
-"key_excerpt": 4,
-"in": 2703,
-"out": 127
-},
-"129018e67000d0342e187b13c929c0ce": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address the extraterritorial reach of the Consumer Fraud Act and the viability of out-of-state plaintiffs' claims, not whether consumer fraud damages claims are legal claims triable to a jury. Nothing in the excerpts discusses a jury right for Consumer Fraud Act claims; the jury discussion concerns only the breach of contract claim (excerpt 1 and 2).",
-"key_excerpt": 1,
-"in": 4630,
-"out": 172
-},
-"220b017435aaaf27ae7a09befcaa37fc": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address Fourth Amendment Terry stop and false-arrest claims, qualified immunity, and arguable probable cause; none discuss de minimis injuries or whether minor injuries fail to rise to a constitutional violation. The proposition concerns an issue the excerpts do not address.",
-"key_excerpt": 0,
-"in": 2666,
-"out": 135
-},
-"cd7ddbd1134a137f5ac3425298f8549d": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address Eighth/Fourteenth Amendment conditions, PLRA injunction termination, and ADA relief for disabled inmates, but nothing discusses the continuing-violation doctrine or statute of limitations extension. The cited proposition is therefore not addressed in the excerpted opinion.",
-"key_excerpt": 0,
-"in": 2647,
-"out": 140
-},
-"2ba079057a54451335826b20e465243e": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts discuss subject-matter jurisdiction, class certification, and consent/established business relationship issues under the TCPA, but nothing addresses the \u00a7227(c)(5) safe harbor or what compliance procedures a defendant must actually follow to invoke it. The proposition is not addressed by the provided text.",
-"key_excerpt": 0,
-"in": 2249,
-"out": 140
-},
-"c395ce8b17e30886262b6839a856612f": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address RICO limitations, Rule 9(b) pleading, leave to amend, and fraudulent concealment tolling, but say nothing about whether fiduciary duties run from a client to a lawyer. Count Five (breach of fiduciary duty) is mentioned only in the list of counts, so the excerpts do not address the proposition.",
-"key_excerpt": 2,
-"in": 2036,
-"out": 152
-},
-"cc02c7d6686f3cc879dc4e8509aad4c5": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts discuss estoppel elements (excerpt 6), which include a false representation or concealment, but do not state a general duty to speak or estoppel arising from silence that would mislead. Excerpt 6 frames estoppel around misleading by representation or concealment, and the proposition's silence-based duty to speak is not addressed.",
-"key_excerpt": 6,
-"in": 2106,
-"out": 146
-},
-"5ad1054cfba11458a550e553c47b6624": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts recount the procedural history and the standard of review in this custody appeal, which turns on the best-interests-of-the-child standard and deference to the trial court's credibility findings. Nothing in the excerpts addresses parental alienation or says that failing to remedy it would irreparably harm a child, and the quoted phrase 'irreparably harm' does not appear.",
-"key_excerpt": 5,
-"in": 2339,
-"out": 157
-},
-"fc2e5536f5bbdbd0db65622fed008fc3": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern a credit card debt collection action, pleading requirements under Pa.R.C.P. 1019, and contract formation; nothing addresses parental alienation or child custody modification. The proposition cannot be supported by this case.",
-"key_excerpt": 0,
-"in": 1703,
-"out": 115
-},
-"3b4f72f0ce6f97a7357faa283f32f32f": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts are fragmentary and mention a plaintiff seeking to amend his complaint to add claims (excerpt 6), but none states or applies the Rule 15 standard that a plaintiff is entitled to amend to add new claims. The excerpts do not reach the legal point the memo cites the case for.",
-"key_excerpt": 6,
-"in": 1267,
-"out": 138
-},
-"72f5b4b14c10b8d6097943c33428a9ad": {
-"verdict": "CONTRADICTED",
-"explanation": "The Court states that Alabama has declined to apply a 'discovery rule' (citing Ramey v. Guyton), so the limitations period is not tolled until the plaintiff discovers the injury. Instead, the cause of action accrues when the first legal injury occurs and damages are sustained.",
-"key_excerpt": 3,
-"in": 2026,
-"out": 129
-},
-"2f3cd69465a231c61d0097f34049c210": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address whether Illinois should recognize a self-critical analysis privilege and do not discuss treating parent and subsidiary corporations as a single entity. The proposition concerns a different legal issue entirely.",
-"key_excerpt": 3,
-"in": 1508,
-"out": 108
-},
-"2026835d74839e1becae23e26f6c7739": {
-"verdict": "UNCLEAR",
-"explanation": "The excerpts show Larson discussing when suits against officials for public-treasury effects are permitted (e.g., McComb enjoining an unconstitutional bond issue), but they do not reach whether courts may void or enjoin ultra vires public spending as such. The excerpt is cut off before the Court's full holding, so the excerpts are insufficient to confirm the proposition.",
-"key_excerpt": 4,
-"in": 1551,
-"out": 155
-},
-"7ae955b0b86b08aba758f969e3ea7df6": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address jury instructions, juror challenges, and whether certain damages from a 'do not patronize' request are compensable, but never state that defamation per se claims are actionable without proof of special damages. The excerpts do not reach the cited proposition.",
-"key_excerpt": 3,
-"in": 1364,
-"out": 119
-},
-"9f57fc342b4aa78666e3ab1234a2b11a": {
-"verdict": "CONTRADICTED",
-"explanation": "The excerpts state that the best evidence rule applies only when the contents of a writing are at issue, and that where no dispute exists about the accuracy of substitute evidence, any error in admitting it is harmless. This runs directly against the claim that admitting a transcript without the original recording is automatically reversible error, and the quoted sentence does not appear in the excerpts.",
-"key_excerpt": 6,
-"in": 1626,
-"out": 151
-},
-"ae3def35e26bc9b6485a4f460d12acc3": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address whether a dismissal for want of prosecution operated with prejudice under Rule 41(b) and the plaintiff's burden to vacate or appeal, not the two-dismissal rule (Rule 41(a)(1)) barring refiling after a second voluntary dismissal. Nothing in the excerpts discusses voluntary dismissals or refiling limits.",
-"key_excerpt": 4,
-"in": 1646,
-"out": 162
-},
-"6414a0793a974707c6fd43820b1f94b9": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address qualified immunity, First Amendment retaliation balancing, and conspiracy liability under \u00a7 1983, but say nothing about a judge's pretrial declaration of guilt removing judicial immunity. The cited proposition is not supported by any excerpt shown.",
-"key_excerpt": 3,
-"in": 2597,
-"out": 128
-},
-"c0fc632549ee62e2970849a0228ea33e": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern mandamus to compel corrections to an assessment roll, the due-process rights of taxpayers, and exhaustion of administrative remedies. Excerpt 6 mentions declaratory relief only in passing as one of the remedies taxpayers may seek, not as a holding that declaratory relief clarifies ownership where property rights are uncertain.",
-"key_excerpt": 6,
-"in": 1481,
-"out": 157
-},
-"ee73ba71c88812fc3d934f79d6ecf90c": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern a creditor's claim against a decedent's estate, the election between county and district court, and the limitations and jurisdictional effect of filing a claim. Nothing in them addresses declaratory judgment or quiet title actions.",
-"key_excerpt": 0,
-"in": 1358,
-"out": 115
-},
-"7c136c30fba0136daac5aedc05473e2e": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern whether the district court abused its discretion in dismissing a prisoner's retaliation claim as frivolous under 28 U.S.C. \u00a7 1915(d), and say nothing about collateral estoppel or issue preclusion. The proposition about relitigation of actually decided issues is not addressed in any excerpt.",
-"key_excerpt": 2,
-"in": 1390,
-"out": 145
-},
-"860e33e1fc36ec9256f040394573fc04": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address whether early discovery to identify an IP subscriber should be allowed under a privacy and balancing analysis, not whether courts approve delayed notice to prevent subpoena targets from learning of a subpoena. Nothing in the excerpts discusses delayed notice or the risk of tipping off the subscriber.",
-"key_excerpt": 5,
-"in": 2074,
-"out": 144
-},
-"6795fc5f0a940b59a5c4e209c032fa41": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address the ADA integration mandate, standing/authority to sue, and the risk-of-institutionalization theory, and reverse the district court's remedial plan. Nothing in the excerpts discusses whether disability-based sanctions or adverse inferences are irreversible.",
-"key_excerpt": 0,
-"in": 2483,
-"out": 129
-},
-"db2d0648ce8e6e83d81dbcf0ec38a1fe": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts show the court itself decided due diligence as a matter of law, holding Tate Supply 'failed as a matter of law to prove diligence' and that the trial court abused its discretion, rather than treating diligence as a jury question. Nothing in the excerpts says diligence in service is for the jury.",
-"key_excerpt": 6,
-"in": 1502,
-"out": 136
-},
-"3a0b7715925c3e398e69e791d4c2991e": {
-"verdict": "CONTRADICTED",
-"explanation": "The Court of Appeals affirmed the trial court's finding of laches as a matter of law, holding the plaintiff failed to show due diligence and reviewing only for abuse of discretion; it did not treat due diligence as a jury question. Excerpt 2 shows the trial court's ruling was affirmed without any jury involvement.",
-"key_excerpt": 2,
-"in": 1487,
-"out": 142
-},
-"402df18608844632e5e041cd70f60c3c": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts are fragmentary and contain no statement that uncertainty should be resolved in the defendant's favor; the visible text concerns plea withdrawal standards, safety-valve sentencing, and a Duran footnote about advisory guidelines. The quoted language does not appear in any excerpt.",
-"key_excerpt": 0,
-"in": 1255,
-"out": 136
-},
-"6f6ffbf24c0074d917c2878a6b5bfff2": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern suppression motions, pretrial delay, double jeopardy, and sentencing, and say nothing about whether laboratory testing is more precise than other identification methods. The only hint of a cited proposition is a bare string cite (excerpts 6-7) with no visible discussion of forensic methods.",
-"key_excerpt": 0,
-"in": 1410,
-"out": 139
-},
-"35b82f865e43176445f1225686aafa11": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address forum selection, fraud in the inducement, and estoppel, and the opinion's only reference to arbitrability is that a federal court must determine whether the parties agreed to arbitrate (excerpt 4). Nothing in the excerpts says discovery is required to decide arbitrability.",
-"key_excerpt": 4,
-"in": 1924,
-"out": 136
-},
-"627074f918939573ad84f8f8e7fa88ab": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts discuss a court's discretionary authority to impose sanctions for filing a pleading, not sanctions for filing a second dispositive motion. Nothing in the fragments addresses successive dispositive motions as a basis for sanctions.",
-"key_excerpt": 3,
-"in": 937,
-"out": 118
-},
-"39603da25989006173f708b1724fd519": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts show the Fifth Circuit affirmed a summary judgment for the government, addressing FTCA medical malpractice expert testimony and deemed admissions under Rule 5 service rules. Nothing in the excerpts concerns a denial of a stay.",
-"key_excerpt": 6,
-"in": 1450,
-"out": 125
-},
-"5e0ff9e452c333fb4e7e3ca61170504b": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address discovery sanctions under Rule 37, inherent judicial power to dismiss for failure to prosecute, and Lanham Act/unfair competition counterclaims; none discusses apparent authority or a principal being bound by an agent's acts based on the principal's conduct. The proposition's agency-law point is not addressed in any excerpt.",
-"key_excerpt": 0,
-"in": 3103,
-"out": 154
-},
-"4f34a50588ae81451041002c040b7eda": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts enforce a contractual non-reliance disclaimer between arm's-length parties and hold it effective absent fraud in procuring the disclaimer itself; they never address whether disclaimers are defeated when the disclaiming party's rights are not otherwise preserved. The proposition states a different rule than the one the excerpts reflect.",
-"key_excerpt": 6,
-"in": 1533,
-"out": 149
-},
-"9a2deca02445b78f2058c7db278f9db8": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address removal, joinder of a non-diverse party, Rule 12(b) dismissal, and slander of title elements; none discuss service of process by certified mail or its sufficiency.",
-"key_excerpt": 0,
-"in": 1310,
-"out": 101
-},
-"15a187ccf8ee6feb407e9a01c3c2e873": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern public-figure status, actual malice, and the first-reporter rule; none discuss whether calling someone 'aggressive' carries a defamatory sting. The proposition's core point about the defamatory meaning of a particular word is not addressed in the provided excerpts.",
-"key_excerpt": 2,
-"in": 1903,
-"out": 129
-},
-"63e8d81c1ae6f0e2e22c28c97597579d": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern a Delaware divorce appeal addressing marital property division, valuation of a law practice, and alimony, not standing to sue for injuries to a business. Nothing in the excerpts discusses an owner's standing based on harm to a business.",
-"key_excerpt": 0,
-"in": 1722,
-"out": 120
-},
-"870e87a8a291f87501c0f6003c2e21dc": {
-"verdict": "CONTRADICTED",
-"explanation": "The court expressly declined to apply the Notaro four-factor test, instead applying the conventional good cause standard (need for expedited discovery outweighing prejudice to the responding party). Excerpt 6 is the key holding rejecting the proposition.",
-"key_excerpt": 6,
-"in": 2438,
-"out": 115
-},
-"ae1ae61b367bbb5e74f76cc882d992fd": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 6 quotes Benjamin and discusses whether a remedy is necessary, narrowly drawn, and the means to correct the violation, and excerpt 7 expressly describes the court's obligation to make 'need-narrowness-intrusiveness' findings under the PLRA. The proposition that review under the PLRA's standards is sometimes called a 'need-narrowness-intrusiveness' inquiry is therefore supported, and the statutory language quoted matches excerpt 5.",
-"key_excerpt": 7,
-"in": 2738,
-"out": 197
-},
-"4f5d270a7b68b27f8e4d312e38ef5a94": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts concern whether a defendant must receive notice of grand jury proceedings under ambiguous statutes, not whether threats make an agreement void versus voidable. Nothing in the excerpted text addresses threats or the void/voidable distinction in contract law.",
-"key_excerpt": 5,
-"in": 1268,
-"out": 124
-},
-"570c7961c487dc364728a794d66143d8": {
-"verdict": "SUPPORTED",
-"explanation": "The Court states in excerpt 3 that the Ex Post Facto Clause is aimed at laws that \"retroactively alter the definition of crimes or increase the punishment for criminal acts,\" quoting Collins v. Youngblood, and the memo's proposition accurately reflects that language and its scope. The memo's reference to protection of criminal defendants is a fair paraphrase of the Clause's purpose as described in excerpt 3.",
-"key_excerpt": 3,
-"in": 2251,
-"out": 178
-},
-"7bed44649de3df5f81d9e0ef4854b7d0": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 3 states that federal law controls interpretation of the contract because it was entered into pursuant to federal statutory authority and ultimately the Constitution, which matches the parenthetical quotation. The proposition that the cited cases involved contracts with the federal government as a party is consistent with the Court's description of the government contract at issue.",
-"key_excerpt": 3,
-"in": 2045,
-"out": 142
-},
-"1a3a9a874196085bf032b1188ea8810a": {
-"verdict": "SUPPORTED",
-"explanation": "The memo's proposition is that the Court acknowledged the probable-cause standard is peculiarly related to criminal investigations, and excerpt 5 directly states that quoted language, quoting Colorado v. Bertine, with the Court then explaining why the standard may be unhelpful for routine administrative functions. The quoted phrase appears in the opinion, and the 'implicitly acknowledged' framing fits the Court's reasoning.",
-"key_excerpt": 5,
-"in": 1941,
-"out": 176
-},
-"e441c5ec37fe796cd219391abbe02fc6": {
-"verdict": "UNCLEAR",
-"explanation": "The excerpts quote the PLRA's 'narrowly drawn, extends no further than necessary' language and mention constitutional violations, but do not clearly state that the determination rests on case-specific factors such as the extent of ongoing violations. Excerpt 7 seems to say the extent of violations has no necessary correlation with something, which may cut against the proposition, but the excerpts are too fragmentary to decide.",
-"key_excerpt": 7,
-"in": 986,
-"out": 167
-},
-"f7676fe2a35b1c1f64facdd68903c1ff": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 7 states that the statute 'is without extraterritorial effect unless a clear intent in this respect appears from the express provisions of the statute,' which is the quoted rule, and excerpt 6 confirms the court found no legislative intent for extraterritorial effect. The memo's proposition accurately reflects this holding.",
-"key_excerpt": 7,
-"in": 2886,
-"out": 141
-},
-"406b5258a346a7eee6ba24bb626cd356": {
-"verdict": "SUPPORTED",
-"explanation": "The excerpt states that in Texas attorney's fees may not be recovered from an opposing party unless provided for by statute or by contract between the parties, which matches the parenthetical. The case is cited with a parenthetical, so it only needs to illustrate that point, and excerpt 3 does so.",
-"key_excerpt": 3,
-"in": 2184,
-"out": 128
-},
-"93497d498817f7656d7dd4eb943c4d06": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "Excerpt 6 states that checking law enforcement databases for outstanding warrants is a routine, non-invasive procedure, which partly supports the warrant-check element. However, the excerpts do not mention driver's license, tag, insurance, or registration checks, and the proposition's claim that such checks are engrafted into the reasonable-time period by state law is not established by the excerpts shown.",
-"key_excerpt": 6,
-"in": 1692,
-"out": 163
-},
-"78aa5c66319a40b6d8c763c5a417dfc6": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 4 states the quoted proposition nearly verbatim, and excerpt 6 supports it with the legislative record (Clark's memorandum and the rejected exclusivity amendments) showing Title VII does not deny rights under other federal and state statutes.",
-"key_excerpt": 4,
-"in": 1969,
+"in": 2759,
 "out": 121
 },
-"2d7ccdeb2cb9f99249989be01d8d714b": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 4 quotes the trial judge's finding that Wang's interference was a wilful act calculated to obtain the benefits of Post's contract without cost and in disregard of known contractual arrangements, and excerpt 5 treats this as a chargeable unfair practice. This matches the memo's parenthetical that a breach committed to obtain contract benefits without cost violates 93A, though the excerpts show this as the lower court's finding rather than the Court's own express holding, and the Court's reversal on Count VII is not described in the excerpts.",
-"key_excerpt": 4,
-"in": 1948,
-"out": 212
+"0691837c5a1d7d60aae7da7e4040ada8": {
+"verdict": "OFF_TOPIC",
+"explanation": "Sheriff v. Marcum is a criminal procedure case about notice to target defendants before grand jury proceedings (Excerpts 1-3). It says nothing about contract law, threats, or void versus voidable agreements.",
+"key_excerpt": 3,
+"in": 2391,
+"out": 109
 },
-"d173e46d19a4e0d87f7bb88b7576ac94": {
+"103d9c1127699dfaebf0f1d9056bf8b8": {
 "verdict": "SUPPORTED",
-"explanation": "Footnote 7 states that the object of disclosure, as with all discovery, is to permit the opponent 'a reasonable opportunity to prepare for trial or settlement.' Excerpt 6 similarly says disclosure 'should have as its goal the preparation of cases for trial or settlement.'",
+"explanation": "Excerpts 5 and 7 show the Second Circuit quoting the PLRA's narrowly-drawn/no-further-than-necessary/least-intrusive requirements and using the \"need-narrowness-intrusiveness\" label for the inquiry. The termination provision (\u00a7 3626(b)(3)) is not quoted in the excerpts, but the label and the substance of the standard match.",
 "key_excerpt": 7,
-"in": 2143,
-"out": 131
-},
-"0ac8c54a9876dd2ebabc962a45b56641": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 5 states that the traffic stop was lawful because the officer had probable cause to believe the defendant violated the traffic code by driving with an expired temporary tag, which is the parenthetical's proposition. The memo's added claim that the probable cause is 'indisputable' is an characterization the opinion does not make, but the core holding that probable cause existed for the stop is directly stated.",
-"key_excerpt": 5,
-"in": 1355,
+"in": 3047,
 "out": 160
 },
-"776ffbf6e5108bb9f299ba05ee130822": {
-"verdict": "SUPPORTED",
-"explanation": "The Court in excerpt 3 gives exactly the example cited: state law could impose duties conflicting with federal mandates by premising liability upon the presence of the very windshield retention requirements federal law requires. The memo's quotation and characterization match the opinion's language, though the example is offered as an illustration of conflict preemption concerns rather than a holding.",
-"key_excerpt": 3,
-"in": 3069,
-"out": 147
-},
-"4832b21f8c6821d978145ae0aaba372a": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 4 quotes Rule 8(b)'s language on joinder of defendants 'alleged to have participated in the same act or transaction or in the same series of acts or transactions,' and states that 'There is a preference in the federal system for joint trials of defendants who are indicted together.' The core propositions of the memo are therefore directly stated in the majority opinion.",
+"114f485e607eec3e857bfbcfb5d78220": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Excerpt 4 supports the general rule that no liability arises on a promise subject to a condition precedent until the condition is met, but the excerpts do not contain the quoted phrase \"never becomes binding.\" The opinion's wording (e.g., \"a contractual obligation does not come into being\") differs, so the attributed quotation is not shown.",
 "key_excerpt": 4,
-"in": 2262,
-"out": 153
+"in": 3115,
+"out": 148
+},
+"14e2d90356c72e67c614f405cc98a875": {
+"verdict": "OFF_TOPIC",
+"explanation": "Hively is a tax equalization/mandamus case; excerpt 5 even rejects taxpayers' claim to declaratory relief against the Board's assessment. It says nothing about declaratory relief to clarify property ownership, so it cannot support that rule.",
+"key_excerpt": 5,
+"in": 3175,
+"out": 117
+},
+"1a97b73a780a9639f0b84a63ba1afb5d": {
+"verdict": "NOT_ADDRESSED",
+"explanation": "The excerpts cover jury instructions, juror challenges, and evidence in a defamation case, but none discusses defamation per se or whether special damages must be proved. The opinion is on a related subject and may address the point in a part not shown.",
+"key_excerpt": 1,
+"in": 2680,
+"out": 109
+},
+"1ddd35bde5a96b8ad923dcf58662c20e": {
+"verdict": "OFF_TOPIC",
+"explanation": "Gutierrez v. Kermon concerns Fourth Amendment false arrest, probable cause, and qualified immunity on interlocutory appeal; nothing in the excerpts addresses de minimis injuries and constitutional violations (an excessive force/Eighth Amendment type of rule).",
+"key_excerpt": 5,
+"in": 3369,
+"out": 133
+},
+"1efabefa5e8fca267e0597fecf324f38": {
+"verdict": "OFF_TOPIC",
+"explanation": "Edwards is a mail fraud conspiracy case with jury and departure issues (excerpts 1-6); nothing concerns drug quantity or packaging weight, and the quoted language does not appear.",
+"key_excerpt": 1,
+"in": 2932,
+"out": 101
+},
+"22cdd98eacd9d227c7af9d3f2a0df6b0": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 5 shows the Court stating that \"the probable-cause standard 'is peculiarly related to criminal investigations,'\" quoting Bertine, and using it to explain why probable cause may not fit administrative searches. The memo's \"implicitly acknowledged\" framing is loose, since the Court said this expressly, but the quoted language is accurate and consistent with the opinion.",
+"key_excerpt": 5,
+"in": 3146,
+"out": 160
+},
+"2bee1edcb2ba58c3ee497371c651a6f9": {
+"verdict": "CONTRADICTED",
+"explanation": "Akuoko holds that the trial court has discretion to decide whether the plaintiff exercised sufficient diligence, reviewed only for abuse of discretion, and it affirmed a trial-court ruling of laches (excerpts 2-4). It does not treat due diligence as a jury question.",
+"key_excerpt": 2,
+"in": 3064,
+"out": 127
+},
+"2ec8f2b20c82d01f1ebe142673702b05": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 3 quotes Rule 8(b) on joinder of defendants and states that there is a preference in the federal system for joint trials of defendants indicted together, which is the proposition (at 537).",
+"key_excerpt": 3,
+"in": 2944,
+"out": 97
+},
+"37cff4b6e69dcbcac43ae92cf145074b": {
+"verdict": "OFF_TOPIC",
+"explanation": "Bevill concerns qualified immunity for officials alleged to have conspired to get a police captain fired in retaliation for his affidavit. The excerpts say nothing about a judge's pretrial declaration of a defendant's guilt or about removal of judicial immunity.",
+"key_excerpt": 1,
+"in": 3782,
+"out": 120
+},
+"3c44007a03691f0086fe9c55ea3932a4": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpts 5-6 show the court treating a wilful termination of a contract \"calculated to obtain the benefits of Post's contract for Wang without cost\" as an unfair act violating c. 93A, matching the parenthetical. The 'must demonstrate' framing is the memo's own application and is fair for a \"see, e.g.\" cite.",
+"key_excerpt": 6,
+"in": 2975,
+"out": 146
+},
+"3cb5780739414f5f8c55baec2f346e88": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts show the court holding pro se litigants to the same procedural rules and declining to act as their advocate; nothing says opposing counsel may prey on pro se litigants' ignorance, and the court affirmed dismissal in favor of the defendant attorneys.",
+"key_excerpt": 3,
+"in": 2459,
+"out": 121
+},
+"3e5872742c595ef674757d896886e706": {
+"verdict": "OFF_TOPIC",
+"explanation": "The excerpts show Kirkland concerns removal, joinder of a non-diverse party, statutes of limitations, privity, and failure to state tort claims. None of them addresses service of process by certified mail (excerpts 1-5).",
+"key_excerpt": 1,
+"in": 2474,
+"out": 108
+},
+"3ee4cf6bbc4c3743bf513295011f3c1b": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Excerpt 6 describes estoppel as preventing one party from misleading another, with elements including false representation or concealment of material facts, but it never says there is a general \"duty to speak\" or that silence alone estops. The Court also rejected the estoppel claim, so the case does not support the proposition as stated.",
+"key_excerpt": 6,
+"in": 3454,
+"out": 133
+},
+"42889285797c3432369495340950a5e1": {
+"verdict": "OFF_TOPIC",
+"explanation": "Pierce v. County of Orange, as excerpted, concerns pretrial detainees' jail-conditions claims under \u00a7 1983, the PLRA, and the ADA (excerpts 3, 5, 7). Nothing in them addresses the continuing-violation doctrine or statutes of limitations for discrimination claims.",
+"key_excerpt": 0,
+"in": 4111,
+"out": 138
+},
+"4453295ca39c609b812b8c89bf13b904": {
+"verdict": "NOT_ADDRESSED",
+"explanation": "The excerpts concern whether Strike 3 may subpoena an ISP to identify an anonymous John Doe under Rule 26(d)(1); none discuss delayed notice to prevent subpoena targets from learning of a subpoena. The opinion is on a related subject (subpoenas and discovery), but the excerpts shown do not reach this point.",
+"key_excerpt": 0,
+"in": 3278,
+"out": 149
+},
+"479a3264fe08ed5c0f0cc8ff3b0de4f6": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Excerpt 5 says whether the plaintiff showed diligence is a question of fact for the trial court's determination, reviewed for abuse of discretion, not a question for a jury. The court then held that the plaintiff failed to prove diligence as a matter of law.",
+"key_excerpt": 5,
+"in": 3273,
+"out": 120
+},
+"4e3a513fe97ecd75d31a4646c87bb399": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 1 contains the quoted language: the stop was lawful because the officer had probable cause to believe the defendant violated the traffic code with an expired temporary tag. The memo's \"indisputable\" framing applies that rule to the present facts, which is acceptable.",
+"key_excerpt": 1,
+"in": 1742,
+"out": 120
+},
+"50c35d743bc487fbc184b6ca9f6dc086": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts state the Rule 11 test as objective reasonableness under the circumstances and the abuse-of-discretion standard of review (excerpt 4). Nothing says sanctions are \"reserved for exceptional circumstances,\" and the court affirmed sanctions without adopting that limit.",
+"key_excerpt": 4,
+"in": 3407,
+"out": 133
+},
+"54c9b8f22019bea48df868fb2836ff7b": {
+"verdict": "OFF_TOPIC",
+"explanation": "Koon v. Barmettler concerns a creditor's claim against a decedent's estate, jurisdiction between county and district courts, and dismissal for failure to substitute a representative (excerpts 2-4, 6). Nothing in the excerpts addresses declaratory judgment or quiet title.",
+"key_excerpt": 3,
+"in": 2783,
+"out": 130
+},
+"5525a2cbc07b1e734e81a7f596fc625f": {
+"verdict": "OFF_TOPIC",
+"explanation": "Peake concerns section 128.7 sanctions for frivolous pleadings (and a safe harbor period), not sanctions for filing a second dispositive motion; the excerpts say nothing on that point (see excerpts 3, 5).",
+"key_excerpt": 3,
+"in": 2850,
+"out": 113
+},
+"60c5d98b2925f8b14296ebfb1c869a1c": {
+"verdict": "OFF_TOPIC",
+"explanation": "Elliott concerns the preclusive effect of state administrative factfinding in federal civil rights suits (res judicata), not removal jurisdiction. The \"remand\" in the excerpts is an appellate remand, not the federal-court remand to state court that the doubts-resolved-in-favor-of-remand rule governs (excerpt 6).",
+"key_excerpt": 6,
+"in": 2580,
+"out": 148
+},
+"6672a400ee7880d8c4ed7df4de90b4ec": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts show Trotter decided the case on public-figure status and actual malice. Nothing in them says that calling someone 'aggressive' carries a defamatory sting, and the articles are described as accusing him of orchestrating violence, not as calling him 'aggressive'.",
+"key_excerpt": 1,
+"in": 3292,
+"out": 124
+},
+"6afc4b237f01ef50c45d8ec0837515c0": {
+"verdict": "UNCLEAR",
+"explanation": "The excerpts show the case is about extortionate threats to reputation and discuss when a threat is wrongful (excerpt 3), but none says that informing authorities of misconduct can never be an unlawful threat. The opinion may address this elsewhere, but it isn't shown here.",
+"key_excerpt": 3,
+"in": 3559,
+"out": 123
+},
+"6c93a19244b2bfb2f18010e5a74dad69": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 5 holds that checking law enforcement databases for outstanding warrants after a stop is a routine, quick, non-invasive procedure that doesn't unconstitutionally prolong the stop. This supports the 'see, e.g.' point as to active warrant checks, though the opinion doesn't expressly mention license, tag, insurance, or registration checks.",
+"key_excerpt": 5,
+"in": 2511,
+"out": 151
+},
+"6ca03aad9052a9f215b6335a3f9b98de": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 6 states that the narrowness of a remedy 'necessarily involves a close examination of a particular set of facts' and what is reasonable to cure the ongoing constitutional violations, and rejects ironclad rules. Excerpt 7 likewise ties the need-narrowness-intrusiveness findings to the nature of the current violations.",
+"key_excerpt": 6,
+"in": 2929,
+"out": 145
+},
+"776dd933d6f5981d9675676ff287336e": {
+"verdict": "OFF_TOPIC",
+"explanation": "Harris v. One Hope United addresses whether Illinois should recognize a self-critical analysis privilege (excerpts 1, 5, 6); nothing in the excerpts concerns treating parent and subsidiary corporations as a single entity.",
+"key_excerpt": 1,
+"in": 3193,
+"out": 116
+},
+"79325bf442df967252fec90e552f2a35": {
+"verdict": "OFF_TOPIC",
+"explanation": "The excerpts concern a Section 2-615 dismissal of statutory and quo warranto claims over parking-ticket collection; none discuss joined legal and equitable issues or a jury trial right. Excerpt 5 only says unresolved facts go to the 'trier of fact'.",
+"key_excerpt": 5,
+"in": 3586,
+"out": 125
+},
+"7a24bddfb1b8e899cffae8a385cf850c": {
+"verdict": "OFF_TOPIC",
+"explanation": "Adams v. Rice is a \u00a7 1915(d) frivolousness and prisoner-retaliation case; the excerpts (1, 3-5) say nothing about collateral estoppel or issue preclusion, so it cannot support that rule.",
+"key_excerpt": 1,
+"in": 2603,
+"out": 111
+},
+"7b61857861e86a535fca50d65db94b0f": {
+"verdict": "NOT_ADDRESSED",
+"explanation": "The excerpts show only that Cook amended his complaint to add claims (Excerpts 4, 5); they do not discuss Rule 15 or any entitlement to amend. The opinion is a voting-rights/\u00a7 1983 case on a related subject, and the Rule 15 point may sit in a part not shown.",
+"key_excerpt": 5,
+"in": 2931,
+"out": 135
+},
+"7bb6d5db49fd358cafc03bc7fcc65ce0": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 7 (footnote 5) states that the object of disclosure, as with all discovery, is to permit the opponent a reasonable opportunity to prepare for trial or settlement. This matches the quoted language and the proposition's characterization of the disclosure rules' purpose.",
+"key_excerpt": 7,
+"in": 3329,
+"out": 123
+},
+"7f996341806ff53f95c9065ea964b688": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts never use the quoted sentence or define 'necessaries' as the contract price plus agreed or customary interest. They discuss maritime liens and prejudgment interest only as a discretionary admiralty award (Excerpt 5), so the quotation is not shown to come from this opinion.",
+"key_excerpt": 5,
+"in": 3126,
+"out": 130
+},
+"81c62d4abb464fcde1edd1fd96698d97": {
+"verdict": "OFF_TOPIC",
+"explanation": "Hoover is a securities/RICO limitations case involving investors and promoters; the excerpts say nothing about whether a client owes fiduciary duties to a lawyer. Count Five's fiduciary claim was dismissed on jurisdictional grounds without addressing the lawyer-client relationship (Excerpt 3).",
+"key_excerpt": 3,
+"in": 2747,
+"out": 139
+},
+"825ddc2ddd150213bcfae473f453fe85": {
+"verdict": "OFF_TOPIC",
+"explanation": "The excerpts address whether a judge-plaintiff may sue under a pseudonym and seal the case, and the Court denied that request. They contain no discussion of evading service through pseudonyms, and the quoted sentence does not appear in them.",
+"key_excerpt": 5,
+"in": 3628,
+"out": 110
+},
+"84e100ccec7af69863a159da6172d5fd": {
+"verdict": "OFF_TOPIC",
+"explanation": "The excerpts from Harrison cover suppression, vehicle searches, indictment delay, double jeopardy, and sentencing disparity. None addresses laboratory testing or the precision of identification methods, so the case cannot be authority for this proposition.",
+"key_excerpt": 0,
+"in": 3178,
+"out": 117
+},
+"866353a8b29c2a8baea4e64e0954bc56": {
+"verdict": "OFF_TOPIC",
+"explanation": "The excerpts concern standing, PSD permit expiration, and a construction memorandum's termination fee; none address the cost of required fixes, and the memo's proposition appears to come from a different kind of dispute. The only cost discussion (excerpt 6) concerns whether a $72 million termination fee shows a binding construction contract, not whether fixes are modest.",
+"key_excerpt": 6,
+"in": 2754,
+"out": 149
+},
+"86ba2975033c122cb4e134553dff9f74": {
+"verdict": "CONTRADICTED",
+"explanation": "Excerpt 5 states that Alabama has declined to apply a \"discovery rule\" and that a plaintiff's later discovery of damage does not save the claim. The claim accrues on the first legal injury (Excerpts 6-7), not when the plaintiff knew or should have known of it.",
+"key_excerpt": 5,
+"in": 3508,
+"out": 127
+},
+"87d8b513dd084a3c2b7bb0d79ba4a582": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Excerpt 3 shows only that in Avery the contract claim was tried to a jury while the consumer fraud claim got a bench trial. The excerpts do not say that Consumer Fraud Act damages claims are legal claims triable to a jury, and the procedural history points the other way.",
+"key_excerpt": 3,
+"in": 5010,
+"out": 127
+},
+"88346c7712ac3424c63ed1d916758bb3": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 3 states that federal law controls interpretation of the contract because it was entered into pursuant to authority conferred by federal statute and, ultimately, the Constitution, matching the quoted language. Seckinger itself involved a contract with the federal government as a party, which fits the proposition.",
+"key_excerpt": 3,
+"in": 3436,
+"out": 126
+},
+"89c450f9eb950e598727ef3e40fbd85a": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Ridder holds that Rule 11 sanctions are unavailable unless the motion is served for the 21-day safe-harbor period before final judgment or rejection of the contention (Excerpt 6). The quoted language is not verbatim, and the memo drops the Rule 11 limit; the same opinion affirms fees under 28 U.S.C. \u00a7 1927 despite the late motion, so sanctions generally are not unavailable.",
+"key_excerpt": 6,
+"in": 3251,
+"out": 174
+},
+"8fd086dc65f8e27f1a78151e1fc9622b": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 4 contains the Court's statement that without ordinary conflict pre-emption principles, state law could impose duties conflicting with federal mandates, 'say, by premising liability upon the presence of the very windshield retention requirements that federal law requires,' citing 49 CFR \u00a7 571.212. This matches the proposition and the page range 871-72.",
+"key_excerpt": 4,
+"in": 4081,
+"out": 146
+},
+"96a9b85a6f952ae3ff3f3623f5d09927": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 3 states that where an officer acts beyond statutory limits, his actions are ultra vires and 'may be made the object of specific relief.' Excerpt 5 adds that an issue of bonds was enjoined because it rested on an unconstitutional statute. The proposition is a fair general statement, although Larson itself denied relief on the facts.",
+"key_excerpt": 3,
+"in": 2880,
+"out": 146
+},
+"9c724dee9044827a42f421da0f2e332a": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 3 states that the Ex Post Facto Clause is aimed at laws that \"retroactively alter the definition of crimes or increase the punishment for criminal acts,\" quoting Collins. This matches the proposition, which describes the protection in the same terms.",
+"key_excerpt": 3,
+"in": 3155,
+"out": 120
+},
+"9c73817e4799bce26daadac1e200572f": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts show the case concerns whether a Greek judicial sale extinguished a maritime lien and what proof is required on summary judgment. Nothing shown contains the quoted sentence or addresses what a maritime lien includes (principal, interest, attorney's fees), so the quotation is unverified and may be misattributed.",
+"key_excerpt": 2,
+"in": 2390,
+"out": 140
+},
+"a408da0780b69414cc41042d17247d21": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpts 4-5 say qualified immunity depends on 'all the circumstances as they reasonably appeared at the time' and on reasonable grounds for the belief formed 'in light of all the circumstances.' This supports considering circumstances in judging reasonableness of official conduct, though the exact phrase 'circumstances of the occasion' is not shown.",
+"key_excerpt": 4,
+"in": 2853,
+"out": 148
+},
+"a9106bfaae0f08c04011f89130867c76": {
+"verdict": "CONTRADICTED",
+"explanation": "Excerpts 5-6 show the court treated a best-evidence objection as pro forma and held any violation harmless where accuracy was undisputed. The quoted sentence does not appear, and the court's approach contradicts a per se reversible-error rule.",
+"key_excerpt": 6,
+"in": 3126,
+"out": 113
+},
+"aa2551fd881a3cd9138ab0103e4e8866": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Jones v. Buchanan involved a deputy who knocked down a handcuffed, non-arrested man and crushed his nose, which is severe force, not minimal force. Excerpts 1 and 5 stress the severity of the injuries; nothing in the excerpts says a minimal level of force can violate a prisoner's rights, and Jones was not a prisoner.",
+"key_excerpt": 5,
+"in": 3592,
+"out": 154
+},
+"afb73a85f88a6b0f0a51bf0c21eb10f4": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts show the defendant answered and then moved to strike, which the court held was improper after an answer. None of them contains the quoted sentence about waiver of the right to demur, though the court's reasoning is related (a post-answer motion to strike is void).",
+"key_excerpt": 3,
+"in": 3218,
+"out": 115
+},
+"afc93242556dff4a3902b4b8213b245e": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "Taylor holds there is no implied private right of action under OSHA \u00a7 11(c) (excerpts 1, 3). The proposition, though, claims a direct quotation, \"OSHA does not create a private cause of action,\" that does not appear in the excerpts, and states the rule for all of OSHA. The case's holding is narrower, limited to retaliatory discharge under \u00a7 11(c).",
+"key_excerpt": 3,
+"in": 4059,
+"out": 160
+},
+"b08b49822e47ca935a6e9b380e45b3f7": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts address plea withdrawal and safety-valve eligibility after Booker, and none contains the quoted statement that \"any uncertainty should be resolved in the defendant's favor.\" Brehm actually rejected the defendant's position, so the quotation is not supported as stated.",
+"key_excerpt": 6,
+"in": 2753,
+"out": 128
+},
+"b5707912349bf3c4a85cdc0dae5d31e4": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 3 states that in Texas attorney's fees may not be recovered from an opposing party unless provided by statute or by contract between the parties, which matches the parenthetical's point that fees are recoverable as authorized by statute or contract.",
+"key_excerpt": 3,
+"in": 3498,
+"out": 110
+},
+"bd37b798e6482ce61deffd68eb53de56": {
+"verdict": "NOT_ADDRESSED",
+"explanation": "The excerpts show a Sunshine Act challenge to a private conference among supervisors and mention a penalty for members who participate with intent to violate the Act (excerpt 5). None of them squarely states that the Act applies to both the agency and each participating member, though the penalty provision is related.",
+"key_excerpt": 5,
+"in": 2137,
+"out": 126
+},
+"c56d803d74b30eb543a502fcef04ac1c": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The Fifth Circuit affirmed a summary judgment (Excerpt 1, 6) based on Fujita's failure to designate an expert, not the denial of a stay. The excerpts mention the government's motion to stay discovery (Excerpt 3), but nothing shows a stay denial being affirmed.",
+"key_excerpt": 1,
+"in": 3232,
+"out": 136
+},
+"cc553824c169fe266350c86034ce3767": {
+"verdict": "OFF_TOPIC",
+"explanation": "E.E.C. v. E.J.C. is a Delaware divorce case about valuing a law practice and dividing marital property under 13 Del.C. \u00a7 1513 (excerpts 1, 4, 5). It does not address whether a business owner has standing to sue for injuries suffered by the business.",
+"key_excerpt": 4,
+"in": 2977,
+"out": 131
+},
+"ce635fd094a19d1415f6c3165f4494d3": {
+"verdict": "OFF_TOPIC",
+"explanation": "The opinion concerns unsolicited fax advertisements under \u00a7227(b) and class certification (Rule 23) and CAFA jurisdiction; the excerpts say nothing about the \u00a7227(c)(5) safe harbor for telephone solicitation or the compliance it requires.",
+"key_excerpt": 2,
+"in": 3470,
+"out": 122
+},
+"d32d59d44eeb05e6780db5c1bc2f3ce9": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 6 states that the right to self-representation carries an obligation on courts to make reasonable allowances for pro se litigants, and excerpt 3 cites authority that pro se papers should be read liberally. This supports the proposition, though 'special solicitude' and 'prisoner' are not the opinion's wording and the case involves a non-prisoner defendant.",
+"key_excerpt": 6,
+"in": 2838,
+"out": 150
+},
+"d3e5c533fb8e1d1429c0792ceb9ea949": {
+"verdict": "OFF_TOPIC",
+"explanation": "LeBeau concerns a Rule 41(b) dismissal for want of prosecution that operated as a dismissal with prejudice (excerpts 1-2). It does not discuss the two-dismissal rule of Rule 41(a)(1), which concerns two voluntary dismissals.",
+"key_excerpt": 2,
+"in": 2566,
+"out": 130
+},
+"db1c8ba46dd53b37c11e8c9fa12eeb0f": {
+"verdict": "CONTRADICTED",
+"explanation": "Semitool addresses expedited discovery and expressly declines to apply the four-prong Notaro test, adopting a general good cause standard instead (excerpts 3, 5). It is not a protective-order case, and it does not require a specific four-factor test.",
+"key_excerpt": 3,
+"in": 3313,
+"out": 113
+},
+"e1c8ff86f580ea58b2bcd84bb4c5919d": {
+"verdict": "NOT_ADDRESSED",
+"explanation": "The excerpts cover only the custody procedural history and the best-interests/abuse-of-discretion review; none mention parental alienation or any quoted \"irreparably harm\" language. The excerpts do not show the point, though it could be in the concurrence or a part not shown.",
+"key_excerpt": 0,
+"in": 3483,
+"out": 122
+},
+"e2086c408ae6414b6b13153c28b4b1d8": {
+"verdict": "OFF_TOPIC",
+"explanation": "Penthouse v. Playboy concerns discovery sanctions under Rule 37, intervention by counsel, and Lanham Act counterclaims (excerpts 1, 3-6). It says nothing about estoppel, apparent authority, or a principal's liability for an agent's acts.",
+"key_excerpt": 1,
+"in": 3493,
+"out": 127
+},
+"e7a0a5752d64c8e431729efb0d3cfd59": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts show Raymond F. affirming termination under the chronic substance-abuse ground (\u00a7 8-533(B)(3)) and the best-interest finding. None contains the quoted sentence about a parent creating barriers to contact through substance abuse lacking just cause, a point that belongs to the abandonment ground rather than the ground shown here.",
+"key_excerpt": 1,
+"in": 2952,
+"out": 148
+},
+"eae023ee848bf657594ec44abb3d67f2": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 7 states nearly verbatim that \"the statute is without extraterritorial effect unless a clear intent in this respect appears from the express provisions of the statute.\" The Court applied that rule to the Occupational Diseases Act. The excerpts do not show whether the quoted language appears at page 350 or whether the rule is \"long-standing,\" but the quoted rule itself is stated.",
+"key_excerpt": 7,
+"in": 3295,
+"out": 162
+},
+"eee247328d97415a6a99afc49b4b8278": {
+"verdict": "OFF_TOPIC",
+"explanation": "Goodman is a First Amendment challenge to an Illinois ban on solicitation by medical professionals, decided on a preliminary injunction standard (excerpts 1-6). It does not discuss the ADA or the availability of compensatory or punitive damages under it.",
+"key_excerpt": 1,
+"in": 3263,
+"out": 119
+},
+"ef02c60a9a3607fa90f5c1b4c420ef5f": {
+"verdict": "OFF_TOPIC",
+"explanation": "The excerpts show an ADA Title II integration-mandate case reversing a systemic remedy against Mississippi's mental health system. They say nothing about disability-based sanctions or adverse inferences being irreversible.",
+"key_excerpt": 1,
+"in": 2938,
+"out": 106
+},
+"f70953fc182e2388a960aa44fa4f0e87": {
+"verdict": "NOT_ADDRESSED",
+"explanation": "The excerpts cover the arbitrability dispute, summary-judgment-style review, and fraudulent inducement, but none says discovery is required to decide arbitrability. The shown portions do not address the point, though other parts of the opinion might.",
+"key_excerpt": 4,
+"in": 2965,
+"out": 112
+},
+"f7b38585fb2fdb2a6551fb74ad64f242": {
+"verdict": "SUPPORTED",
+"explanation": "Excerpt 4 contains the quoted sentence verbatim at pages 47-48 of the opinion, with footnote 9 detailing the legislative history. The Court itself states this as its view.",
+"key_excerpt": 4,
+"in": 3019,
+"out": 94
+},
+"fc8c7b299563bba68e8084734aa61dc8": {
+"verdict": "OFF_TOPIC",
+"explanation": "Landale concerns a buyer's specific contractual disclaimer of reliance barring a fraud claim (excerpts 3-4). It says nothing about third-party disclaimers or the disclaiming party's rights being preserved, so it does not stand for the stated rule.",
+"key_excerpt": 4,
+"in": 2634,
+"out": 120
+},
+"fec747dba9f67f2f2672fccf59b4f2f8": {
+"verdict": "NOT_SUPPORTED",
+"explanation": "The excerpts show the court finding RSE's general (blanket) privilege objection ineffective and boilerplate objections presumptively insufficient (Excerpts 4, 7). None of them contains the quoted phrase \"is tantamount to no objection at all,\" and the opinion does not state the broader rule as framed.",
+"key_excerpt": 4,
+"in": 3633,
+"out": 138
+},
+"feddab96841d501a444e7b48c31dc3a6": {
+"verdict": "UNCLEAR",
+"explanation": "The excerpts show Title VII imposes a 'more stringent standard' for prevailing defendants (excerpt 6) and discuss the 'frivolous, unreasonable, or groundless' inquiry (excerpt 3). None contains the quoted 'egregious cases' language, so I can't confirm the proposition or its quotation.",
+"key_excerpt": 6,
+"in": 4080,
+"out": 140
 }
 }

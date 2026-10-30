@@ -10,10 +10,13 @@ benchmark's data is untouched:
     eval/data/heldout_judgments.json      support-check verdicts (cache)
     eval/data/heldout_results.json        the result
 
+Set 1 was looked at while the support check was fixed (October 29), so it is no longer held out. Set 2 was
+chosen after that fix, from source opinions set 1 didn't use, and its files are named heldout2_*.
+
 Usage:
-    python -m eval.heldout select     # pick the set (refuses to overwrite an existing one)
-    python -m eval.heldout record     # fetch from CourtListener (needs COURTLISTENER_TOKEN; resumable)
-    python -m eval.heldout run        # run the checks (needs ANTHROPIC_API_KEY for the support check)
+    python -m eval.heldout select [--set N]   # pick the set (refuses to overwrite an existing one)
+    python -m eval.heldout record [--set N]   # fetch from CourtListener (needs COURTLISTENER_TOKEN; resumable)
+    python -m eval.heldout run [--set N]      # run the checks (needs ANTHROPIC_API_KEY for the support check)
 
 Keys come from the environment or .streamlit/secrets.toml.
 """
@@ -37,19 +40,19 @@ sys.path.insert(0, str(ROOT))
 from eyecite import get_citations  # noqa: E402
 
 from core.extract import extract_claims  # noqa: E402
-from core.judge import DEFAULT_MODEL, ClaudeJudge  # noqa: E402
+from core.judge import DEFAULT_EFFORT, DEFAULT_MODEL, ClaudeJudge  # noqa: E402
 from core.pipeline import verify  # noqa: E402
 from core.sources import (CourtListenerSource, HttpTransport, ReplayTransport,  # noqa: E402
                           _strip_html, load_recording)
 from eval.run_eval import FLAGS, OK, wilson  # noqa: E402
 
 DATA = ROOT / "eval" / "data"
-ITEMS = DATA / "heldout_items.json"
-RECORDING = DATA / "heldout_recording.json.gz"
-JUDGMENTS = DATA / "heldout_judgments.json"
-RESULTS = DATA / "heldout_results.json"
 N_ITEMS = 50
-SEED = 20261029
+SEED = 20261029     # set N uses SEED + N - 1
+
+
+def path(name: str, n: int) -> Path:
+    return DATA / f"heldout{'' if n == 1 else n}_{name}"
 # Same filters as the benchmark's correct citations: one full case citation, a real proposition,
 # and no signal that the court is distinguishing or disagreeing with the case.
 SIGNALS = re.compile(r"\b(but see|cf\.|contra|compare|see generally|overruled|abrogated)\b", re.I)
@@ -99,17 +102,23 @@ def candidates(rec: dict, used: set[str]) -> dict[str, list]:
     return out
 
 
-def select() -> None:
-    if ITEMS.exists():
-        sys.exit(f"{ITEMS.name} already exists; the held-out set is frozen once chosen.")
-    rec = load_recording()
+def select(n: int) -> None:
+    items_path = path("items.json", n)
+    if items_path.exists():
+        sys.exit(f"{items_path.name} already exists; the held-out set is frozen once chosen.")
     items = json.loads((DATA / "items.json").read_text(encoding="utf-8"))
-    used = {re.sub(r"\W+", "", i["text"])[:80] for i in items}
+    earlier = [i for k in range(1, n) for i in json.loads(path("items.json", k).read_text(encoding="utf-8"))]
+    used = {re.sub(r"\W+", "", i["text"])[:80] for i in items + earlier}
+    # Later sets also draw from the opinions recorded for earlier sets, but never from an opinion an
+    # earlier set already took a sentence from.
+    rec = merged_recording(n - 1)
     # sub-opinion URL -> the case it belongs to, for describing where each sentence came from
     source = {u: cl for v in rec["lookups"].values() for cl in (v.get("clusters") or [])
               for u in (cl.get("sub_opinions") or [])}
     cands = candidates(rec, used)
-    rng = random.Random(SEED)
+    for i in earlier:
+        cands.pop(i["source_opinion"], None)
+    rng = random.Random(SEED + n - 1)
     urls = sorted(cands)
     rng.shuffle(urls)
     picked = []
@@ -118,7 +127,7 @@ def select() -> None:
         cl = source.get(url, {})
         name, date = cl.get("case_name", ""), (cl.get("date_filed") or "")
         picked.append({
-            "id": f"hold-{len(picked):03d}", "group": "control", "split": "heldout",
+            "id": f"hold{'' if n == 1 else n}-{len(picked):03d}", "group": "control", "split": "heldout",
             "cite": c.citation, "name": c.case_name, "text": claim, "expected": "ok",
             "decision": name, "date": date, "court": "",
             "court_finding": f"A correct citation, written by the court in {name} ({date[:4]})." if name
@@ -126,9 +135,9 @@ def select() -> None:
             "document": "https://www.courtlistener.com" + cl["absolute_url"] if cl.get("absolute_url") else "",
             "source_opinion": url,
         })
-    ITEMS.write_text(json.dumps(picked, indent=1, ensure_ascii=False), encoding="utf-8")
+    items_path.write_text(json.dumps(picked, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Selected {len(picked)} held-out correct citations from {len(cands)} source opinions "
-          f"({sum(map(len, cands.values()))} candidates), seed {SEED} -> {ITEMS.relative_to(ROOT)}")
+          f"({sum(map(len, cands.values()))} candidates), seed {SEED + n - 1} -> {items_path.relative_to(ROOT)}")
 
 
 class Recorder:
@@ -152,9 +161,9 @@ class Recorder:
         return status, body
 
 
-def load_heldout_recording() -> dict:
-    if RECORDING.exists():
-        with gzip.open(RECORDING, "rt", encoding="utf-8") as f:
+def load_heldout_recording(n: int = 1) -> dict:
+    if path("recording.json.gz", n).exists():
+        with gzip.open(path("recording.json.gz", n), "rt", encoding="utf-8") as f:
             return json.load(f)
     return {"lookups": {}, "opinions": {}}
 
@@ -195,45 +204,54 @@ class Resume:
         return status, body
 
 
-def record() -> None:
+def merged_recording(n: int) -> dict:
+    """The main recording plus the held-out recordings of sets 1 to n."""
+    rec = load_recording()
+    for k in range(1, n + 1):
+        extra = load_heldout_recording(k)
+        rec = {"lookups": {**rec["lookups"], **extra["lookups"]}, "opinions": {**rec["opinions"], **extra["opinions"]}}
+    return rec
+
+
+def record(n: int) -> None:
     token = secret("COURTLISTENER_TOKEN")
     if not token:
         sys.exit("Set COURTLISTENER_TOKEN (environment or .streamlit/secrets.toml).")
-    items = json.loads(ITEMS.read_text(encoding="utf-8"))
-    main, rec = load_recording(), load_heldout_recording()
-    known = {"lookups": {**main["lookups"], **rec["lookups"]}, "opinions": {**main["opinions"], **rec["opinions"]}}
+    items = json.loads(path("items.json", n).read_text(encoding="utf-8"))
+    rec = load_heldout_recording(n)
+    known = merged_recording(n)
     t = Resume(HttpTransport(token), known, rec)
     # The same requests the app makes: one lookup, then up to three opinions for the case each citation names.
     CourtListenerSource(transport=t).get_many([i["cite"] for i in items], {i["cite"]: i["name"] for i in items})
-    with gzip.open(RECORDING, "wt", encoding="utf-8") as f:
+    with gzip.open(path("recording.json.gz", n), "wt", encoding="utf-8") as f:
         json.dump(rec, f)
     if t.failures:
         status, body = t.failures[-1]
         print(f"{len(t.failures)} requests failed; last: HTTP {status} {str(body)[:200]}")
     print(f"Recorded so far: {len(rec['lookups'])} lookups, {len(rec['opinions'])} opinions."
-          + (" Re-run `python -m eval.heldout record` to fetch the rest." if t.failures else " Complete."))
+          + (f" Re-run `python -m eval.heldout record --set {n}` to fetch the rest." if t.failures else " Complete."))
 
 
-def run() -> None:
-    items = json.loads(ITEMS.read_text(encoding="utf-8"))
-    main, extra = load_recording(), load_heldout_recording()
-    merged = {"lookups": {**main["lookups"], **extra["lookups"]},
-              "opinions": {**main["opinions"], **extra["opinions"]}}
+def run(n: int) -> None:
+    items = json.loads(path("items.json", n).read_text(encoding="utf-8"))
+    merged = merged_recording(n)
     missing = [i["id"] for i in items if i["cite"] not in merged["lookups"]]
     if missing:
-        sys.exit(f"{len(missing)} citations aren't recorded yet; run `python -m eval.heldout record` first.")
+        sys.exit(f"{len(missing)} citations aren't recorded yet; run `python -m eval.heldout record --set {n}` first.")
     key = secret("ANTHROPIC_API_KEY")
     if not key:
         sys.exit("Set ANTHROPIC_API_KEY (environment or .streamlit/secrets.toml).")
-    store = json.loads(JUDGMENTS.read_text()) if JUDGMENTS.exists() else {}
-    judge = ClaudeJudge(key, os.environ.get("CLAUDE_MODEL", DEFAULT_MODEL), store)
+    judgments, results = path("judgments.json", n), path("results.json", n)
+    store = json.loads(judgments.read_text()) if judgments.exists() else {}
+    judge = ClaudeJudge(key, os.environ.get("CLAUDE_MODEL", DEFAULT_MODEL), store,
+                        os.environ.get("CLAUDE_EFFORT", DEFAULT_EFFORT))
     source = CourtListenerSource(transport=ReplayTransport(merged))
     rows = []
     for it in items:
         r = (verify(it["text"], source, judge) or [None])[0]
         rows.append({"id": it["id"], "status": r.status if r else "NO_CITATION", "reason": r.reason if r else "",
                      "verdict": r.judgment.verdict if r and r.judgment else None})
-    JUDGMENTS.write_text(json.dumps(judge.store, indent=0))
+    judgments.write_text(json.dumps({k: judge.store[k] for k in sorted(judge.used)}, indent=0))
     n = len(rows)
     passed = sum(r["status"] in OK for r in rows)
     flagged = [r for r in rows if r["status"] in FLAGS]
@@ -241,7 +259,7 @@ def run() -> None:
     out = {"n": n, "passed": passed, "false_alarms": len(flagged), "needs_review": review,
            "pass_ci": wilson(passed, n), "false_alarm_ci": wilson(len(flagged), n),
            "statuses": Counter(r["status"] for r in rows), "model": judge.model, "rows": rows}
-    RESULTS.write_text(json.dumps(out, indent=1, default=list), encoding="utf-8")
+    results.write_text(json.dumps(out, indent=1, default=list), encoding="utf-8")
     print(f"Held-out correct citations: {n} | passed {passed} ({100 * passed / n:.0f}%, 95% CI "
           f"{100 * out['pass_ci'][0]:.0f}-{100 * out['pass_ci'][1]:.0f}%) | wrongly flagged {len(flagged)} "
           f"| sent to review {review}")
@@ -254,4 +272,6 @@ def run() -> None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("step", choices=["select", "record", "run"])
-    {"select": select, "record": record, "run": run}[ap.parse_args().step]()
+    ap.add_argument("--set", type=int, default=1)
+    args = ap.parse_args()
+    {"select": select, "record": record, "run": run}[args.step](args.set)

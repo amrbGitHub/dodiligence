@@ -185,8 +185,11 @@ class CourtListenerSource:
                         break
             label = j.get("type", "")
             if txt.strip():
-                parts.append(f"[{label}]\n{txt.strip()}" if label else txt.strip())
-        return "\n\n".join(parts)
+                parts.append((label, f"[{label}]\n{txt.strip()}" if label else txt.strip()))
+        # The majority first: CourtListener sometimes lists a dissent first, and the opening passages
+        # are what the support check reads as the holding. Labels sort that way ("010combined" < "040dissent").
+        parts.sort(key=lambda p: p[0] or "999")
+        return "\n\n".join(t for _, t in parts)
 
     def get_many(self, citations: list[str], names: dict[str, str] | None = None) -> dict[str, Opinion]:
         cites = list(dict.fromkeys(citations))

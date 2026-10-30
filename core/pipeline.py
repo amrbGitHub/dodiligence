@@ -155,8 +155,11 @@ def verify(text: str, source, judge=None, on_progress=None, max_cites: int | Non
                 continue
             if res.status != "MISQUOTED":
                 res.status = {"SUPPORTED": "VERIFIED", "CONTRADICTED": "CONTRADICTED",
-                              "NOT_SUPPORTED": "UNSUPPORTED"}.get(j.verdict, "REVIEW")
+                              "NOT_SUPPORTED": "UNSUPPORTED", "OFF_TOPIC": "UNSUPPORTED"}.get(j.verdict, "REVIEW")
                 res.reason = j.explanation
+                if j.verdict == "NOT_ADDRESSED":
+                    res.reason = ("The passages checked don't discuss this point, so the opinion may cover it elsewhere. "
+                                  + j.explanation)
         elif res.status != "MISQUOTED":
             res.status = "QUOTE_OK" if quotes else "REVIEW"
             res.reason = STATUS[res.status][1]

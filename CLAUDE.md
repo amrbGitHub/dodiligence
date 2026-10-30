@@ -1,6 +1,6 @@
 # DoDiligence: notes for Claude Code
 
-A Streamlit demo that checks case citations in legal memos. It confirms the case exists and is the named case (CourtListener), that quotes match the opinion (rapidfuzz), and that the opinion supports the claim (Claude Haiku). README.md has the measured accuracy on real court cases.
+A Streamlit demo that checks case citations in legal memos. It confirms the case exists and is the named case (CourtListener), that quotes match the opinion (rapidfuzz), and that the opinion supports the claim (Claude Sonnet, with reasoning). README.md has the measured accuracy on real court cases.
 
 ## Goal of the handoff
 1. Put this folder in a new **public** GitHub repo, `dodiligence`, on the `main` branch.

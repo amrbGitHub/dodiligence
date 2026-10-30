@@ -12,15 +12,21 @@ _QUOTE_RE = re.compile(r"[\"“]([^\"“”]{15,}?)[\"”]")
 # A quotation introduced as coming from a statute, rule or document is not the cited case's own words.
 _NOT_CASE = re.compile(
     r"\b(?:(?i:provides?|provided|reads?|stating|statute|statutory|regulations?|lease|contract|agreement|"
-    r"section|clause|policy)|Act|Rule|Code|Amendment|Constitution|U\.S\.C|C\.F\.R)\b|§")
+    r"section|clause|policy|complaint|petition|motion|brief|asked|argues?|argued|contends?|alleges?|alleged|"
+    r"requests?|requested)|Act|Rule|Code|Amendment|Constitution|U\.S\.C|C\.F\.R|Fed\.\s?R|R\.\s?(?:Civ|Crim|Evid|App))\b|§")
+# A sentence break, but not after an abbreviation like "Fed.R.Civ.P." or "Stat."
+_SENTENCE = re.compile(r"(?<!\b[A-Z])(?<!\b[A-Z][a-z])(?<!\b[A-Z][a-z]{2})(?<!\b[A-Z][a-z]{3})[.;]\s")
+# Another authority cited between a quotation and the case: the quotation is that authority's.
+_OTHER_SIGNAL = re.compile(r"(?:^|[.;])\s*(?:See(?: also)?|Cf\.|Accord)\s+\S")
 
 
 def _case_quotes(body: str) -> list[str]:
     out = []
+    tail = re.sub(r"(?:\b(?:See(?: also)?|see(?: also)?|Cf\.|cf\.|Accord|accord|e\.g\.,?)\s*)+$", "", body)
     for m in _QUOTE_RE.finditer(body):
         lead = body[max(0, m.start() - 60):m.start()]
-        lead = re.split(r"[.;]\s", lead)[-1]           # same sentence only
-        if _NOT_CASE.search(lead):
+        lead = _SENTENCE.split(lead)[-1]               # same sentence only
+        if _NOT_CASE.search(lead) or _OTHER_SIGNAL.search(tail[m.end():]):
             continue
         out.append(m.group(1).strip())
     return out

@@ -42,22 +42,22 @@
   "misrepresented": {
    "label": "Real case, misstated holding",
    "n": 45,
-   "caught": 43,
-   "catch_rate": 0.9555555555555556,
+   "caught": 37,
+   "catch_rate": 0.8222222222222222,
    "catch_ci": [
-    0.8517222081611939,
-    0.9877261309595557
+    0.6866989315634586,
+    0.9070572107414617
    ],
-   "needs_review": 1,
-   "caught_or_review": 0.9777777777777777,
-   "right_type": 41,
-   "missed": 1,
+   "needs_review": 6,
+   "caught_or_review": 0.9555555555555556,
+   "right_type": 35,
+   "missed": 2,
    "statuses": {
-    "UNSUPPORTED": 35,
-    "VERIFIED": 1,
+    "UNSUPPORTED": 29,
+    "REVIEW": 6,
+    "VERIFIED": 2,
     "MISQUOTED": 3,
     "CONTRADICTED": 3,
-    "REVIEW": 1,
     "NAME_MISMATCH": 1,
     "NOT_FOUND": 1
    }
@@ -65,50 +65,48 @@
   "control": {
    "label": "Correct citations written by judges",
    "n": 14,
-   "passed": 12,
-   "pass_rate": 0.8571428571428571,
+   "passed": 13,
+   "pass_rate": 0.9285714285714286,
    "heldout_n": 0,
    "heldout_passed": 0,
    "heldout_false_alarms": 0,
    "pass_ci": [
-    0.600580922361363,
-    0.9599069262620787
+    0.6853073044604219,
+    0.9872781138877085
    ],
-   "false_alarms": 2,
+   "false_alarms": 1,
    "needs_review": 0,
    "statuses": {
-    "VERIFIED": 12,
-    "MISQUOTED": 1,
-    "UNSUPPORTED": 1
+    "VERIFIED": 13,
+    "MISQUOTED": 1
    }
   }
  },
  "overall": {
-  "precision": 0.9906103286384976,
-  "recall": 0.9678899082568807,
-  "f1": 0.9791183294663572,
-  "accuracy": 0.9612068965517241,
-  "tp": 211,
-  "fp": 2,
-  "fn": 7,
-  "tn": 12,
+  "precision": 0.9951456310679612,
+  "recall": 0.9403669724770642,
+  "f1": 0.9669811320754718,
+  "accuracy": 0.9396551724137931,
+  "tp": 205,
+  "fp": 1,
+  "fn": 13,
+  "tn": 13,
   "precision_ci": [
-   0.9664159179683713,
-   0.9974212793221854
+   0.9730192670653586,
+   0.9991425921656042
   ],
   "recall_ci": [
-   0.9352143696991564,
-   0.984360678443302
+   0.9006596035401168,
+   0.9648227947116089
   ]
  },
  "cost": {
-  "model": "claude-haiku-5-5",
+  "model": "claude-sonnet-5-5",
   "api_calls": 71,
-  "input_tokens": 136696,
-  "output_tokens": 10240,
-  "dollars": 0.0188
+  "input_tokens": 222254,
+  "output_tokens": 9189
  },
- "median_seconds": 0.01,
+ "median_seconds": 0.02,
  "rows": [
   {
    "id": "fab-000",
@@ -128,7 +126,7 @@
    "reason": "The memo names \u201cJones v. Lynn\u201d, but 155 Idaho 439 is State v. J. Bradshaw.",
    "verdict": null,
    "found_case": "State v. J. Bradshaw",
-   "seconds": 0.03
+   "seconds": 0.0
   },
   {
    "id": "fab-002",
@@ -138,7 +136,7 @@
    "reason": "Citation not found: '621 F.2d 934'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.02
+   "seconds": 0.01
   },
   {
    "id": "fab-003",
@@ -158,17 +156,17 @@
    "reason": "The memo names \u201cWigington v. Hill-Soberg Co.\u201d, but 396 F.2d 228 is Louisiana High School Athletic Ass'n. v. St. Augustine High School.",
    "verdict": null,
    "found_case": "Louisiana High School Athletic Ass'n. v. St. Augustine High School",
-   "seconds": 0.02
+   "seconds": 0.0
   },
   {
    "id": "fab-005",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cJenkins v. Equifax Info. Servs., LLC\u201d, but 736 F. Supp. 2d 962 is In Re KBR, Inc..",
+   "reason": "The memo names \u201cJenkins v. Equifax Info. Servs., LLC\u201d, but 736 F. Supp. 2d 962 is In Re KBR, Inc.",
    "verdict": null,
    "found_case": "In Re KBR, Inc.",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-006",
@@ -178,17 +176,17 @@
    "reason": "Citation not found: '750 F.3d 910'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.02
+   "seconds": 0.01
   },
   {
    "id": "fab-007",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cCo. v. Employers Reins. Corp.\u201d, but 472 F. App'x 806 is Dezhong Tian v. Eric H. Holder Jr..",
+   "reason": "The memo names \u201cCo. v. Employers Reins. Corp.\u201d, but 472 F. App'x 806 is Dezhong Tian v. Eric H. Holder Jr.",
    "verdict": null,
    "found_case": "Dezhong Tian v. Eric H. Holder Jr.",
-   "seconds": 0.0
+   "seconds": 0.02
   },
   {
    "id": "fab-008",
@@ -198,7 +196,7 @@
    "reason": "The memo names \u201cHill v. Synder\u201d, but 814 F.3d 408 is United States v. Kelvin Mize.",
    "verdict": null,
    "found_case": "United States v. Kelvin Mize",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-009",
@@ -208,7 +206,7 @@
    "reason": "The case exists, but there's no proposition next to the citation to check.",
    "verdict": null,
    "found_case": "Marriage of Breitbart-Napp v. Napp",
-   "seconds": 0.02
+   "seconds": 0.01
   },
   {
    "id": "fab-010",
@@ -218,14 +216,14 @@
    "reason": "The memo names \u201cBoard  Regents v. Wilson\u201d, but 365 So. 2d 213 is Chambers v. Gaul.",
    "verdict": null,
    "found_case": "Chambers v. Gaul",
-   "seconds": 0.0
+   "seconds": 0.02
   },
   {
    "id": "fab-011",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cAlief Independent School District v. Lozano\u201d, but 543 S.W.3d 118 is Payne v. Fiesta Corp..",
+   "reason": "The memo names \u201cAlief Independent School District v. Lozano\u201d, but 543 S.W.3d 118 is Payne v. Fiesta Corp.",
    "verdict": null,
    "found_case": "Payne v. Fiesta Corp.",
    "seconds": 0.02
@@ -238,7 +236,7 @@
    "reason": "The memo names \u201cCottman Transmission Sys., Inc. v. Metro. Pontiac GMC, Inc.\u201d, but 351 F. Supp. 2d 343 is In Re Royal Ahold N v. Securities & Erisa Litigation.",
    "verdict": null,
    "found_case": "In Re Royal Ahold N v. Securities & Erisa Litigation",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-013",
@@ -248,7 +246,7 @@
    "reason": "The memo names \u201cBoling v. Pub. Utils. Comm'n\u201d, but 105 Cal. App. 3d 805 is Nielson v. San Diego Braille Club.",
    "verdict": null,
    "found_case": "Nielson v. San Diego Braille Club",
-   "seconds": 0.02
+   "seconds": 0.01
   },
   {
    "id": "fab-014",
@@ -268,17 +266,17 @@
    "reason": "The memo names \u201cWeatherly v. A.O. Smith Corp.\u201d, but 841 F. Supp. 2d 913 is Morales v. Richardson.",
    "verdict": null,
    "found_case": "Morales v. Richardson",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-016",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cHand, LLC v. U.S. Dep\u2019t of Health & Hum. Servs.\u201d, but 21 F. Supp. 3d 8 is In re the Search of Information Associated with the Facebook Account Identified by the Username Aaron.Alexis that is Stored at Premises Controlled by Facebook, Inc..",
+   "reason": "The memo names \u201cHand, LLC v. U.S. Dep\u2019t of Health & Hum. Servs.\u201d, but 21 F. Supp. 3d 8 is In re the Search of Information Associated with the Facebook Account Identified by the Username Aaron.Alexis that is Stored at Premises Controlled by Facebook, Inc.",
    "verdict": null,
    "found_case": "In re the Search of Information Associated with the Facebook Account Identified by the Username Aaron.Alexis that is Stored at Premises Controlled by Facebook, Inc.",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-017",
@@ -298,14 +296,14 @@
    "reason": "The memo names \u201cGharbi v. Williams\u201d, but 919 So. 2d 595 is Metro Bldg. Materials v. REPUBLIC NAT. BANK.",
    "verdict": null,
    "found_case": "Metro Bldg. Materials v. REPUBLIC NAT. BANK",
-   "seconds": 0.01
+   "seconds": 0.03
   },
   {
    "id": "fab-019",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cUnited States v. Tittsworth\u201d, but 630 F.3d 1029 is In Re Glatt Air Techniques, Inc..",
+   "reason": "The memo names \u201cUnited States v. Tittsworth\u201d, but 630 F.3d 1029 is In Re Glatt Air Techniques, Inc.",
    "verdict": null,
    "found_case": "In Re Glatt Air Techniques, Inc.",
    "seconds": 0.01
@@ -318,7 +316,7 @@
    "reason": "Citation not found: '227 Ill. App. 3d 295'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.03
   },
   {
    "id": "fab-021",
@@ -328,17 +326,17 @@
    "reason": "Citation not found: '624 S.W.3d 630'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-022",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cPerez v. Mortgage Bankers Ass'n\u201d, but 677 F. Supp. 2d 63 is American Society for the Prevention of Cruelty to Animals v. Feld Entertainment, Inc..",
+   "reason": "The memo names \u201cPerez v. Mortgage Bankers Ass'n\u201d, but 677 F. Supp. 2d 63 is American Society for the Prevention of Cruelty to Animals v. Feld Entertainment, Inc.",
    "verdict": null,
    "found_case": "American Society for the Prevention of Cruelty to Animals v. Feld Entertainment, Inc.",
-   "seconds": 0.02
+   "seconds": 0.03
   },
   {
    "id": "fab-023",
@@ -348,7 +346,7 @@
    "reason": "The memo names \u201cVan Scoy v. Process Control Corp.\u201d, but 113 F.3d 891 is George Goff and Dudie J. Rose v. C.C. Nix and John Henry.",
    "verdict": null,
    "found_case": "George Goff and Dudie J. Rose v. C.C. Nix and John Henry",
-   "seconds": 0.02
+   "seconds": 0.01
   },
   {
    "id": "fab-024",
@@ -358,7 +356,7 @@
    "reason": "The memo names \u201cCargill Inc. v. Zurich Am. Ins. Co.\u201d, but 825 F.3d 256 is Sealed v. Sealed.",
    "verdict": null,
    "found_case": "Sealed v. Sealed",
-   "seconds": 0.02
+   "seconds": 0.03
   },
   {
    "id": "fab-025",
@@ -368,7 +366,7 @@
    "reason": "The case exists, but there's no proposition next to the citation to check.",
    "verdict": null,
    "found_case": "Baker v. Emmerson",
-   "seconds": 0.01
+   "seconds": 0.06
   },
   {
    "id": "fab-026",
@@ -378,7 +376,7 @@
    "reason": "Citation not found: '425 S.W.2d 662'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.02
+   "seconds": 0.01
   },
   {
    "id": "fab-027",
@@ -388,7 +386,7 @@
    "reason": "Citation not found: '453 F. Supp. 3d 571'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-028",
@@ -408,7 +406,7 @@
    "reason": "Citation not found: '84 So. 3d 35'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-030",
@@ -418,7 +416,7 @@
    "reason": "The memo names \u201cCrittendon v. State Farm Mut. Auto. Ins. Co.\u201d, but 99 So. 3d 751 is Watts v. Watts.",
    "verdict": null,
    "found_case": "Watts v. Watts",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-031",
@@ -428,7 +426,7 @@
    "reason": "The memo names \u201cFederal National Mortgage Association v. Lemire\u201d, but 276 Or. App. 261 is State v. McAuliffe.",
    "verdict": null,
    "found_case": "State v. McAuliffe",
-   "seconds": 0.02
+   "seconds": 0.0
   },
   {
    "id": "fab-032",
@@ -438,7 +436,7 @@
    "reason": "The memo names \u201cDeutsche Bank National Trust Co. v. Brock\u201d, but 277 Or. App. 660 is Rogue Advocates v. Board of Commissioners.",
    "verdict": null,
    "found_case": "Rogue Advocates v. Board of Commissioners",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-033",
@@ -448,7 +446,7 @@
    "reason": "The memo names \u201cCitigroup Global Mkts., Inc. v. Masek\u201d, but 982 So. 2d 1231 is Liberty Transp. v. Banyan Air Services.",
    "verdict": null,
    "found_case": "Liberty Transp. v. Banyan Air Services",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-034",
@@ -465,7 +463,7 @@
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cTaylor v. City of Minneapolis\u201d, but 202 F. Supp. 3d 933 is Eli Lilly & Co. v. Perrigo Co..",
+   "reason": "The memo names \u201cTaylor v. City of Minneapolis\u201d, but 202 F. Supp. 3d 933 is Eli Lilly & Co. v. Perrigo Co.",
    "verdict": null,
    "found_case": "Eli Lilly & Co. v. Perrigo Co.",
    "seconds": 0.01
@@ -478,7 +476,7 @@
    "reason": "Citation not found: '64 M.S.P.R. 42'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.04
   },
   {
    "id": "fab-037",
@@ -488,7 +486,7 @@
    "reason": "Citation not found: '301 F.3d 1356'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.02
+   "seconds": 0.04
   },
   {
    "id": "fab-038",
@@ -498,7 +496,7 @@
    "reason": "Citation not found: '669 F. Supp. 3d 904'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.03
   },
   {
    "id": "fab-039",
@@ -508,7 +506,7 @@
    "reason": "The memo names \u201cGAI Consultants, Inc. v. Homestead Vill. Ltd. P'ship\u201d, but 961 F. Supp. 1437 is Thornton v. Kaplan.",
    "verdict": null,
    "found_case": "Thornton v. Kaplan",
-   "seconds": 0.01
+   "seconds": 0.04
   },
   {
    "id": "fab-040",
@@ -548,7 +546,7 @@
    "reason": "Citation not found: '74 F.4th 1308'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.04
   },
   {
    "id": "fab-044",
@@ -558,7 +556,7 @@
    "reason": "The memo names \u201cBoyd v. City of San Diego\u201d, but 14 Cal. App. 4th 954 is People v. Foster.",
    "verdict": null,
    "found_case": "People v. Foster",
-   "seconds": 0.02
+   "seconds": 0.0
   },
   {
    "id": "fab-045",
@@ -568,7 +566,7 @@
    "reason": "Citation not found: '202 A.D.3d 421'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-046",
@@ -578,7 +576,7 @@
    "reason": "The memo names \u201cYoung v. District of Columbia\u201d, but 752 F. Supp. 2d 1 is Friendship Edison Public Charter School Collegiate Campus v. Nesbitt.",
    "verdict": null,
    "found_case": "Friendship Edison Public Charter School Collegiate Campus v. Nesbitt",
-   "seconds": 0.0
+   "seconds": 0.03
   },
   {
    "id": "fab-047",
@@ -588,7 +586,7 @@
    "reason": "The memo names \u201cBeaucage v. Beaucage\u201d, but 583 So. 2d 846 is All American Roofing & Siding Co. v. Van Norman.",
    "verdict": null,
    "found_case": "All American Roofing & Siding Co. v. Van Norman",
-   "seconds": 0.0
+   "seconds": 0.02
   },
   {
    "id": "fab-048",
@@ -628,7 +626,7 @@
    "reason": "The memo names \u201cKing County v. Vincent\u201d, but 167 Wash. 2d 671 is State v. League.",
    "verdict": null,
    "found_case": "State v. League",
-   "seconds": 0.01
+   "seconds": 0.03
   },
   {
    "id": "fab-052",
@@ -638,7 +636,7 @@
    "reason": "The memo names \u201cGovernmental Interinsurance Exchange v. Judge\u201d, but 221 Ill. App. 3d 586 is People v. Blake.",
    "verdict": null,
    "found_case": "People v. Blake",
-   "seconds": 0.0
+   "seconds": 0.02
   },
   {
    "id": "fab-053",
@@ -648,7 +646,7 @@
    "reason": "The memo names \u201cWaller v. Waller\u201d, but 288 Ga. 164 is DeRYKE v. Teets.",
    "verdict": null,
    "found_case": "DeRYKE v. Teets",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-054",
@@ -658,7 +656,7 @@
    "reason": "The memo names \u201cJohnson v. Johnson\u201d, but 286 Ga. 720 is Witcher v. JSD PROPERTIES, LLC.",
    "verdict": null,
    "found_case": "Witcher v. JSD PROPERTIES, LLC",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-055",
@@ -678,7 +676,7 @@
    "reason": "Citation not found: '103 Wash. App. 1064'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.02
+   "seconds": 0.0
   },
   {
    "id": "fab-057",
@@ -688,7 +686,7 @@
    "reason": "The memo names \u201cUnited States v. Lopez\u201d, but 817 F.3d 541 is Ciarpaglini v. Norwood.",
    "verdict": null,
    "found_case": "Ciarpaglini v. Norwood",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-058",
@@ -708,7 +706,7 @@
    "reason": "The memo names \u201cCity  LaGrange v. Bolden\u201d, but 261 Ga. 77 is Pence v. Pence.",
    "verdict": null,
    "found_case": "Pence v. Pence",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-060",
@@ -718,7 +716,7 @@
    "reason": "Citation not found: '88 Cal. App. 5th 459'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-061",
@@ -728,7 +726,7 @@
    "reason": "The memo names \u201cCounty  Sacramento v. Superior Court\u201d, but 232 Cal. App. 4th 305 is Pacific Corporate Group Holdings v. Keck.",
    "verdict": null,
    "found_case": "Pacific Corporate Group Holdings v. Keck",
-   "seconds": 0.02
+   "seconds": 0.01
   },
   {
    "id": "fab-062",
@@ -738,7 +736,7 @@
    "reason": "The memo names \u201cCo. v. Hurd\u201d, but 66 Ohio St. 2d 280 is State ex rel. Voss v. Northwest Local Board of Education.",
    "verdict": null,
    "found_case": "State ex rel. Voss v. Northwest Local Board of Education",
-   "seconds": 0.02
+   "seconds": 0.06
   },
   {
    "id": "fab-063",
@@ -748,7 +746,7 @@
    "reason": "The memo names \u201cABC Corp. v. XYZ Inc.\u201d, but 123 F.3d 456 is Mary Santaella and Cary Eldridge v. Metropolitan Life Insurance Company.",
    "verdict": null,
    "found_case": "Mary Santaella and Cary Eldridge v. Metropolitan Life Insurance Company",
-   "seconds": 0.02
+   "seconds": 0.04
   },
   {
    "id": "fab-064",
@@ -768,7 +766,7 @@
    "reason": "The case exists, but there's no proposition next to the citation to check.",
    "verdict": null,
    "found_case": "State Ex Rel. Stenehjem v. FreeEats.com, Inc.",
-   "seconds": 0.01
+   "seconds": 0.05
   },
   {
    "id": "fab-066",
@@ -778,7 +776,7 @@
    "reason": "The memo names \u201cUnited States v. Mateo\u201d, but 476 F.3d 179 is In Re Arlene P. O'lexa, Debtor. Charles O. Zebley, Jr., Trustee.",
    "verdict": null,
    "found_case": "In Re Arlene P. O'lexa, Debtor. Charles O. Zebley, Jr., Trustee",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-067",
@@ -788,14 +786,14 @@
    "reason": "The memo names \u201cUnited States v. Matthews\u201d, but 7 F.3d 1552 is Post v. City of Fort Lauderdale.",
    "verdict": null,
    "found_case": "Post v. City of Fort Lauderdale",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-068",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cPerrin v. Perrin\u201d, but 514 S.W.2d 426 is Medley v. Cimmaron Insurance Co..",
+   "reason": "The memo names \u201cPerrin v. Perrin\u201d, but 514 S.W.2d 426 is Medley v. Cimmaron Insurance Co.",
    "verdict": null,
    "found_case": "Medley v. Cimmaron Insurance Co.",
    "seconds": 0.0
@@ -808,7 +806,7 @@
    "reason": "The memo names \u201cHarris v. Seward Park Housing Corp.\u201d, but 147 A.D.3d 589 is NRT New York, LLC v. Morin.",
    "verdict": null,
    "found_case": "NRT New York, LLC v. Morin",
-   "seconds": 0.0
+   "seconds": 0.04
   },
   {
    "id": "fab-070",
@@ -838,7 +836,7 @@
    "reason": "The memo names \u201cS.S. v. Wermers\u201d, but 74 F.3d 857 is Rine & Rine Auctioneers, Inc. v. Douglas County Bank & Trust Co. (In re Rine & Rine Auctioneers, Inc.).",
    "verdict": null,
    "found_case": "Rine & Rine Auctioneers, Inc. v. Douglas County Bank & Trust Co. (In re Rine & Rine Auctioneers, Inc.)",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-073",
@@ -848,17 +846,17 @@
    "reason": "The memo names \u201cSmith v. West Lake Enterprises\u201d, but 374 F. Supp. 2d 1094 is Hicks v. Jackson County Commission.",
    "verdict": null,
    "found_case": "Hicks v. Jackson County Commission",
-   "seconds": 0.01
+   "seconds": 0.03
   },
   {
    "id": "fab-074",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cMatter  Knapp v. Knapp\u201d, but 225 A.D.2d 1010 is Orange Steel Erectors, Inc. v. Newburgh Steel Products, Inc..",
+   "reason": "The memo names \u201cMatter  Knapp v. Knapp\u201d, but 225 A.D.2d 1010 is Orange Steel Erectors, Inc. v. Newburgh Steel Products, Inc.",
    "verdict": null,
    "found_case": "Orange Steel Erectors, Inc. v. Newburgh Steel Products, Inc.",
-   "seconds": 0.0
+   "seconds": 0.05
   },
   {
    "id": "fab-075",
@@ -868,7 +866,7 @@
    "reason": "The memo names \u201cMatter  Negron v. St. Charles Hosp. & Rehab. Ctr.\u201d, but 121 A.D.3d 1427 is People v. Rojas.",
    "verdict": null,
    "found_case": "People v. Rojas",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-076",
@@ -878,7 +876,7 @@
    "reason": "The memo names \u201cMatter  Polizzi v. Polizzi\u201d, but 226 A.D.2d 581 is Epes v. Healey.",
    "verdict": null,
    "found_case": "Epes v. Healey",
-   "seconds": 0.01
+   "seconds": 0.03
   },
   {
    "id": "fab-077",
@@ -888,7 +886,7 @@
    "reason": "The memo names \u201cMcEwen v. McCullough\u201d, but 347 F. Supp. 2d 349 is Malley v. Allstate Texas Lloyds.",
    "verdict": null,
    "found_case": "Malley v. Allstate Texas Lloyds",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-078",
@@ -918,7 +916,7 @@
    "reason": "The memo names \u201cWilliams v. Lowndes Cnty.\u201d, but 475 F.3d 820 is Linda Call, on Behalf of Herself and All Others Similarly Situated v. Ameritech Management Pension Plan.",
    "verdict": null,
    "found_case": "Linda Call, on Behalf of Herself and All Others Similarly Situated v. Ameritech Management Pension Plan",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-081",
@@ -928,7 +926,7 @@
    "reason": "The memo names \u201cSmith v. Aegis Mortg. Corp.\u201d, but 560 F.3d 837 is Sungwook Kim v. Holder.",
    "verdict": null,
    "found_case": "Sungwook Kim v. Holder",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-082",
@@ -938,7 +936,7 @@
    "reason": "Citation not found: '159 Cal. Rptr. 3d 113'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-083",
@@ -948,7 +946,7 @@
    "reason": "The memo names \u201cUnited States v. Signatone Corp.\u201d, but 60 F.3d 365 is United States v. Charles Baldwin.",
    "verdict": null,
    "found_case": "United States v. Charles Baldwin",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-084",
@@ -958,7 +956,7 @@
    "reason": "The memo names \u201cHerring v. Dist. of Columbia\u201d, but 780 F. Supp. 2d 105 is Morin v. Eastern Maine Medical Center.",
    "verdict": null,
    "found_case": "Morin v. Eastern Maine Medical Center",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-085",
@@ -968,7 +966,7 @@
    "reason": "The memo names \u201cVermont Nat. Tel. Co. v. Dept. of Taxes\u201d, but 2021 VT 84 is Michael Horgan v. Kelly DePaolo Horgan.",
    "verdict": null,
    "found_case": "Michael Horgan v. Kelly DePaolo Horgan",
-   "seconds": 0.01
+   "seconds": 0.07
   },
   {
    "id": "fab-086",
@@ -985,7 +983,7 @@
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cGreyhound-Thermalink, Inc. v. B.U.R. Realty Corp.\u201d, but 42 A.D.3d 319 is Flores v. Parkchester Preservation Co., L.P..",
+   "reason": "The memo names \u201cGreyhound-Thermalink, Inc. v. B.U.R. Realty Corp.\u201d, but 42 A.D.3d 319 is Flores v. Parkchester Preservation Co., L.P.",
    "verdict": null,
    "found_case": "Flores v. Parkchester Preservation Co., L.P.",
    "seconds": 0.01
@@ -1018,7 +1016,7 @@
    "reason": "The memo names \u201cRev. v. Sec'y of State\u201d, but 16 Or. Tax 350 is Kailes v. Josephine County Assessor.",
    "verdict": null,
    "found_case": "Kailes v. Josephine County Assessor",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-091",
@@ -1028,7 +1026,7 @@
    "reason": "Citation not found: '39 F.4th 113'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-092",
@@ -1048,7 +1046,7 @@
    "reason": "The memo names \u201cEquilon Enters. v. Ford Motor Co.\u201d, but 2010 UT 44 is State v. Gardner.",
    "verdict": null,
    "found_case": "State v. Gardner",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-094",
@@ -1075,10 +1073,10 @@
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cHendricks v. Bank of America, N.A.\u201d, but 408 S.W.3d 688 is York v. Texas Guaranteed Student Loan Corp..",
+   "reason": "The memo names \u201cHendricks v. Bank of America, N.A.\u201d, but 408 S.W.3d 688 is York v. Texas Guaranteed Student Loan Corp.",
    "verdict": null,
    "found_case": "York v. Texas Guaranteed Student Loan Corp.",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-097",
@@ -1098,7 +1096,7 @@
    "reason": "The memo names \u201cUnited States v. Bovio\u201d, but 708 F. Supp. 2d 579 is D.B. v. Bedford County School Board.",
    "verdict": null,
    "found_case": "D.B. v. Bedford County School Board",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-099",
@@ -1108,14 +1106,14 @@
    "reason": "The memo names \u201cCorp. v. Mendel\u201d, but 894 F. Supp. 2d 107 is Sierra Club v. Salazar.",
    "verdict": null,
    "found_case": "Sierra Club v. Salazar",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-100",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cMarrero v. Camden Steel Co.\u201d, but 850 F. Supp. 188 is In Re Eastern Dist. Repetitive Stress Injury Lit..",
+   "reason": "The memo names \u201cMarrero v. Camden Steel Co.\u201d, but 850 F. Supp. 188 is In Re Eastern Dist. Repetitive Stress Injury Lit.",
    "verdict": null,
    "found_case": "In Re Eastern Dist. Repetitive Stress Injury Lit.",
    "seconds": 0.01
@@ -1128,7 +1126,7 @@
    "reason": "The memo names \u201cKennedy v. Cmty. Action Servs.\u201d, but 107 F. Supp. 2d 993 is Hyde v. Stanley Tools.",
    "verdict": null,
    "found_case": "Hyde v. Stanley Tools",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-102",
@@ -1145,10 +1143,10 @@
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cCitizens Nat' Bank  Paris v. Midwest Agri-Dev. Corp.\u201d, but 887 F.2d 1128 is Midwest Precision Services, Inc. v. PTM Industries Corp..",
+   "reason": "The memo names \u201cCitizens Nat' Bank  Paris v. Midwest Agri-Dev. Corp.\u201d, but 887 F.2d 1128 is Midwest Precision Services, Inc. v. PTM Industries Corp.",
    "verdict": null,
    "found_case": "Midwest Precision Services, Inc. v. PTM Industries Corp.",
-   "seconds": 0.0
+   "seconds": 0.04
   },
   {
    "id": "fab-104",
@@ -1158,7 +1156,7 @@
    "reason": "The memo names \u201cMontebello Unified School District v. State Board of Education\u201d, but 226 Cal. App. 3d 1685 is Monte Vista Development Corp. v. Superior Court.",
    "verdict": null,
    "found_case": "Monte Vista Development Corp. v. Superior Court",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-105",
@@ -1195,10 +1193,10 @@
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cSmith v. Life Investors Ins. Co. of Am.\u201d, but 245 F.R.D. 580 is Ryan v. Flowserve Corp..",
+   "reason": "The memo names \u201cSmith v. Life Investors Ins. Co. of Am.\u201d, but 245 F.R.D. 580 is Ryan v. Flowserve Corp.",
    "verdict": null,
    "found_case": "Ryan v. Flowserve Corp.",
-   "seconds": 0.0
+   "seconds": 0.04
   },
   {
    "id": "fab-109",
@@ -1218,7 +1216,7 @@
    "reason": "The memo names \u201cMatter  Oppenheimer v. City of New York\u201d, but 193 A.D.2d 457 is Mariani v. Dyer.",
    "verdict": null,
    "found_case": "Mariani v. Dyer",
-   "seconds": 0.02
+   "seconds": 0.0
   },
   {
    "id": "fab-111",
@@ -1228,7 +1226,7 @@
    "reason": "The case exists, but there's no proposition next to the citation to check.",
    "verdict": null,
    "found_case": "Chambers v. Time Warner, Inc.",
-   "seconds": 0.01
+   "seconds": 0.03
   },
   {
    "id": "fab-112",
@@ -1248,7 +1246,7 @@
    "reason": "Citation not found: '538 F. App'x 874'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.0
+   "seconds": 0.04
   },
   {
    "id": "fab-114",
@@ -1258,7 +1256,7 @@
    "reason": "The memo names \u201cUnited States v. Hazel\u201d, but 696 F.3d 473 is RYO MacHine, LLC v. United States Department of Treasury.",
    "verdict": null,
    "found_case": "RYO MacHine, LLC v. United States Department of Treasury",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-115",
@@ -1268,7 +1266,7 @@
    "reason": "The memo names \u201cUnited States v. Angel\u201d, but 102 F.3d 1066 is United States v. Quentin T. Wiles, United States of America v. Patrick J. Schleibaum.",
    "verdict": null,
    "found_case": "United States v. Quentin T. Wiles, United States of America v. Patrick J. Schleibaum",
-   "seconds": 0.02
+   "seconds": 0.03
   },
   {
    "id": "fab-116",
@@ -1288,7 +1286,7 @@
    "reason": "Citation not found: '843 F. App'x 859'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-118",
@@ -1308,7 +1306,7 @@
    "reason": "Citation not found: '183 F. Supp. 3d 468'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.0
+   "seconds": 0.02
   },
   {
    "id": "fab-120",
@@ -1338,7 +1336,7 @@
    "reason": "The memo names \u201cPFK Co. v. Protective Technologies, Inc.\u201d, but 624 F. Supp. 2d 802 is Cowans v. Bagley.",
    "verdict": null,
    "found_case": "Cowans v. Bagley",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-123",
@@ -1348,7 +1346,7 @@
    "reason": "The memo names \u201cMetropolitan Dade County v. Dyer\u201d, but 315 So. 2d 442 is Osteen v. State.",
    "verdict": null,
    "found_case": "Osteen v. State",
-   "seconds": 0.0
+   "seconds": 0.02
   },
   {
    "id": "fab-124",
@@ -1358,7 +1356,7 @@
    "reason": "The memo names \u201cQBE Ins. Corp. v. Dome Constr. Corp.\u201d, but 10 So. 3d 676 is D.A. v. State.",
    "verdict": null,
    "found_case": "D.A. v. State",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-125",
@@ -1378,7 +1376,7 @@
    "reason": "Citation not found: '939 F.3d 740'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-127",
@@ -1388,7 +1386,7 @@
    "reason": "The memo names \u201cUnited States v. Parisi\u201d, but 363 F. Supp. 3d 281 is In re Fin. Oversight & Mgmt. Bd. for Puerto Rico.",
    "verdict": null,
    "found_case": "In re Fin. Oversight & Mgmt. Bd. for Puerto Rico",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-128",
@@ -1398,7 +1396,7 @@
    "reason": "Citation not found: '180 P.R. Dec. 367'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-129",
@@ -1408,7 +1406,7 @@
    "reason": "The memo names \u201cOtero-Burgos v. Inter Med Supplies, Inc.\u201d, but 137 P.R. Dec. 841 is Silva Iglecia v. Panel sobre el Fiscal Especial Independiente.",
    "verdict": null,
    "found_case": "Silva Iglecia v. Panel sobre el Fiscal Especial Independiente",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-130",
@@ -1418,7 +1416,7 @@
    "reason": "Citation not found: '2020 TSPR 61'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-131",
@@ -1448,7 +1446,7 @@
    "reason": "The memo names \u201cErmine v. Frank\u201d, but 655 F.3d 154 is United States v. Isaac.",
    "verdict": null,
    "found_case": "United States v. Isaac",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-134",
@@ -1465,10 +1463,10 @@
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cMatter  Medical Transport v. NY State Dept of Health\u201d, but 294 A.D.2d 574 is Liberty Mutual Insurance v. Spine Americare Medical, P.C..",
+   "reason": "The memo names \u201cMatter  Medical Transport v. NY State Dept of Health\u201d, but 294 A.D.2d 574 is Liberty Mutual Insurance v. Spine Americare Medical, P.C.",
    "verdict": null,
    "found_case": "Liberty Mutual Insurance v. Spine Americare Medical, P.C.",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-136",
@@ -1498,17 +1496,17 @@
    "reason": "The memo names \u201cUnited States v. Baker\u201d, but 539 F. App'x 937 is Williams v. Morahan.",
    "verdict": null,
    "found_case": "Williams v. Morahan",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-139",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cPerez v. Miami-Dade Cnty.\u201d, but 297 F.R.D. 620 is Black & Veatch Corp. v. Aspen Insurance (UK) Ltd..",
+   "reason": "The memo names \u201cPerez v. Miami-Dade Cnty.\u201d, but 297 F.R.D. 620 is Black & Veatch Corp. v. Aspen Insurance (UK) Ltd.",
    "verdict": null,
    "found_case": "Black & Veatch Corp. v. Aspen Insurance (UK) Ltd.",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-140",
@@ -1518,7 +1516,7 @@
    "reason": "The memo names \u201cTucker v. United States\u201d, but 71 Fed. Cl. 324 is Grapevine Imports, Ltd. v. United States.",
    "verdict": null,
    "found_case": "Grapevine Imports, Ltd. v. United States",
-   "seconds": 0.0
+   "seconds": 0.01
   },
   {
    "id": "fab-141",
@@ -1538,7 +1536,7 @@
    "reason": "The memo names \u201cMoss v. Parsons\u201d, but 993 S.W.2d 650 is Baptist Vie Le v. State.",
    "verdict": null,
    "found_case": "Baptist Vie Le v. State",
-   "seconds": 0.0
+   "seconds": 0.02
   },
   {
    "id": "fab-143",
@@ -1548,7 +1546,7 @@
    "reason": "The memo names \u201cSpokane v. Douglass\u201d, but 800 F.3d 1075 is Edin Avendano-Hernandez v. Loretta E. Lynch.",
    "verdict": null,
    "found_case": "Edin Avendano-Hernandez v. Loretta E. Lynch",
-   "seconds": 0.0
+   "seconds": 0.29
   },
   {
    "id": "fab-144",
@@ -1568,7 +1566,7 @@
    "reason": "The memo names \u201cSnyder v. City of Sanford\u201d, but 645 So. 2d 1126 is Lindsey v. State.",
    "verdict": null,
    "found_case": "Lindsey v. State",
-   "seconds": 0.01
+   "seconds": 0.0
   },
   {
    "id": "fab-146",
@@ -1578,7 +1576,7 @@
    "reason": "The memo names \u201cValley Nat' Bank  Arizona v. A.E. Moses\u201d, but 617 So. 2d 455 is Beaubrum v. State.",
    "verdict": null,
    "found_case": "Beaubrum v. State",
-   "seconds": 0.01
+   "seconds": 0.02
   },
   {
    "id": "fab-147",
@@ -1588,7 +1586,7 @@
    "reason": "Citation not found: '785 N.W.2d 169'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.03
+   "seconds": 0.0
   },
   {
    "id": "fab-148",
@@ -1598,7 +1596,7 @@
    "reason": "The memo names \u201cCalifornia Federal Bank v. Kwong\u201d, but 231 Cal. App. 3d 1467 is Valenta v. Regents of University of California.",
    "verdict": null,
    "found_case": "Valenta v. Regents of University of California",
-   "seconds": 0.01
+   "seconds": 0.19
   },
   {
    "id": "fab-149",
@@ -1618,7 +1616,7 @@
    "reason": "The memo names \u201cHuffman v. Bright\u201d, but 636 F. Supp. 133 is Hartman v. Bowen.",
    "verdict": null,
    "found_case": "Hartman v. Bowen",
-   "seconds": 0.0
+   "seconds": 0.12
   },
   {
    "id": "fab-151",
@@ -1638,7 +1636,7 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Adohr Milk Farms, Inc. v. Love",
-   "seconds": 1.18
+   "seconds": 0.3
   },
   {
    "id": "fal-153",
@@ -1646,9 +1644,9 @@
    "split": "",
    "status": "MISQUOTED",
    "reason": "The quoted words don't match the opinion. The closest passage reads: \u201cthe circumstances of these cases,\u201d",
-   "verdict": "NOT_SUPPORTED",
+   "verdict": "SUPPORTED",
    "found_case": "Scheuer v. Rhodes",
-   "seconds": 1.42
+   "seconds": 0.09
   },
   {
    "id": "fal-154",
@@ -1656,19 +1654,19 @@
    "split": "",
    "status": "MISQUOTED",
    "reason": "This quotation does not appear anywhere in the opinion.",
-   "verdict": "SUPPORTED",
+   "verdict": "NOT_SUPPORTED",
    "found_case": "Stephen Michael Ridder v. City of Springfield, Clark County",
-   "seconds": 1.52
+   "seconds": 0.09
   },
   {
    "id": "mis-155",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts only show the caption and the opening of the appeal, a pro se plaintiff challenging dismissal under RICO and a Rule 28 brief requirement that applies equally to pro se litigants. Nothing in these excerpts addresses opposing counsel preying on the ignorance of pro se litigants.",
+   "reason": "The excerpts show the court holding pro se litigants to the same procedural rules and declining to act as their advocate; nothing says opposing counsel may prey on pro se litigants' ignorance, and the court affirmed dismissal in favor of the defendant attorneys.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Garrett v. Selby Connor Maddux & Janer",
-   "seconds": 2.67
+   "seconds": 0.02
   },
   {
    "id": "fal-156",
@@ -1678,7 +1676,7 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Duff v. Trenton Beverage Co.",
-   "seconds": 1.38
+   "seconds": 0.07
   },
   {
    "id": "fal-157",
@@ -1688,17 +1686,17 @@
    "reason": "case found, but no opinion text available",
    "verdict": null,
    "found_case": "Jordan v. Fox, Rothschild, O'Brien & Frankel",
-   "seconds": 0.04
+   "seconds": 0.08
   },
   {
    "id": "mis-158",
    "group": "misrepresented",
    "split": "",
-   "status": "UNSUPPORTED",
-   "reason": "The excerpts concern the scope of 18 U.S.C. \u00a7 875(d) and hold that threats to reputation seeking money without a plausible claim of right are inherently wrongful and prohibited. Nothing in the excerpts addresses whether informing authorities of misconduct can be an unlawful threat, so the proposition is not supported by these excerpts.",
-   "verdict": "NOT_SUPPORTED",
+   "status": "REVIEW",
+   "reason": "The excerpts show the case is about extortionate threats to reputation and discuss when a threat is wrongful (excerpt 3), but none says that informing authorities of misconduct can never be an unlawful threat. The opinion may address this elsewhere, but it isn't shown here.",
+   "verdict": "UNCLEAR",
    "found_case": "United States v. Autumn Jackson, Boris Sabas, Also Known as Boris Shmulevich, and Jose Medina, Also Known as Yosi Medina",
-   "seconds": 1.25
+   "seconds": 0.05
   },
   {
    "id": "fal-159",
@@ -1708,7 +1706,7 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Raymond F. v. Arizona Department of Economic Security",
-   "seconds": 1.24
+   "seconds": 0.18
   },
   {
    "id": "fal-160",
@@ -1716,9 +1714,9 @@
    "split": "",
    "status": "MISQUOTED",
    "reason": "This quotation does not appear anywhere in the opinion.",
-   "verdict": "NOT_SUPPORTED",
+   "verdict": "UNCLEAR",
    "found_case": "Equal Employment Opportunity Commission v. Great Steaks, Inc.",
-   "seconds": 1.25
+   "seconds": 0.19
   },
   {
    "id": "fal-161",
@@ -1726,9 +1724,9 @@
    "split": "",
    "status": "MISQUOTED",
    "reason": "The quoted words don't match the opinion. The closest passage reads: \u201cCongress intended to create a private cause of action\u201d",
-   "verdict": "SUPPORTED",
+   "verdict": "NOT_SUPPORTED",
    "found_case": "Taylor v. Brighton Corp.",
-   "seconds": 1.01
+   "seconds": 0.14
   },
   {
    "id": "fal-162",
@@ -1738,7 +1736,7 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Jones v. Buchanan",
-   "seconds": 1.17
+   "seconds": 0.24
   },
   {
    "id": "fal-163",
@@ -1746,9 +1744,9 @@
    "split": "",
    "status": "MISQUOTED",
    "reason": "This quotation does not appear anywhere in the opinion.",
-   "verdict": "UNCLEAR",
+   "verdict": "OFF_TOPIC",
    "found_case": "United States v. Stephon Edwards, United States of America v. John E. Brown",
-   "seconds": 1.08
+   "seconds": 0.06
   },
   {
    "id": "fal-164",
@@ -1756,9 +1754,9 @@
    "split": "",
    "status": "MISQUOTED",
    "reason": "This quotation does not appear anywhere in the opinion.",
-   "verdict": "UNCLEAR",
+   "verdict": "NOT_SUPPORTED",
    "found_case": "Crescent Towing & Salvage Co., Inc. v. M/V Anax",
-   "seconds": 0.98
+   "seconds": 0.12
   },
   {
    "id": "fal-165",
@@ -1768,7 +1766,7 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "General Electric Credit & Leasing Corporation v. Drill Ship Mission Exploration, in Rem, Foods and Services, Inc., Claimant-Appellant",
-   "seconds": 0.96
+   "seconds": 0.16
   },
   {
    "id": "fal-166",
@@ -1776,9 +1774,9 @@
    "split": "",
    "status": "MISQUOTED",
    "reason": "This quotation does not appear anywhere in the opinion.",
-   "verdict": "NOT_SUPPORTED",
+   "verdict": "OFF_TOPIC",
    "found_case": "Doe v. Federal Bureau of Investigation",
-   "seconds": 1.06
+   "seconds": 0.08
   },
   {
    "id": "fal-167",
@@ -1788,7 +1786,7 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Union Planters Bank v. L & J Development Co.",
-   "seconds": 1.16
+   "seconds": 0.16
   },
   {
    "id": "fal-168",
@@ -1798,127 +1796,127 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Universal City Development Partners, Ltd. v. Ride & Show Engineering, Inc.",
-   "seconds": 1.33
+   "seconds": 0.43
   },
   {
    "id": "mis-169",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address whether an administrative factfinding has preclusive effect in federal civil rights litigation, not any rule that doubts must be resolved in favor of remand. The Court's only remand reference is to leaving respondent's contentions for resolution on remand, which does not state a resolve-doubts-for-remand standard.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Elliott concerns the preclusive effect of state administrative factfinding in federal civil rights suits (res judicata), not removal jurisdiction. The \"remand\" in the excerpts is an appellate remand, not the federal-court remand to state court that the doubts-resolved-in-favor-of-remand rule governs (excerpt 6).",
+   "verdict": "OFF_TOPIC",
    "found_case": "University of Tennessee v. Elliott",
-   "seconds": 1.09
+   "seconds": 0.41
   },
   {
    "id": "mis-170",
    "group": "misrepresented",
    "split": "",
-   "status": "VERIFIED",
-   "reason": "Excerpt 5 indicates the Act reaches individual members of an agency who participate in meetings in violation of the Act, and excerpt 4 describes the Act's purpose as addressing private meetings on agency business, which together fairly support the proposition that the Act applies to both the agency and its members.",
-   "verdict": "SUPPORTED",
+   "status": "REVIEW",
+   "reason": "The passages checked don't discuss this point, so the opinion may cover it elsewhere. The excerpts show a Sunshine Act challenge to a private conference among supervisors and mention a penalty for members who participate with intent to violate the Act (excerpt 5). None of them squarely states that the Act applies to both the agency and each participating member, though the penalty provision is related.",
+   "verdict": "NOT_ADDRESSED",
    "found_case": "Ackerman v. Upper Mt. Bethel Township",
-   "seconds": 0.96
+   "seconds": 0.08
   },
   {
    "id": "mis-171",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern a First Amendment challenge to Illinois's ban on professional telemarketing and the denial of a preliminary injunction; they say nothing about whether the ADA provides compensatory or punitive damages. The cited case does not address the proposition at all.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Goodman is a First Amendment challenge to an Illinois ban on solicitation by medical professionals, decided on a preliminary injunction standard (excerpts 1-6). It does not discuss the ADA or the availability of compensatory or punitive damages under it.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Goodman v. Illinois Department of Financial & Professional Regulation",
-   "seconds": 0.88
+   "seconds": 0.03
   },
   {
    "id": "mis-172",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern whether the PSD permit expired because construction was not commenced or was discontinued, and whether a preliminary construction memorandum counted as beginning construction. Nothing in the excerpts addresses whether required pollution-control fixes are modest in cost.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "The excerpts concern standing, PSD permit expiration, and a construction memorandum's termination fee; none address the cost of required fixes, and the memo's proposition appears to come from a different kind of dispute. The only cost discussion (excerpt 6) concerns whether a $72 million termination fee shows a binding construction contract, not whether fixes are modest.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Sierra Club v. Franklin County Power of Illinois, LLC",
-   "seconds": 1.04
+   "seconds": 0.08
   },
   {
    "id": "mis-173",
    "group": "misrepresented",
    "split": "",
-   "status": "UNSUPPORTED",
-   "reason": "The excerpts discuss a default judgment, a party's statutory right to appear pro se under 28 U.S.C. \u00a7 1654, and a Rule 6(b) issue, but none states that courts must give special solicitude to pro se prisoner litigants in construing pleadings. Excerpt 6 only refers generally to protecting pro se litigants from inadvertent forfeiture of rights, and does not address prisoners or pleading construction.",
-   "verdict": "NOT_SUPPORTED",
+   "status": "VERIFIED",
+   "reason": "Excerpt 6 states that the right to self-representation carries an obligation on courts to make reasonable allowances for pro se litigants, and excerpt 3 cites authority that pro se papers should be read liberally. This supports the proposition, though 'special solicitude' and 'prisoner' are not the opinion's wording and the case involves a non-prisoner defendant.",
+   "verdict": "SUPPORTED",
    "found_case": "Fred Traguth and Otto Handtke, Individually and Doing Business as Dance Motion Press v. D'LeLa Zuck",
-   "seconds": 1.09
+   "seconds": 0.1
   },
   {
    "id": "mis-174",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address the extraterritorial reach of the Consumer Fraud Act and the viability of out-of-state plaintiffs' claims, not whether consumer fraud damages claims are legal claims triable to a jury. Nothing in the excerpts discusses a jury right for Consumer Fraud Act claims; the jury discussion concerns only the breach of contract claim (excerpt 1 and 2).",
+   "reason": "Excerpt 3 shows only that in Avery the contract claim was tried to a jury while the consumer fraud claim got a bench trial. The excerpts do not say that Consumer Fraud Act damages claims are legal claims triable to a jury, and the procedural history points the other way.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Avery v. State Farm Mutual Automobile Insurance",
-   "seconds": 1.49
+   "seconds": 0.42
   },
   {
    "id": "mis-175",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address quo warranto pleading standards, appellate review of waived arguments, and dismissal of a complaint under section 2-615; none discuss the jury trial right when legal and equitable issues are joined. The proposition concerns a different issue than the excerpts cover.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "The excerpts concern a Section 2-615 dismissal of statutory and quo warranto claims over parking-ticket collection; none discuss joined legal and equitable issues or a jury trial right. Excerpt 5 only says unresolved facts go to the 'trier of fact'.",
+   "verdict": "OFF_TOPIC",
    "found_case": "People Ex Rel. Daley v. Datacom Systems Corp.",
-   "seconds": 1.0
+   "seconds": 0.2
   },
   {
    "id": "mis-176",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address Eighth/Fourteenth Amendment conditions, PLRA injunction termination, and ADA relief for disabled inmates, but nothing discusses the continuing-violation doctrine or statute of limitations extension. The cited proposition is therefore not addressed in the excerpted opinion.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Pierce v. County of Orange, as excerpted, concerns pretrial detainees' jail-conditions claims under \u00a7 1983, the PLRA, and the ADA (excerpts 3, 5, 7). Nothing in them addresses the continuing-violation doctrine or statutes of limitations for discrimination claims.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Pierce v. County of Orange",
-   "seconds": 1.2
+   "seconds": 0.27
   },
   {
    "id": "mis-177",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address Fourth Amendment Terry stop and false-arrest claims, qualified immunity, and arguable probable cause; none discuss de minimis injuries or whether minor injuries fail to rise to a constitutional violation. The proposition concerns an issue the excerpts do not address.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Gutierrez v. Kermon concerns Fourth Amendment false arrest, probable cause, and qualified immunity on interlocutory appeal; nothing in the excerpts addresses de minimis injuries and constitutional violations (an excessive force/Eighth Amendment type of rule).",
+   "verdict": "OFF_TOPIC",
    "found_case": "Miguel Gutierrez v. Michael Kermon",
-   "seconds": 1.11
+   "seconds": 0.29
   },
   {
    "id": "mis-178",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts discuss subject-matter jurisdiction, class certification, and consent/established business relationship issues under the TCPA, but nothing addresses the \u00a7227(c)(5) safe harbor or what compliance procedures a defendant must actually follow to invoke it. The proposition is not addressed by the provided text.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "The opinion concerns unsolicited fax advertisements under \u00a7227(b) and class certification (Rule 23) and CAFA jurisdiction; the excerpts say nothing about the \u00a7227(c)(5) safe harbor for telephone solicitation or the compliance it requires.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Gene and Gene LLC v. BIOPAY LLC",
-   "seconds": 1.14
+   "seconds": 0.16
   },
   {
    "id": "mis-179",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts discuss estoppel elements (excerpt 6), which include a false representation or concealment, but do not state a general duty to speak or estoppel arising from silence that would mislead. Excerpt 6 frames estoppel around misleading by representation or concealment, and the proposition's silence-based duty to speak is not addressed.",
+   "reason": "Excerpt 6 describes estoppel as preventing one party from misleading another, with elements including false representation or concealment of material facts, but it never says there is a general \"duty to speak\" or that silence alone estops. The Court also rejected the estoppel claim, so the case does not support the proposition as stated.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Shields Ltd. Partnership v. Bradberry",
-   "seconds": 1.13
+   "seconds": 0.07
   },
   {
    "id": "mis-180",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address RICO limitations, Rule 9(b) pleading, leave to amend, and fraudulent concealment tolling, but say nothing about whether fiduciary duties run from a client to a lawyer. Count Five (breach of fiduciary duty) is mentioned only in the list of counts, so the excerpts do not address the proposition.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Hoover is a securities/RICO limitations case involving investors and promoters; the excerpts say nothing about whether a client owes fiduciary duties to a lawyer. Count Five's fiduciary claim was dismissed on jurisdictional grounds without addressing the lawyer-client relationship (Excerpt 3).",
+   "verdict": "OFF_TOPIC",
    "found_case": "Hoover v. Langston Equipment Associates, Inc.",
-   "seconds": 0.91
+   "seconds": 0.05
   },
   {
    "id": "mis-181",
@@ -1926,59 +1924,59 @@
    "split": "",
    "status": "MISQUOTED",
    "reason": "This quotation does not appear anywhere in the opinion.",
-   "verdict": "NOT_SUPPORTED",
+   "verdict": "NOT_ADDRESSED",
    "found_case": "S.M. v. J.M.",
-   "seconds": 1.16
+   "seconds": 0.1
   },
   {
    "id": "mis-182",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern a credit card debt collection action, pleading requirements under Pa.R.C.P. 1019, and contract formation; nothing addresses parental alienation or child custody modification. The proposition cannot be supported by this case.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Discover Bank v. Stucka is a credit card collection and pleading case (Pa.R.C.P. 1019, amending a complaint) and says nothing about parental alienation or child custody modification (see excerpts 1, 4). It cannot be authority for that rule.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Discover Bank v. Stucka",
-   "seconds": 1.15
+   "seconds": 0.29
   },
   {
    "id": "mis-183",
    "group": "misrepresented",
    "split": "",
-   "status": "UNSUPPORTED",
-   "reason": "The excerpts are fragmentary and mention a plaintiff seeking to amend his complaint to add claims (excerpt 6), but none states or applies the Rule 15 standard that a plaintiff is entitled to amend to add new claims. The excerpts do not reach the legal point the memo cites the case for.",
-   "verdict": "NOT_SUPPORTED",
+   "status": "REVIEW",
+   "reason": "The passages checked don't discuss this point, so the opinion may cover it elsewhere. The excerpts show only that Cook amended his complaint to add claims (Excerpts 4, 5); they do not discuss Rule 15 or any entitlement to amend. The opinion is a voting-rights/\u00a7 1983 case on a related subject, and the Rule 15 point may sit in a part not shown.",
+   "verdict": "NOT_ADDRESSED",
    "found_case": "Cook v. Randolph County, Ga.",
-   "seconds": 1.17
+   "seconds": 0.31
   },
   {
    "id": "mis-184",
    "group": "misrepresented",
    "split": "",
    "status": "CONTRADICTED",
-   "reason": "The Court states that Alabama has declined to apply a 'discovery rule' (citing Ramey v. Guyton), so the limitations period is not tolled until the plaintiff discovers the injury. Instead, the cause of action accrues when the first legal injury occurs and damages are sustained.",
+   "reason": "Excerpt 5 states that Alabama has declined to apply a \"discovery rule\" and that a plaintiff's later discovery of damage does not save the claim. The claim accrues on the first legal injury (Excerpts 6-7), not when the plaintiff knew or should have known of it.",
    "verdict": "CONTRADICTED",
    "found_case": "Payton v. Monsanto Co.",
-   "seconds": 0.98
+   "seconds": 0.12
   },
   {
    "id": "mis-185",
    "group": "misrepresented",
    "split": "",
-   "status": "REVIEW",
-   "reason": "The excerpts show Larson discussing when suits against officials for public-treasury effects are permitted (e.g., McComb enjoining an unconstitutional bond issue), but they do not reach whether courts may void or enjoin ultra vires public spending as such. The excerpt is cut off before the Court's full holding, so the excerpts are insufficient to confirm the proposition.",
-   "verdict": "UNCLEAR",
+   "status": "VERIFIED",
+   "reason": "Excerpt 3 states that where an officer acts beyond statutory limits, his actions are ultra vires and 'may be made the object of specific relief.' Excerpt 5 adds that an issue of bonds was enjoined because it rested on an unconstitutional statute. The proposition is a fair general statement, although Larson itself denied relief on the facts.",
+   "verdict": "SUPPORTED",
    "found_case": "Larson v. Domestic and Foreign Commerce Corp.",
-   "seconds": 1.09
+   "seconds": 0.21
   },
   {
    "id": "mis-186",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address whether Illinois should recognize a self-critical analysis privilege and do not discuss treating parent and subsidiary corporations as a single entity. The proposition concerns a different legal issue entirely.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Harris v. One Hope United addresses whether Illinois should recognize a self-critical analysis privilege (excerpts 1, 5, 6); nothing in the excerpts concerns treating parent and subsidiary corporations as a single entity.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Harris v. One Hope United, Inc.",
-   "seconds": 0.86
+   "seconds": 0.23
   },
   {
    "id": "mis-187",
@@ -1988,37 +1986,37 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "CONTRADICTED",
    "found_case": "People v. Panah",
-   "seconds": 1.2
+   "seconds": 0.67
   },
   {
    "id": "mis-188",
    "group": "misrepresented",
    "split": "",
-   "status": "UNSUPPORTED",
-   "reason": "The excerpts address jury instructions, juror challenges, and whether certain damages from a 'do not patronize' request are compensable, but never state that defamation per se claims are actionable without proof of special damages. The excerpts do not reach the cited proposition.",
-   "verdict": "NOT_SUPPORTED",
+   "status": "REVIEW",
+   "reason": "The passages checked don't discuss this point, so the opinion may cover it elsewhere. The excerpts cover jury instructions, juror challenges, and evidence in a defamation case, but none discusses defamation per se or whether special damages must be proved. The opinion is on a related subject and may address the point in a part not shown.",
+   "verdict": "NOT_ADDRESSED",
    "found_case": "Caruso v. LOCAL 690 INTERNL. BROTHERHOOD OF TEAMSTERS",
-   "seconds": 1.02
+   "seconds": 0.2
   },
   {
    "id": "mis-189",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address whether a dismissal for want of prosecution operated with prejudice under Rule 41(b) and the plaintiff's burden to vacate or appeal, not the two-dismissal rule (Rule 41(a)(1)) barring refiling after a second voluntary dismissal. Nothing in the excerpts discusses voluntary dismissals or refiling limits.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "LeBeau concerns a Rule 41(b) dismissal for want of prosecution that operated as a dismissal with prejudice (excerpts 1-2). It does not discuss the two-dismissal rule of Rule 41(a)(1), which concerns two voluntary dismissals.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Carol Lebeau v. Taco Bell, Inc.",
-   "seconds": 1.07
+   "seconds": 0.11
   },
   {
    "id": "mis-190",
    "group": "misrepresented",
    "split": "",
-   "status": "UNSUPPORTED",
-   "reason": "The excerpts address forum selection, fraud in the inducement, and estoppel, and the opinion's only reference to arbitrability is that a federal court must determine whether the parties agreed to arbitrate (excerpt 4). Nothing in the excerpts says discovery is required to decide arbitrability.",
-   "verdict": "NOT_SUPPORTED",
+   "status": "REVIEW",
+   "reason": "The passages checked don't discuss this point, so the opinion may cover it elsewhere. The excerpts cover the arbitrability dispute, summary-judgment-style review, and fraudulent inducement, but none says discovery is required to decide arbitrability. The shown portions do not address the point, though other parts of the opinion might.",
+   "verdict": "NOT_ADDRESSED",
    "found_case": "Great Earth Companies, Inc., and Great Earth International Franchising Corp. v. Richard Simons and Kimberly Simons",
-   "seconds": 3.39
+   "seconds": 0.22
   },
   {
    "id": "mis-191",
@@ -2028,87 +2026,87 @@
    "reason": "The memo names \u201cUnited States v. Helena\u201d, but 906 F.3d 288 is United States v. Branden Holena.",
    "verdict": null,
    "found_case": "United States v. Branden Holena",
-   "seconds": 0.0
+   "seconds": 0.27
   },
   {
    "id": "mis-192",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address qualified immunity, First Amendment retaliation balancing, and conspiracy liability under \u00a7 1983, but say nothing about a judge's pretrial declaration of guilt removing judicial immunity. The cited proposition is not supported by any excerpt shown.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Bevill concerns qualified immunity for officials alleged to have conspired to get a police captain fired in retaliation for his affidavit. The excerpts say nothing about a judge's pretrial declaration of a defendant's guilt or about removal of judicial immunity.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Bevill v. Fletcher",
-   "seconds": 0.94
+   "seconds": 0.11
   },
   {
    "id": "mis-193",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern mandamus to compel corrections to an assessment roll, the due-process rights of taxpayers, and exhaustion of administrative remedies. Excerpt 6 mentions declaratory relief only in passing as one of the remedies taxpayers may seek, not as a holding that declaratory relief clarifies ownership where property rights are uncertain.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Hively is a tax equalization/mandamus case; excerpt 5 even rejects taxpayers' claim to declaratory relief against the Board's assessment. It says nothing about declaratory relief to clarify property ownership, so it cannot support that rule.",
+   "verdict": "OFF_TOPIC",
    "found_case": "People Ex Rel. State Board of Equalization v. Hively",
-   "seconds": 1.47
+   "seconds": 0.22
   },
   {
    "id": "mis-194",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern a creditor's claim against a decedent's estate, the election between county and district court, and the limitations and jurisdictional effect of filing a claim. Nothing in them addresses declaratory judgment or quiet title actions.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Koon v. Barmettler concerns a creditor's claim against a decedent's estate, jurisdiction between county and district courts, and dismissal for failure to substitute a representative (excerpts 2-4, 6). Nothing in the excerpts addresses declaratory judgment or quiet title.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Koon v. Barmettler",
-   "seconds": 0.99
+   "seconds": 0.22
   },
   {
    "id": "mis-195",
    "group": "misrepresented",
    "split": "",
-   "status": "UNSUPPORTED",
-   "reason": "The excerpts address whether early discovery to identify an IP subscriber should be allowed under a privacy and balancing analysis, not whether courts approve delayed notice to prevent subpoena targets from learning of a subpoena. Nothing in the excerpts discusses delayed notice or the risk of tipping off the subscriber.",
-   "verdict": "NOT_SUPPORTED",
+   "status": "REVIEW",
+   "reason": "The passages checked don't discuss this point, so the opinion may cover it elsewhere. The excerpts concern whether Strike 3 may subpoena an ISP to identify an anonymous John Doe under Rule 26(d)(1); none discuss delayed notice to prevent subpoena targets from learning of a subpoena. The opinion is on a related subject (subpoenas and discovery), but the excerpts shown do not reach this point.",
+   "verdict": "NOT_ADDRESSED",
    "found_case": "Strike 3 Holdings, LLC v. John Doe",
-   "seconds": 1.05
+   "seconds": 0.21
   },
   {
    "id": "mis-196",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern whether the district court abused its discretion in dismissing a prisoner's retaliation claim as frivolous under 28 U.S.C. \u00a7 1915(d), and say nothing about collateral estoppel or issue preclusion. The proposition about relitigation of actually decided issues is not addressed in any excerpt.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Adams v. Rice is a \u00a7 1915(d) frivolousness and prisoner-retaliation case; the excerpts (1, 3-5) say nothing about collateral estoppel or issue preclusion, so it cannot support that rule.",
+   "verdict": "OFF_TOPIC",
    "found_case": "David Adams v. Nathan A. Rice Gary T. Dixon Hazel W. Keith",
-   "seconds": 0.95
+   "seconds": 0.06
   },
   {
    "id": "mis-197",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address the ADA integration mandate, standing/authority to sue, and the risk-of-institutionalization theory, and reverse the district court's remedial plan. Nothing in the excerpts discusses whether disability-based sanctions or adverse inferences are irreversible.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "The excerpts show an ADA Title II integration-mandate case reversing a systemic remedy against Mississippi's mental health system. They say nothing about disability-based sanctions or adverse inferences being irreversible.",
+   "verdict": "OFF_TOPIC",
    "found_case": "United States v. State of Mississippi",
-   "seconds": 1.04
+   "seconds": 0.13
   },
   {
    "id": "mis-198",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts show the court itself decided due diligence as a matter of law, holding Tate Supply 'failed as a matter of law to prove diligence' and that the trial court abused its discretion, rather than treating diligence as a jury question. Nothing in the excerpts says diligence in service is for the jury.",
+   "reason": "Excerpt 5 says whether the plaintiff showed diligence is a question of fact for the trial court's determination, reviewed for abuse of discretion, not a question for a jury. The court then held that the plaintiff failed to prove diligence as a matter of law.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Scanlan v. TATE SUPPLY CO., INC.",
-   "seconds": 1.0
+   "seconds": 0.06
   },
   {
    "id": "mis-199",
    "group": "misrepresented",
    "split": "",
    "status": "CONTRADICTED",
-   "reason": "The Court of Appeals affirmed the trial court's finding of laches as a matter of law, holding the plaintiff failed to show due diligence and reviewing only for abuse of discretion; it did not treat due diligence as a jury question. Excerpt 2 shows the trial court's ruling was affirmed without any jury involvement.",
+   "reason": "Akuoko holds that the trial court has discretion to decide whether the plaintiff exercised sufficient diligence, reviewed only for abuse of discretion, and it affirmed a trial-court ruling of laches (excerpts 2-4). It does not treat due diligence as a jury question.",
    "verdict": "CONTRADICTED",
    "found_case": "Akuoko v. Martin",
-   "seconds": 0.98
+   "seconds": 0.11
   },
   {
    "id": "mis-200",
@@ -2118,67 +2116,67 @@
    "reason": "This quotation does not appear anywhere in the opinion.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "United States v. Robert Brehm",
-   "seconds": 1.13
+   "seconds": 0.22
   },
   {
    "id": "mis-201",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern suppression motions, pretrial delay, double jeopardy, and sentencing, and say nothing about whether laboratory testing is more precise than other identification methods. The only hint of a cited proposition is a bare string cite (excerpts 6-7) with no visible discussion of forensic methods.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "The excerpts from Harrison cover suppression, vehicle searches, indictment delay, double jeopardy, and sentencing disparity. None addresses laboratory testing or the precision of identification methods, so the case cannot be authority for this proposition.",
+   "verdict": "OFF_TOPIC",
    "found_case": "United States v. Jack Eugene Harrison, United States of America v. Gary Don Jeter",
-   "seconds": 1.44
+   "seconds": 0.24
   },
   {
    "id": "mis-202",
    "group": "misrepresented",
    "split": "",
    "status": "CONTRADICTED",
-   "reason": "The court expressly declined to apply the Notaro four-factor test, instead applying the conventional good cause standard (need for expedited discovery outweighing prejudice to the responding party). Excerpt 6 is the key holding rejecting the proposition.",
+   "reason": "Semitool addresses expedited discovery and expressly declines to apply the four-prong Notaro test, adopting a general good cause standard instead (excerpts 3, 5). It is not a protective-order case, and it does not require a specific four-factor test.",
    "verdict": "CONTRADICTED",
    "found_case": "Semitool, Inc. v. Tokyo Electron America, Inc.",
-   "seconds": 3.44
+   "seconds": 0.17
   },
   {
    "id": "mis-203",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts discuss a court's discretionary authority to impose sanctions for filing a pleading, not sanctions for filing a second dispositive motion. Nothing in the fragments addresses successive dispositive motions as a basis for sanctions.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Peake concerns section 128.7 sanctions for frivolous pleadings (and a safe harbor period), not sanctions for filing a second dispositive motion; the excerpts say nothing on that point (see excerpts 3, 5).",
+   "verdict": "OFF_TOPIC",
    "found_case": "Peake v. Underwood",
-   "seconds": 0.95
+   "seconds": 0.13
   },
   {
    "id": "mis-204",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts show the Fifth Circuit affirmed a summary judgment for the government, addressing FTCA medical malpractice expert testimony and deemed admissions under Rule 5 service rules. Nothing in the excerpts concerns a denial of a stay.",
+   "reason": "The Fifth Circuit affirmed a summary judgment (Excerpt 1, 6) based on Fujita's failure to designate an expert, not the denial of a stay. The excerpts mention the government's motion to stay discovery (Excerpt 3), but nothing shows a stay denial being affirmed.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "Richard Fujita v. United States",
-   "seconds": 0.97
+   "seconds": 0.02
   },
   {
    "id": "mis-205",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address discovery sanctions under Rule 37, inherent judicial power to dismiss for failure to prosecute, and Lanham Act/unfair competition counterclaims; none discusses apparent authority or a principal being bound by an agent's acts based on the principal's conduct. The proposition's agency-law point is not addressed in any excerpt.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Penthouse v. Playboy concerns discovery sanctions under Rule 37, intervention by counsel, and Lanham Act counterclaims (excerpts 1, 3-6). It says nothing about estoppel, apparent authority, or a principal's liability for an agent's acts.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Penthouse International, Ltd. v. Playboy Enterprises, Inc.",
-   "seconds": 1.13
+   "seconds": 0.16
   },
   {
    "id": "mis-206",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts enforce a contractual non-reliance disclaimer between arm's-length parties and hold it effective absent fraud in procuring the disclaimer itself; they never address whether disclaimers are defeated when the disclaiming party's rights are not otherwise preserved. The proposition states a different rule than the one the excerpts reflect.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Landale concerns a buyer's specific contractual disclaimer of reliance barring a fraud claim (excerpts 3-4). It says nothing about third-party disclaimers or the disclaiming party's rights being preserved, so it does not stand for the stated rule.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Landale Enterprises, Inc. v. Cranford Berry and Nell Berry",
-   "seconds": 1.1
+   "seconds": 0.08
   },
   {
    "id": "mis-207",
@@ -2188,47 +2186,47 @@
    "reason": "Citation not found: '748 F. App'x 930'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.0
+   "seconds": 0.07
   },
   {
    "id": "mis-208",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern whether a defendant must receive notice of grand jury proceedings under ambiguous statutes, not whether threats make an agreement void versus voidable. Nothing in the excerpted text addresses threats or the void/voidable distinction in contract law.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "Sheriff v. Marcum is a criminal procedure case about notice to target defendants before grand jury proceedings (Excerpts 1-3). It says nothing about contract law, threats, or void versus voidable agreements.",
+   "verdict": "OFF_TOPIC",
    "found_case": "Sheriff, Humboldt County v. Marcum",
-   "seconds": 2.43
+   "seconds": 0.06
   },
   {
    "id": "mis-209",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts address removal, joinder of a non-diverse party, Rule 12(b) dismissal, and slander of title elements; none discuss service of process by certified mail or its sufficiency.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "The excerpts show Kirkland concerns removal, joinder of a non-diverse party, statutes of limitations, privity, and failure to state tort claims. None of them addresses service of process by certified mail (excerpts 1-5).",
+   "verdict": "OFF_TOPIC",
    "found_case": "Kirkland v. American Title Insurance",
-   "seconds": 1.06
+   "seconds": 0.03
   },
   {
    "id": "mis-210",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern public-figure status, actual malice, and the first-reporter rule; none discuss whether calling someone 'aggressive' carries a defamatory sting. The proposition's core point about the defamatory meaning of a particular word is not addressed in the provided excerpts.",
+   "reason": "The excerpts show Trotter decided the case on public-figure status and actual malice. Nothing in them says that calling someone 'aggressive' carries a defamatory sting, and the articles are described as accusing him of orchestrating violence, not as calling him 'aggressive'.",
    "verdict": "NOT_SUPPORTED",
    "found_case": "John C. Trotter v. Jack Anderson Enterprises, Inc. And Jack Anderson",
-   "seconds": 1.0
+   "seconds": 0.09
   },
   {
    "id": "mis-211",
    "group": "misrepresented",
    "split": "",
    "status": "UNSUPPORTED",
-   "reason": "The excerpts concern a Delaware divorce appeal addressing marital property division, valuation of a law practice, and alimony, not standing to sue for injuries to a business. Nothing in the excerpts discusses an owner's standing based on harm to a business.",
-   "verdict": "NOT_SUPPORTED",
+   "reason": "E.E.C. v. E.J.C. is a Delaware divorce case about valuing a law practice and dividing marital property under 13 Del.C. \u00a7 1513 (excerpts 1, 4, 5). It does not address whether a business owner has standing to sue for injuries suffered by the business.",
+   "verdict": "OFF_TOPIC",
    "found_case": "E.E.C. v. E.J.C.",
-   "seconds": 0.87
+   "seconds": 0.07
   },
   {
    "id": "mata-0",
@@ -2238,14 +2236,14 @@
    "reason": "Citation not found: '925 F.3d 1339'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.0
+   "seconds": 0.06
   },
   {
    "id": "mata-1",
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cPetersen v. Iran Air\u201d, but 905 F. Supp. 2d 121 is United States of America v. Iss Marine Services, Inc..",
+   "reason": "The memo names \u201cPetersen v. Iran Air\u201d, but 905 F. Supp. 2d 121 is United States of America v. Iss Marine Services, Inc.",
    "verdict": null,
    "found_case": "United States of America v. Iss Marine Services, Inc.",
    "seconds": 0.0
@@ -2255,10 +2253,10 @@
    "group": "fabricated",
    "split": "",
    "status": "NAME_MISMATCH",
-   "reason": "The memo names \u201cMiller v. United Airlines, Inc.\u201d, but 174 F.3d 366 is Greenleaf v. Garlock, Inc..",
+   "reason": "The memo names \u201cMiller v. United Airlines, Inc.\u201d, but 174 F.3d 366 is Greenleaf v. Garlock, Inc.",
    "verdict": null,
    "found_case": "Greenleaf v. Garlock, Inc.",
-   "seconds": 0.0
+   "seconds": 0.03
   },
   {
    "id": "mata-3",
@@ -2268,7 +2266,7 @@
    "reason": "Citation not found: '516 F.3d 1237'",
    "verdict": null,
    "found_case": "",
-   "seconds": 0.0
+   "seconds": 0.05
   },
   {
    "id": "mata-4",
@@ -2278,7 +2276,7 @@
    "reason": "The memo names \u201cHolliday v. Atl. Capital Corp.\u201d, but 738 F.2d 1153 is Frank Gibbs, Jr. v. Maxwell House, a Division of General Foods Corporation.",
    "verdict": null,
    "found_case": "Frank Gibbs, Jr. v. Maxwell House, a Division of General Foods Corporation",
-   "seconds": 0.0
+   "seconds": 0.04
   },
   {
    "id": "mata-5",
@@ -2295,40 +2293,40 @@
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "Excerpt 6 quotes Benjamin and discusses whether a remedy is necessary, narrowly drawn, and the means to correct the violation, and excerpt 7 expressly describes the court's obligation to make 'need-narrowness-intrusiveness' findings under the PLRA. The proposition that review under the PLRA's standards is sometimes called a 'need-narrowness-intrusiveness' inquiry is therefore supported, and the statutory language quoted matches excerpt 5.",
+   "reason": "Excerpts 5 and 7 show the Second Circuit quoting the PLRA's narrowly-drawn/no-further-than-necessary/least-intrusive requirements and using the \"need-narrowness-intrusiveness\" label for the inquiry. The termination provision (\u00a7 3626(b)(3)) is not quoted in the excerpts, but the label and the substance of the standard match.",
    "verdict": "SUPPORTED",
    "found_case": "Handberry v. Thompson",
-   "seconds": 1.35
+   "seconds": 0.68
   },
   {
    "id": "ctl-001",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "The Court states in excerpt 3 that the Ex Post Facto Clause is aimed at laws that \"retroactively alter the definition of crimes or increase the punishment for criminal acts,\" quoting Collins v. Youngblood, and the memo's proposition accurately reflects that language and its scope. The memo's reference to protection of criminal defendants is a fair paraphrase of the Clause's purpose as described in excerpt 3.",
+   "reason": "Excerpt 3 states that the Ex Post Facto Clause is aimed at laws that \"retroactively alter the definition of crimes or increase the punishment for criminal acts,\" quoting Collins. This matches the proposition, which describes the protection in the same terms.",
    "verdict": "SUPPORTED",
    "found_case": "California Department of Corrections v. Morales",
-   "seconds": 1.19
+   "seconds": 0.24
   },
   {
    "id": "ctl-002",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "The memo's proposition is that the Court acknowledged the probable-cause standard is peculiarly related to criminal investigations, and excerpt 5 directly states that quoted language, quoting Colorado v. Bertine, with the Court then explaining why the standard may be unhelpful for routine administrative functions. The quoted phrase appears in the opinion, and the 'implicitly acknowledged' framing fits the Court's reasoning.",
+   "reason": "Excerpt 5 shows the Court stating that \"the probable-cause standard 'is peculiarly related to criminal investigations,'\" quoting Bertine, and using it to explain why probable cause may not fit administrative searches. The memo's \"implicitly acknowledged\" framing is loose, since the Court said this expressly, but the quoted language is accurate and consistent with the opinion.",
    "verdict": "SUPPORTED",
    "found_case": "National Treasury Employees Union v. Von Raab",
-   "seconds": 1.31
+   "seconds": 0.12
   },
   {
    "id": "ctl-003",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "Excerpt 3 states that federal law controls interpretation of the contract because it was entered into pursuant to federal statutory authority and ultimately the Constitution, which matches the parenthetical quotation. The proposition that the cited cases involved contracts with the federal government as a party is consistent with the Court's description of the government contract at issue.",
+   "reason": "Excerpt 3 states that federal law controls interpretation of the contract because it was entered into pursuant to authority conferred by federal statute and, ultimately, the Constitution, matching the quoted language. Seckinger itself involved a contract with the federal government as a party, which fits the proposition.",
    "verdict": "SUPPORTED",
    "found_case": "United States v. Seckinger",
-   "seconds": 0.98
+   "seconds": 0.18
   },
   {
    "id": "ctl-004",
@@ -2336,99 +2334,99 @@
    "split": "dev",
    "status": "MISQUOTED",
    "reason": "The quoted words don't match the opinion. The closest passage reads: \u201cright, and is the least intrusive means necessary to correct the violation of\u201d",
-   "verdict": "UNCLEAR",
+   "verdict": "SUPPORTED",
    "found_case": "Morales Feliciano,et v. John A. Rullan",
-   "seconds": 1.14
+   "seconds": 0.3
   },
   {
    "id": "ctl-005",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "Excerpt 7 states that the statute 'is without extraterritorial effect unless a clear intent in this respect appears from the express provisions of the statute,' which is the quoted rule, and excerpt 6 confirms the court found no legislative intent for extraterritorial effect. The memo's proposition accurately reflects this holding.",
+   "reason": "Excerpt 7 states nearly verbatim that \"the statute is without extraterritorial effect unless a clear intent in this respect appears from the express provisions of the statute.\" The Court applied that rule to the Occupational Diseases Act. The excerpts do not show whether the quoted language appears at page 350 or whether the rule is \"long-standing,\" but the quoted rule itself is stated.",
    "verdict": "SUPPORTED",
    "found_case": "Dur-Ite Company v. Industrial Commission",
-   "seconds": 1.02
+   "seconds": 0.06
   },
   {
    "id": "ctl-006",
    "group": "control",
    "split": "dev",
-   "status": "UNSUPPORTED",
-   "reason": "Excerpt 6 states that checking law enforcement databases for outstanding warrants is a routine, non-invasive procedure, which partly supports the warrant-check element. However, the excerpts do not mention driver's license, tag, insurance, or registration checks, and the proposition's claim that such checks are engrafted into the reasonable-time period by state law is not established by the excerpts shown.",
-   "verdict": "NOT_SUPPORTED",
+   "status": "VERIFIED",
+   "reason": "Excerpt 5 holds that checking law enforcement databases for outstanding warrants after a stop is a routine, quick, non-invasive procedure that doesn't unconstitutionally prolong the stop. This supports the 'see, e.g.' point as to active warrant checks, though the opinion doesn't expressly mention license, tag, insurance, or registration checks.",
+   "verdict": "SUPPORTED",
    "found_case": "State v. Stone",
-   "seconds": 1.25
+   "seconds": 0.7
   },
   {
    "id": "ctl-007",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "The excerpt states that in Texas attorney's fees may not be recovered from an opposing party unless provided for by statute or by contract between the parties, which matches the parenthetical. The case is cited with a parenthetical, so it only needs to illustrate that point, and excerpt 3 does so.",
+   "reason": "Excerpt 3 states that in Texas attorney's fees may not be recovered from an opposing party unless provided by statute or by contract between the parties, which matches the parenthetical's point that fees are recoverable as authorized by statute or contract.",
    "verdict": "SUPPORTED",
    "found_case": "Travelers Indemnity Co. of Connecticut v. Mayfield",
-   "seconds": 1.22
+   "seconds": 0.62
   },
   {
    "id": "ctl-008",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "Excerpt 4 quotes the trial judge's finding that Wang's interference was a wilful act calculated to obtain the benefits of Post's contract without cost and in disregard of known contractual arrangements, and excerpt 5 treats this as a chargeable unfair practice. This matches the memo's parenthetical that a breach committed to obtain contract benefits without cost violates 93A, though the excerpts show this as the lower court's finding rather than the Court's own express holding, and the Court's reversal on Count VII is not described in the excerpts.",
+   "reason": "Excerpts 5-6 show the court treating a wilful termination of a contract \"calculated to obtain the benefits of Post's contract for Wang without cost\" as an unfair act violating c. 93A, matching the parenthetical. The 'must demonstrate' framing is the memo's own application and is fair for a \"see, e.g.\" cite.",
    "verdict": "SUPPORTED",
    "found_case": "Wang Laboratories, Inc. v. Business Incentives, Inc.",
-   "seconds": 1.19
+   "seconds": 0.05
   },
   {
    "id": "ctl-009",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "Excerpt 4 states the quoted proposition nearly verbatim, and excerpt 6 supports it with the legislative record (Clark's memorandum and the rejected exclusivity amendments) showing Title VII does not deny rights under other federal and state statutes.",
+   "reason": "Excerpt 4 contains the quoted sentence verbatim at pages 47-48 of the opinion, with footnote 9 detailing the legislative history. The Court itself states this as its view.",
    "verdict": "SUPPORTED",
    "found_case": "Alexander v. Gardner-Denver Co.",
-   "seconds": 1.08
+   "seconds": 0.22
   },
   {
    "id": "ctl-010",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "Footnote 7 states that the object of disclosure, as with all discovery, is to permit the opponent 'a reasonable opportunity to prepare for trial or settlement.' Excerpt 6 similarly says disclosure 'should have as its goal the preparation of cases for trial or settlement.'",
+   "reason": "Excerpt 7 (footnote 5) states that the object of disclosure, as with all discovery, is to permit the opponent a reasonable opportunity to prepare for trial or settlement. This matches the quoted language and the proposition's characterization of the disclosure rules' purpose.",
    "verdict": "SUPPORTED",
    "found_case": "Bryan v. Riddel",
-   "seconds": 1.02
+   "seconds": 0.08
   },
   {
    "id": "ctl-011",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "Excerpt 5 states that the traffic stop was lawful because the officer had probable cause to believe the defendant violated the traffic code by driving with an expired temporary tag, which is the parenthetical's proposition. The memo's added claim that the probable cause is 'indisputable' is an characterization the opinion does not make, but the core holding that probable cause existed for the stop is directly stated.",
+   "reason": "Excerpt 1 contains the quoted language: the stop was lawful because the officer had probable cause to believe the defendant violated the traffic code with an expired temporary tag. The memo's \"indisputable\" framing applies that rule to the present facts, which is acceptable.",
    "verdict": "SUPPORTED",
    "found_case": "Gomez v. State",
-   "seconds": 1.15
+   "seconds": 0.45
   },
   {
    "id": "ctl-012",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "The Court in excerpt 3 gives exactly the example cited: state law could impose duties conflicting with federal mandates by premising liability upon the presence of the very windshield retention requirements federal law requires. The memo's quotation and characterization match the opinion's language, though the example is offered as an illustration of conflict preemption concerns rather than a holding.",
+   "reason": "Excerpt 4 contains the Court's statement that without ordinary conflict pre-emption principles, state law could impose duties conflicting with federal mandates, 'say, by premising liability upon the presence of the very windshield retention requirements that federal law requires,' citing 49 CFR \u00a7 571.212. This matches the proposition and the page range 871-72.",
    "verdict": "SUPPORTED",
    "found_case": "Geier v. American Honda Motor Co.",
-   "seconds": 1.12
+   "seconds": 0.3
   },
   {
    "id": "ctl-013",
    "group": "control",
    "split": "dev",
    "status": "VERIFIED",
-   "reason": "Excerpt 4 quotes Rule 8(b)'s language on joinder of defendants 'alleged to have participated in the same act or transaction or in the same series of acts or transactions,' and states that 'There is a preference in the federal system for joint trials of defendants who are indicted together.' The core propositions of the memo are therefore directly stated in the majority opinion.",
+   "reason": "Excerpt 3 quotes Rule 8(b) on joinder of defendants and states that there is a preference in the federal system for joint trials of defendants indicted together, which is the proposition (at 537).",
    "verdict": "SUPPORTED",
    "found_case": "Zafiro v. United States",
-   "seconds": 1.18
+   "seconds": 0.09
   }
  ]
 }
