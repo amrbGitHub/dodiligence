@@ -2,6 +2,8 @@
 
 **Check every case citation before you file.**
 
+**Live demo:** https://dodiligence-sdxr7vabkyznlkbqewthfj.streamlit.app/
+
 Checks the case citations in a legal memo or brief, the way a careful associate would. The checks run in order, and each citation stops at the first one it fails:
 
 1. **Does the case exist, and is it the case named?** Citations are found with [eyecite](https://github.com/freelawproject/eyecite) and looked up on [CourtListener](https://www.courtlistener.com). A citation that leads to a *different* case than the one named is flagged too; that is how most invented citations show up.
