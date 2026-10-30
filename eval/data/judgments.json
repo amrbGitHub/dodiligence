@@ -20,13 +20,6 @@
 "in": 3047,
 "out": 160
 },
-"114f485e607eec3e857bfbcfb5d78220": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "Excerpt 4 supports the general rule that no liability arises on a promise subject to a condition precedent until the condition is met, but the excerpts do not contain the quoted phrase \"never becomes binding.\" The opinion's wording (e.g., \"a contractual obligation does not come into being\") differs, so the attributed quotation is not shown.",
-"key_excerpt": 4,
-"in": 3115,
-"out": 148
-},
 "14e2d90356c72e67c614f405cc98a875": {
 "verdict": "OFF_TOPIC",
 "explanation": "Hively is a tax equalization/mandamus case; excerpt 5 even rejects taxpayers' claim to declaratory relief against the Board's assessment. It says nothing about declaratory relief to clarify property ownership, so it cannot support that rule.",
@@ -47,13 +40,6 @@
 "key_excerpt": 5,
 "in": 3369,
 "out": 133
-},
-"1efabefa5e8fca267e0597fecf324f38": {
-"verdict": "OFF_TOPIC",
-"explanation": "Edwards is a mail fraud conspiracy case with jury and departure issues (excerpts 1-6); nothing concerns drug quantity or packaging weight, and the quoted language does not appear.",
-"key_excerpt": 1,
-"in": 2932,
-"out": 101
 },
 "22cdd98eacd9d227c7af9d3f2a0df6b0": {
 "verdict": "SUPPORTED",
@@ -139,13 +125,6 @@
 "in": 1742,
 "out": 120
 },
-"50c35d743bc487fbc184b6ca9f6dc086": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts state the Rule 11 test as objective reasonableness under the circumstances and the abuse-of-discretion standard of review (excerpt 4). Nothing says sanctions are \"reserved for exceptional circumstances,\" and the court affirmed sanctions without adopting that limit.",
-"key_excerpt": 4,
-"in": 3407,
-"out": 133
-},
 "54c9b8f22019bea48df868fb2836ff7b": {
 "verdict": "OFF_TOPIC",
 "explanation": "Koon v. Barmettler concerns a creditor's claim against a decedent's estate, jurisdiction between county and district courts, and dismissal for failure to substitute a representative (excerpts 2-4, 6). Nothing in the excerpts addresses declaratory judgment or quiet title.",
@@ -188,13 +167,6 @@
 "in": 2511,
 "out": 151
 },
-"6ca03aad9052a9f215b6335a3f9b98de": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpt 6 states that the narrowness of a remedy 'necessarily involves a close examination of a particular set of facts' and what is reasonable to cure the ongoing constitutional violations, and rejects ironclad rules. Excerpt 7 likewise ties the need-narrowness-intrusiveness findings to the nature of the current violations.",
-"key_excerpt": 6,
-"in": 2929,
-"out": 145
-},
 "776dd933d6f5981d9675676ff287336e": {
 "verdict": "OFF_TOPIC",
 "explanation": "Harris v. One Hope United addresses whether Illinois should recognize a self-critical analysis privilege (excerpts 1, 5, 6); nothing in the excerpts concerns treating parent and subsidiary corporations as a single entity.",
@@ -230,26 +202,12 @@
 "in": 3329,
 "out": 123
 },
-"7f996341806ff53f95c9065ea964b688": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts never use the quoted sentence or define 'necessaries' as the contract price plus agreed or customary interest. They discuss maritime liens and prejudgment interest only as a discretionary admiralty award (Excerpt 5), so the quotation is not shown to come from this opinion.",
-"key_excerpt": 5,
-"in": 3126,
-"out": 130
-},
 "81c62d4abb464fcde1edd1fd96698d97": {
 "verdict": "OFF_TOPIC",
 "explanation": "Hoover is a securities/RICO limitations case involving investors and promoters; the excerpts say nothing about whether a client owes fiduciary duties to a lawyer. Count Five's fiduciary claim was dismissed on jurisdictional grounds without addressing the lawyer-client relationship (Excerpt 3).",
 "key_excerpt": 3,
 "in": 2747,
 "out": 139
-},
-"825ddc2ddd150213bcfae473f453fe85": {
-"verdict": "OFF_TOPIC",
-"explanation": "The excerpts address whether a judge-plaintiff may sue under a pseudonym and seal the case, and the Court denied that request. They contain no discussion of evading service through pseudonyms, and the quoted sentence does not appear in them.",
-"key_excerpt": 5,
-"in": 3628,
-"out": 110
 },
 "84e100ccec7af69863a159da6172d5fd": {
 "verdict": "OFF_TOPIC",
@@ -286,13 +244,6 @@
 "in": 3436,
 "out": 126
 },
-"89c450f9eb950e598727ef3e40fbd85a": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "Ridder holds that Rule 11 sanctions are unavailable unless the motion is served for the 21-day safe-harbor period before final judgment or rejection of the contention (Excerpt 6). The quoted language is not verbatim, and the memo drops the Rule 11 limit; the same opinion affirms fees under 28 U.S.C. \u00a7 1927 despite the late motion, so sanctions generally are not unavailable.",
-"key_excerpt": 6,
-"in": 3251,
-"out": 174
-},
 "8fd086dc65f8e27f1a78151e1fc9622b": {
 "verdict": "SUPPORTED",
 "explanation": "Excerpt 4 contains the Court's statement that without ordinary conflict pre-emption principles, state law could impose duties conflicting with federal mandates, 'say, by premising liability upon the presence of the very windshield retention requirements that federal law requires,' citing 49 CFR \u00a7 571.212. This matches the proposition and the page range 871-72.",
@@ -313,55 +264,6 @@
 "key_excerpt": 3,
 "in": 3155,
 "out": 120
-},
-"9c73817e4799bce26daadac1e200572f": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts show the case concerns whether a Greek judicial sale extinguished a maritime lien and what proof is required on summary judgment. Nothing shown contains the quoted sentence or addresses what a maritime lien includes (principal, interest, attorney's fees), so the quotation is unverified and may be misattributed.",
-"key_excerpt": 2,
-"in": 2390,
-"out": 140
-},
-"a408da0780b69414cc41042d17247d21": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpts 4-5 say qualified immunity depends on 'all the circumstances as they reasonably appeared at the time' and on reasonable grounds for the belief formed 'in light of all the circumstances.' This supports considering circumstances in judging reasonableness of official conduct, though the exact phrase 'circumstances of the occasion' is not shown.",
-"key_excerpt": 4,
-"in": 2853,
-"out": 148
-},
-"a9106bfaae0f08c04011f89130867c76": {
-"verdict": "CONTRADICTED",
-"explanation": "Excerpts 5-6 show the court treated a best-evidence objection as pro forma and held any violation harmless where accuracy was undisputed. The quoted sentence does not appear, and the court's approach contradicts a per se reversible-error rule.",
-"key_excerpt": 6,
-"in": 3126,
-"out": 113
-},
-"aa2551fd881a3cd9138ab0103e4e8866": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "Jones v. Buchanan involved a deputy who knocked down a handcuffed, non-arrested man and crushed his nose, which is severe force, not minimal force. Excerpts 1 and 5 stress the severity of the injuries; nothing in the excerpts says a minimal level of force can violate a prisoner's rights, and Jones was not a prisoner.",
-"key_excerpt": 5,
-"in": 3592,
-"out": 154
-},
-"afb73a85f88a6b0f0a51bf0c21eb10f4": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts show the defendant answered and then moved to strike, which the court held was improper after an answer. None of them contains the quoted sentence about waiver of the right to demur, though the court's reasoning is related (a post-answer motion to strike is void).",
-"key_excerpt": 3,
-"in": 3218,
-"out": 115
-},
-"afc93242556dff4a3902b4b8213b245e": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "Taylor holds there is no implied private right of action under OSHA \u00a7 11(c) (excerpts 1, 3). The proposition, though, claims a direct quotation, \"OSHA does not create a private cause of action,\" that does not appear in the excerpts, and states the rule for all of OSHA. The case's holding is narrower, limited to retaliatory discharge under \u00a7 11(c).",
-"key_excerpt": 3,
-"in": 4059,
-"out": 160
-},
-"b08b49822e47ca935a6e9b380e45b3f7": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts address plea withdrawal and safety-valve eligibility after Booker, and none contains the quoted statement that \"any uncertainty should be resolved in the defendant's favor.\" Brehm actually rejected the defendant's position, so the quotation is not supported as stated.",
-"key_excerpt": 6,
-"in": 2753,
-"out": 128
 },
 "b5707912349bf3c4a85cdc0dae5d31e4": {
 "verdict": "SUPPORTED",
@@ -419,26 +321,12 @@
 "in": 3313,
 "out": 113
 },
-"e1c8ff86f580ea58b2bcd84bb4c5919d": {
-"verdict": "NOT_ADDRESSED",
-"explanation": "The excerpts cover only the custody procedural history and the best-interests/abuse-of-discretion review; none mention parental alienation or any quoted \"irreparably harm\" language. The excerpts do not show the point, though it could be in the concurrence or a part not shown.",
-"key_excerpt": 0,
-"in": 3483,
-"out": 122
-},
 "e2086c408ae6414b6b13153c28b4b1d8": {
 "verdict": "OFF_TOPIC",
 "explanation": "Penthouse v. Playboy concerns discovery sanctions under Rule 37, intervention by counsel, and Lanham Act counterclaims (excerpts 1, 3-6). It says nothing about estoppel, apparent authority, or a principal's liability for an agent's acts.",
 "key_excerpt": 1,
 "in": 3493,
 "out": 127
-},
-"e7a0a5752d64c8e431729efb0d3cfd59": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts show Raymond F. affirming termination under the chronic substance-abuse ground (\u00a7 8-533(B)(3)) and the best-interest finding. None contains the quoted sentence about a parent creating barriers to contact through substance abuse lacking just cause, a point that belongs to the abandonment ground rather than the ground shown here.",
-"key_excerpt": 1,
-"in": 2952,
-"out": 148
 },
 "eae023ee848bf657594ec44abb3d67f2": {
 "verdict": "SUPPORTED",
@@ -481,19 +369,5 @@
 "key_excerpt": 4,
 "in": 2634,
 "out": 120
-},
-"fec747dba9f67f2f2672fccf59b4f2f8": {
-"verdict": "NOT_SUPPORTED",
-"explanation": "The excerpts show the court finding RSE's general (blanket) privilege objection ineffective and boilerplate objections presumptively insufficient (Excerpts 4, 7). None of them contains the quoted phrase \"is tantamount to no objection at all,\" and the opinion does not state the broader rule as framed.",
-"key_excerpt": 4,
-"in": 3633,
-"out": 138
-},
-"feddab96841d501a444e7b48c31dc3a6": {
-"verdict": "UNCLEAR",
-"explanation": "The excerpts show Title VII imposes a 'more stringent standard' for prevailing defendants (excerpt 6) and discuss the 'frivolous, unreasonable, or groundless' inquiry (excerpt 3). None contains the quoted 'egregious cases' language, so I can't confirm the proposition or its quotation.",
-"key_excerpt": 6,
-"in": 4080,
-"out": 140
 }
 }

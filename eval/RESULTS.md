@@ -34,7 +34,7 @@ With the support check switched off, the lookup and quote checks alone catch 11.
 
 ## Support check
 
-71 language-model calls (claude-sonnet-5-5), averaging 3,130 input and 129 output tokens per check: each check reads about five passages, not the whole opinion. Everything else runs locally on the CPU; see `python -m eval.perf`.
+53 language-model calls (claude-sonnet-5-5), averaging 3,089 input and 127 output tokens per check: each check reads about five passages, not the whole opinion. Everything else runs locally on the CPU; see `python -m eval.perf`.
 
 ## Status counts
 

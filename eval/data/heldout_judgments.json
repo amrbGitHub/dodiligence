@@ -76,13 +76,6 @@
 "in": 3405,
 "out": 109
 },
-"214c7de7934ad4470d59578fb575dd80": {
-"verdict": "UNCLEAR",
-"explanation": "The excerpts show Scalia's concurrence in Roy discussing when an instructional omission can be harmless (excerpts 5, 7), but they do not show the quoted 'complete confidence' language, footnote 10, stipulations, or 'harmless structural error.' The memo's proposition appears to be a quote from a different opinion that cites Roy, so the excerpts cannot confirm it.",
-"key_excerpt": 5,
-"in": 4052,
-"out": 159
-},
 "2401ee61dc04b5b38cf916ef2856b235": {
 "verdict": "SUPPORTED",
 "explanation": "Excerpt 4 says \"equitably\" in \u00a7 1513 refers to the Court's power to divide property \"according to justice and fairness,\" not the power to create equitable interests. Excerpts 3 and 5 show the power is limited, since the Court cannot place marital property in trust.",
@@ -215,13 +208,6 @@
 "key_excerpt": 3,
 "in": 3086,
 "out": 136
-},
-"95d0d49140121cf53abee757835cd69f": {
-"verdict": "SUPPORTED",
-"explanation": "Excerpts 3 and 5 contain the exact quoted language: \"on issues of credibility and weight of the evidence, we defer to the findings of the trial judge,\" in the Court's own statement of the standard of review in custody cases.",
-"key_excerpt": 3,
-"in": 3573,
-"out": 108
 },
 "a5efbc8402ff44d1db373d2fc75747d0": {
 "verdict": "UNCLEAR",

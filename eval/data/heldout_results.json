@@ -48,7 +48,7 @@
    "id": "hold-004",
    "status": "MISQUOTED",
    "reason": "This quotation does not appear anywhere in the opinion.",
-   "verdict": "UNCLEAR"
+   "verdict": null
   },
   {
    "id": "hold-005",
@@ -306,7 +306,7 @@
    "id": "hold-047",
    "status": "MISQUOTED",
    "reason": "The quoted words don't match the opinion. The closest passage reads: \u201cHowever, on issues of credibility and weight of the evidence, we defer to the findings of the trial judge, *290\u201d",
-   "verdict": "SUPPORTED"
+   "verdict": null
   },
   {
    "id": "hold-048",

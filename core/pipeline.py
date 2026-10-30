@@ -143,7 +143,9 @@ def verify(text: str, source, judge=None, on_progress=None, max_cites: int | Non
                           else "This quotation does not appear anywhere in the opinion.")
         body = cl.claim_text[: max(0, len(cl.claim_text) - (cl.cite_span[1] - cl.cite_span[0]))]
         body = re.sub(r"\b(see also|see|e\.g\.|accord|cf\.)\b|[\W_]+", " ", body, flags=re.I).strip()
-        if judge is not None and len(body) < 15 and res.status != "MISQUOTED":
+        if res.status == "MISQUOTED":
+            pass                    # already flagged; the support check only sees citations that pass the first two
+        elif judge is not None and len(body) < 15:
             res.status, res.reason = "REVIEW", "The case exists, but there's no proposition next to the citation to check."
         elif judge is not None:
             try:
@@ -156,14 +158,13 @@ def verify(text: str, source, judge=None, on_progress=None, max_cites: int | Non
                                             f"({detail or type(e).__name__})")
                 results.append(res)
                 continue
-            if res.status != "MISQUOTED":
-                res.status = {"SUPPORTED": "VERIFIED", "CONTRADICTED": "CONTRADICTED",
-                              "NOT_SUPPORTED": "UNSUPPORTED", "OFF_TOPIC": "UNSUPPORTED"}.get(j.verdict, "REVIEW")
-                res.reason = j.explanation
-                if j.verdict == "NOT_ADDRESSED":
-                    res.reason = ("The passages checked don't discuss this point, so the opinion may cover it elsewhere. "
-                                  + j.explanation)
-        elif res.status != "MISQUOTED":
+            res.status = {"SUPPORTED": "VERIFIED", "CONTRADICTED": "CONTRADICTED",
+                          "NOT_SUPPORTED": "UNSUPPORTED", "OFF_TOPIC": "UNSUPPORTED"}.get(j.verdict, "REVIEW")
+            res.reason = j.explanation
+            if j.verdict == "NOT_ADDRESSED":
+                res.reason = ("The passages checked don't discuss this point, so the opinion may cover it elsewhere. "
+                              + j.explanation)
+        else:
             res.status = "QUOTE_OK" if quotes else "REVIEW"
             res.reason = STATUS[res.status][1]
         results.append(res)
